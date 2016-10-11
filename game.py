@@ -245,13 +245,10 @@ def execute_take(item_id):
     took_item = False
     for item in current_room["items"]:
         if (item["id"] == item_id):
-            if (calculate_mass(inventory) + item["mass"]) < 2600:
-                inventory.append(item)
-                current_room["items"].remove(item)
-                print ("Took " + item_id + ".")
-                took_item = True
-            else:
-                print ("You're carrying too much weight, you must drop some items before you can pick up " + item_id + ".")
+            inventory.append(item)
+            current_room["items"].remove(item)
+            print ("Took " + item_id + ".")
+            took_item = True
             break
     if took_item == False:
         print ("You cannot take that.")
@@ -261,7 +258,6 @@ def execute_drop(item_id):
     player's inventory to list of items in the current room. However, if there is
     no such item in the inventory, this function prints "You cannot drop that."
     """
-    global player_won
     has_item = False
     for item in inventory:
         if item["id"] == item_id:
@@ -269,13 +265,6 @@ def execute_drop(item_id):
             current_room["items"].append(item)
             inventory.remove(item)
             print ("Dropped " + item_id + ".")
-            if current_room["name"] == "your personal tutor's office":
-                item_count = 0
-                for item in current_room["items"]:
-                    item_count = item_count + 1
-                if item_count == 6:
-                    player_won = True
-                    print ("As you handed " + item["name"] + " to your personal tutor, you felt as if you had fulfilled your purpose in life.") 
             break
     if has_item == False:
         print ("You cannot drop that.")
