@@ -4,3 +4,4 @@ CHANGELOG:
 {Cleaned up the coding in game.py
 added comments where needed
 see line 255 for explination of some changes.} - Luca
+{Removed changelog from gitignore so it actually gets updated ;) } - James
