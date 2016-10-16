@@ -1,0 +1,6 @@
+whenever you make a committ to the github, please enter what changes you made here so that they are all traceable:
+
+CHANGELOG:
+{Cleaned up the coding in game.py
+added comments where needed
+see line 255 for explination of some changes.} - Luca

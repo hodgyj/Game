@@ -5,6 +5,7 @@ from player import *
 from items import *
 from gameparser import *
 
+
 def list_of_items(items):
     """This function takes a list of items (see items.py for the definition) and
     returns a comma-separated list of item names (as a string). For example:
@@ -22,13 +23,8 @@ def list_of_items(items):
     'money, a student handbook, laptop'
 
     """
-    list = ""
-    for item in items:
-        if (list == ""):
-            list = list + str(item["name"])
-        else:
-            list = list + ", " + str(item["name"])
-    return list
+    return ", ".join([i['name']for i in items]) #returns list of items by iterating over dictionary values
+
 
 def print_room_items(room):
     """This function takes a room as an input and nicely displays a list of items
@@ -52,10 +48,9 @@ def print_room_items(room):
     Note: <BLANKLINE> here means that doctest should expect a blank line.
 
     """
-    item_list = list_of_items(room["items"])
-    if (item_list != ""):
-        print("There is " + item_list + " here.")
-        print()
+    if room["items"]: #checks if items list has any values
+        print("There is " + list_of_items(room["items"]) + " here. \n") #if there are items then summon list function and prints each item
+
 
 def print_inventory_items(items):
     """This function takes a list of inventory items and displays it nicely, in a
@@ -67,10 +62,8 @@ def print_inventory_items(items):
     <BLANKLINE>
 
     """
-    item_list = list_of_items(inventory)
-    if (item_list != ""):
-        print("You have " + item_list + ".")
-        print()
+    if items: #if value true then
+        print("You have " + list_of_items(inventory) + ".\n") #prints inventory list
 
 def print_room(room):
     """This function takes a room as an input and nicely displays its name
@@ -242,32 +235,48 @@ def execute_take(item_id):
     there is no such item in the room, this function prints
     "You cannot take that."
     """
-    took_item = False
-    for item in current_room["items"]:
-        if (item["id"] == item_id):
-            inventory.append(item)
-            current_room["items"].remove(item)
-            print ("Took " + item_id + ".")
-            took_item = True
-            break
-    if took_item == False:
-        print ("You cannot take that.")
+    if not (current_room["items"]): #checks if there is a value 
+        print("There is nothing here to take") #if no value 
+    else:
+        for item in current_room["items"]: #itterates over items and compares values
+            if item["id"] == item_id:
+                current_room["items"].remove(item) #removes from the room
+                inventory.append(item) #adds to player inventory
+                break
+
+        if item_id not in (item["id"]): #if item isn't found in list of takable items
+            print("You cannot take that.")
 
 def execute_drop(item_id):
     """This function takes an item_id as an argument and moves this item from the
     player's inventory to list of items in the current room. However, if there is
     no such item in the inventory, this function prints "You cannot drop that."
     """
-    has_item = False
-    for item in inventory:
-        if item["id"] == item_id:
-            has_item = True
-            current_room["items"].append(item)
-            inventory.remove(item)
-            print ("Dropped " + item_id + ".")
-            break
-    if has_item == False:
-        print ("You cannot drop that.")
+    # has_item = False
+    # for item in inventory:
+    #     if item["id"] == item_id:
+    #         has_item = True
+    #         current_room["items"].append(item)
+    #         inventory.remove(item)
+    #         print ("Dropped " + item_id + ".")
+    #         break
+    # if has_item == False: 
+    #     print ("You cannot drop that.")
+    # I kept this to explain why I changed it, the if function returns a boolean value of true or fale
+    # using it in this manner is like doubling down on the statement, the below corrects it.
+
+    if not (inventory): # checks for any value in inventory
+        print("You have nothing to drop.")
+    else: 
+        for item in inventory: #checks against all values in dictionary
+            if item["id"] == item_id:
+                inventory.remove(item)
+                current_room["items"].append(item)
+                print("Dropped " + item_id + ".") #this is a nice bit I kept, good idea!
+                break
+
+    if item_id not in (item["id"]): #this is a catch for when an item is not in the dictionary but the dictionary still have values
+        print("You cannot drop that.")
 
 def execute_command(command):
     """This function takes a command (a list of words as returned by
