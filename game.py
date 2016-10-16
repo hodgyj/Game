@@ -5,21 +5,22 @@ from player import *
 from items import *
 from gameparser import *
 
+gibberish = 0 # Initialise gibberish as a global variable
 
-def fail_conditions(gibberish, current_room):
+def fail_conditions(current_room):
 
     # This function checks against all fail conditions and then after printing the fail condition quits the game.
-
+    global gibberish
     if gibberish >= 5: # checks for how many times people type in gibberish. 
-        print("""Your continued presence within the dungeon has clearly addlled your mind.
+        print("""Your continued presence within the dungeon has clearly addled your mind.
         In your newfound state of madness you begin to see what appear to be orderlys melting into being from the walls. 
-        They approach carrying what appears to be a straight jacket whilst making calming sounds.""")
-        choice = input("Would you like to accept the nice doctors sanity pills?: ")
-        if choice = "yes":
+        They approach carrying what appears to be a straitjacket whilst making calming sounds.""")
+        choice = str(input("Would you like to accept the nice doctors sanity pills?: ")).lower()
+        if choice == "yes" or choice == "y":
             gibberish = 0
             main() # resets the game
         else:
-            print("I guess those padded walls are faily appealing. . .and comfy. . .")
+            print("I guess those padded walls are fairly appealing. . .and comfy. . .")
             exit() # quits the game
 
     # if current_room == death_room:
@@ -308,7 +309,7 @@ def execute_command(command):
     execute_take, or execute_drop, supplying the second word as the argument.
 
     """
-
+    global gibberish
     if 0 == len(command):
         return
 
@@ -382,7 +383,7 @@ def main():
     while True:
         # Display game status (room description, inventory etc.)
         
-        fail_conditions(gibberish, current_room)
+        fail_conditions(current_room)
         print_room(current_room)
         print_inventory_items(inventory)
 
