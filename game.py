@@ -6,6 +6,29 @@ from items import *
 from gameparser import *
 
 
+def fail_conditions(gibberish, current_room):
+
+    # This function checks against all fail conditions and then after printing the fail condition quits the game.
+
+    if gibberish >= 5: # checks for how many times people type in gibberish. 
+        print("""Your continued presence within the dungeon has clearly addlled your mind.
+        In your newfound state of madness you begin to see what appear to be orderlys melting into being from the walls. 
+        They approach carrying what appears to be a straight jacket whilst making calming sounds.""")
+        choice = input("Would you like to accept the nice doctors sanity pills?: ")
+        if choice = "yes":
+            gibberish = 0
+            main() # resets the game
+        else:
+            print("I guess those padded walls are faily appealing. . .and comfy. . .")
+            exit() # quits the game
+
+    # if current_room == death_room:
+    #     for i in items:
+    #         if useless_weapon not in i:
+    #             print(" please fill this in with troll death ")
+    # WIP for useless weapon check
+
+
 def list_of_items(items):
     """This function takes a list of items (see items.py for the definition) and
     returns a comma-separated list of item names (as a string). For example:
@@ -309,6 +332,7 @@ def execute_command(command):
 
     else:
         print("This makes no sense.")
+        gibberish += 1
 
 def menu(exits, room_items, inv_items):
     """This function, given a dictionary of possible exits from a room, and a list
@@ -357,6 +381,8 @@ def main():
     # Main game loop
     while True:
         # Display game status (room description, inventory etc.)
+        
+        fail_conditions(gibberish, current_room)
         print_room(current_room)
         print_inventory_items(inventory)
 
