@@ -1,4 +1,5 @@
-
+# It seems for python to be happy you have to define the function and what it does first, 
+# and then set the value of use_func to the function we want to execute
 def use_key():
     import player 
     if player.current_room["name"] != "kirills office": #For some reason this isnt working I hate python
