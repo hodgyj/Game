@@ -8,7 +8,7 @@ room_office={
 spilling under the desk and over top the framed black-and-white pictures on the wall. A desk stands before you layden
 with books and papers all of incomprehensible text """,
 
-	"exits": {"west": "Corridor","south": "exit"},
+	"exits": {"west": "corridor","south": "exit"},
 
 	"items": []
 
@@ -22,7 +22,7 @@ room_boss= {
 to manifest before your eyes thickening becoming the embodiment of your worst nightmares. The mass' voice beckons demanding
 you drop your weapon and surrender""",
 
-	"exits": {"south": "Corridor"},
+	"exits": {"south": "corridor"},
 
 	"items": [item_key]
 
@@ -36,7 +36,7 @@ armoury = {
 	 - how convenient. From full suits of rusty mail to rotting wooden shields, the room is packed. There only seem to be a 
 	 few items that you could pick up that wouldn't fall apart instantly.""",
 
-	"exits": {"east": "Corridor", "south": "empty"},
+	"exits": {"east": "corridor", "south": "empty"},
 
 	"items": [item_helmet, item_chest, item_weapon]
 }
@@ -62,7 +62,7 @@ room_treasure ={
 	a beautiful handcrafted crossbow with the head of a wolf biting on the handle. Straight ahead of you is a pillar of glass 
 	engraved with strange runes, and atop the pillar is a glowing tomb with simular runes all over the cover""",
 
-	"exits": {"south west": "Corridor"},
+	"exits": {"south west": "corridor"},
 
 	"items": [item_crown, item_coins]
 }
@@ -74,7 +74,7 @@ corridor ={
 	"""you have stumbled out of kirills office into a long forgotten under ground tunnel, dim lighting casts a shadow on the wooden doors spaced every so often.
 you can exit north to a grand archway, north east to a door loosly chained, east back to the office and west to a slightly open wooden door.""",
 
-	"exits": {"north": "boss room", " north east": "treasure room", "east": "kirills office", "west": "armoury"},
+	"exits": {"north": "boss", "north east": "treasure", "east": "office", "west": "armoury"},
 
 	"items": [item_potion, item_book, item_laptop, item_prospectus]
 }

@@ -4,6 +4,20 @@ from map import rooms
 from player import *
 from items import *
 from gameparser import *
+from deaths import *
+
+def win_condition():
+
+    if item_key in inventory:
+        if current_room["kirills office"]:
+            print("""You put the key into the door and slowly turn it, you hear a satifying click as the lock slides back. \n
+            as the door opens you are blinded by the light from outside. As you begin to leave you think back on the day and ponder. . .
+            just how in the world did you tie yourself to the chair like that?""")
+
+            time.sleep(4)
+            print("""'Oh well' you think, 'at least I got to kill a troll'.""")
+            time.sleep(5)
+            exit()
 
 def fail_conditions(current_room):
 
@@ -215,7 +229,7 @@ def print_menu(exits, room_items, inv_items):
         print("TAKE " + item["id"].upper() + " to take " + item["name"])
 
     for item in inv_items:
-        print("DROP " + item["id"].upper() + " to drop " + item["name"])
+        print("DROP or USE" + item["id"].upper() + " to drop or use " + item["name"])
     
     print("What do you want to do?")
 
@@ -245,7 +259,7 @@ def execute_use(item_id):
         for item in inventory:
             if item['id'] == item_id:
                 if removeable in (item['use']):
-                    return item['use']
+                    return item['use_func']
                     inventory.remove(item)
                     break
                 else:
@@ -355,6 +369,9 @@ def execute_command(command):
         else:
             print("Use what?")
 
+    elif command[0] == "exit":
+        exit()
+
     else:
         print("This makes no sense.")
         gibberish += 1
@@ -406,7 +423,6 @@ def main():
     # Main game loop
     while True:
         # Display game status (room description, inventory etc.)
-        
         fail_conditions(current_room)
         print_room(current_room)
         print_inventory_items(inventory)

@@ -5,7 +5,7 @@ Things to do (add your name next to which bit you would like to do):
 write storyboard
 draw out a map
 create win conditions 
-fail conditions?
+fail conditions? - WIP
 EASTER EGGS!1!!111elevenone!!'5fdlaibj etp - Luca
 Who's coding what? 
 combat system? or fake combat system!!
@@ -18,4 +18,6 @@ plan and do presentation - Luca
 Things done:
 
 Main template
+map drawn
+win condition
 
