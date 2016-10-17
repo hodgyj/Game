@@ -1,3 +1,13 @@
+
+def use_key():
+    import player 
+    if player.current_room["name"] != "kirills office": #For some reason this isnt working I hate python
+        print("You cannot use that here.")
+        return False
+    else:
+        # Code for using key goes here
+        return True # Returns True if used so that it can be removed
+
 item_key = {
     "id": "key",
 
@@ -8,8 +18,7 @@ item_key = {
 
     "use": "removeable", 
 
-    #"use_func": if current_room["name"] not current_room["kirills office"]:
-                    #print("You cannot use that here.")
+    "use_func": use_key
 }
 
 item_weapon = {

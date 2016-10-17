@@ -2,7 +2,7 @@ import os
 import time
 from map import rooms
 from player import *
-from items import *
+#from items import *
 from gameparser import *
 from deaths import *
 from ascii_dragon import *
@@ -259,9 +259,9 @@ def execute_use(item_id):
     else:
         for item in inventory:
             if item['id'] == item_id:
-                if removeable in (item['use']):
-                    return item['use_func']
-                    inventory.remove(item)
+                if (item['use']) == "removeable":
+                    if item['use_func']() == True:
+                        inventory.remove(item)
                     break
                 else:
                     print('You cannot use that item here.')
