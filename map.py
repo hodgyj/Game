@@ -6,7 +6,9 @@ room_office={
 spilling under the desk and over top the framed black-and-white pictures on the wall. A desk stands before you layden
 with books and papers all of incomprehensible text """,
 
-	"exits": {"west": "Corridor","south": "exit"}
+	"exits": {"west": "Corridor","south": "exit"},
+
+	"items": []
 
 	}
 
@@ -18,7 +20,9 @@ room_boss= {
 to manifest before your eyes thickening becoming the embodiment of your worst nightmares. The mass' voice beckons demanding
 you drop your weapon and surrender""",
 
-	"exits": {"south": "Corridor"}
+	"exits": {"south": "Corridor"},
+
+	"items": []
 
 	}
 
@@ -30,7 +34,9 @@ armoury = {
 	 - how convenient. From full suits of rusty mail to rotting wooden sheilds, the room is packed. There only seem to be a 
 	 few peices that you could pick up that wouldn't fall apart instantly.""",
 
-	"exits": {"east": "Corridor", "south": "empty"}
+	"exits": {"east": "Corridor", "south": "empty"},
+
+	"items": []
 }
 
 empty_room ={
@@ -39,7 +45,9 @@ empty_room ={
 	"description":
 	"""you have entered an empty room""",
 
-	"exits": {"north": "armoury"}
+	"exits": {"north": "armoury"},
+
+	"items": []
 
 }
 
@@ -52,7 +60,9 @@ room_treasure ={
 	a beautiful handcrafted crossbow with the head of a wolf biting on the handle. Straight ahead of you is a pillar of glass 
 	engraved with strange runes, and atop the pillar is a glowing tome with simular runes all over the cover""",
 
-	"exits": {"south west": "Corridor"}
+	"exits": {"south west": "Corridor"},
+
+	"items": []
 }
 
 corridor ={
@@ -62,7 +72,20 @@ corridor ={
 	"""you have stumbled out of kirills office into a long forgotten under ground tunnel, dim lighting casts a shadow on the wooden doors spaced every so often.
 you can exit north to a grand archway, north east to a door loosly chained, east back to the office and west to a slightly open wooden door.""",
 
-	"exits": {"north": "boss room", " north east": "treasure room", "east": "kirills office", "west": "armoury"}
+	"exits": {"north": "boss room", " north east": "treasure room", "east": "kirills office", "west": "armoury"},
+
+	"items": []
+}
+
+room_exit = {
+	"name": "Exit",
+
+	"description":
+	"""You exited. Well done""",
+
+	"exits": {"north": "office"},
+
+	"items": []
 }
 
 rooms = {
@@ -71,5 +94,6 @@ rooms = {
 	"armoury": armoury,
 	"empty": empty_room,
 	"treasure": room_treasure,
-	"corridor": corridor
+	"corridor": corridor,
+	"exit": room_exit
 }
