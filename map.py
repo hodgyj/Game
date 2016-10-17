@@ -6,7 +6,7 @@ room_office={
 spilling under the desk and over top the framed black-and-white pictures on the wall. A desk stands before you layden
 with books and papers all of incomprehensible text """,
 
-	"exits": {"west": "Corridor","south": "exit"},
+	"exits": {"west": "corridor","south": "exit"},
 
 	"items": []
 
@@ -20,7 +20,7 @@ room_boss= {
 to manifest before your eyes thickening becoming the embodiment of your worst nightmares. The mass' voice beckons demanding
 you drop your weapon and surrender""",
 
-	"exits": {"south": "Corridor"},
+	"exits": {"south": "corridor"},
 
 	"items": []
 
@@ -34,7 +34,7 @@ armoury = {
 	 - how convenient. From full suits of rusty mail to rotting wooden sheilds, the room is packed. There only seem to be a 
 	 few peices that you could pick up that wouldn't fall apart instantly.""",
 
-	"exits": {"east": "Corridor", "south": "empty"},
+	"exits": {"east": "corridor", "south": "empty"},
 
 	"items": []
 }
@@ -60,7 +60,7 @@ room_treasure ={
 	a beautiful handcrafted crossbow with the head of a wolf biting on the handle. Straight ahead of you is a pillar of glass 
 	engraved with strange runes, and atop the pillar is a glowing tome with simular runes all over the cover""",
 
-	"exits": {"south west": "Corridor"},
+	"exits": {"south west": "corridor"},
 
 	"items": []
 }

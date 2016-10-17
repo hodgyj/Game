@@ -4,6 +4,7 @@ from map import rooms
 from player import *
 from items import *
 from gameparser import *
+from deaths import *
 
 def fail_conditions(current_room):
 
@@ -406,7 +407,6 @@ def main():
     # Main game loop
     while True:
         # Display game status (room description, inventory etc.)
-        
         fail_conditions(current_room)
         print_room(current_room)
         print_inventory_items(inventory)
