@@ -11,7 +11,7 @@ def fail_conditions(current_room):
     global gibberish
     if gibberish >= 5: # checks for how many times people type in gibberish. 
         print("""Your continued presence within the dungeon has clearly addled your mind.
-        In your newfound state of madness you begin to see what appear to be orderlys melting into being from the walls. 
+        In your newfound state of madness you begin to see what appear to be orderlys and a charming doctor melting into being from the walls. 
         They approach carrying what appears to be a straitjacket whilst making calming sounds.""")
         choice = str(input("Would you like to accept the nice doctors sanity pills?: ")).lower()
         if choice == "yes" or choice == "y":
@@ -237,6 +237,26 @@ def is_valid_exit(exits, chosen_exit):
     """
     return chosen_exit in exits
 
+def execute_use(item_id):
+    #This function is so that the player can use items for various functions
+    if not (inventory):
+        print("You have nothing in your inventory to use, perhaps your memory is failing you?")
+    else:
+        for item in inventory:
+            if item['id'] == item_id:
+                if removeable in (item['use']):
+                    return item['use']
+                    inventory.remove(item)
+                    break
+                else:
+                    print('You cannot use that item here.')
+                    break
+
+        if item_id not in (item["id"]):
+            print("You cannot use that.")
+
+
+
 def execute_go(direction):
     """This function, given the direction (e.g. "south") updates the current room
     to reflect the movement of the player if the direction is a valid exit
@@ -328,6 +348,12 @@ def execute_command(command):
             execute_drop(command[1])
         else:
             print("Drop what?")
+
+    elif command[0] == "use":
+        if len(command) > 1:
+            execute_use(command[1])
+        else:
+            print("Use what?")
 
     else:
         print("This makes no sense.")
