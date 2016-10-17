@@ -22,7 +22,7 @@ you drop your weapon and surrender""",
 
 	}
 
-Armoury = {
+armoury = {
 	"name":"armoury",
 
 	"description":
@@ -58,4 +58,13 @@ corridor ={
 you can exit north to the boss' room, north east to the room of death, east back to kirills office and west to the armoury""",
 
 	"exits": {"north": "boss room", " north east": "room of death", "east": "kirills office", "west": "armoury"}
+}
+
+rooms = {
+	"office": room_office,
+	"boss": room_boss,
+	"armoury": armoury,
+	"empty": empty_room,
+	"death": room_death,
+	"corridor": corridor
 }
