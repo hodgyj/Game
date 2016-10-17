@@ -5,6 +5,7 @@ from player import *
 from items import *
 from gameparser import *
 from deaths import *
+from ascii_dragon import *
 
 def win_condition():
 
@@ -420,6 +421,7 @@ def main():
     #time.sleep(4)
     #print("lol jk")
     #time.sleep(1)
+    print_intro()
     # Main game loop
     while True:
         # Display game status (room description, inventory etc.)
