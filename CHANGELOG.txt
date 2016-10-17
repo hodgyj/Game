@@ -7,3 +7,5 @@ see line 255 for explination of some changes.} - Luca
 {Removed changelog from gitignore so it actually gets updated ;) } - James
 {Began work on fail conditions} - Luca
 {Changed gibberish variable to a global variable} - James
+{Imported player using "import player" instead of "from player
+import *", so that using player in items.py works!} - James

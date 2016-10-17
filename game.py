@@ -1,7 +1,7 @@
 import os
 import time
 from map import rooms
-from player import *
+import player
 #from items import *
 from gameparser import *
 from deaths import *
@@ -9,8 +9,8 @@ from ascii_dragon import *
 
 def win_condition():
 
-    if item_key in inventory:
-        if current_room["kirills office"]:
+    if item_key in player.inventory:
+        if player.current_room["kirills office"]:
             print("""You put the key into the door and slowly turn it, you hear a satifying click as the lock slides back. \n
             as the door opens you are blinded by the light from outside. As you begin to leave you think back on the day and ponder. . .
             just how in the world did you tie yourself to the chair like that?""")
@@ -23,14 +23,14 @@ def win_condition():
 def fail_conditions(current_room):
 
     # This function checks against all fail conditions and then after printing the fail condition quits the game.
-    global gibberish
-    if gibberish >= 5: # checks for how many times people type in gibberish. 
+    #global player.gibberish
+    if player.gibberish >= 5: # checks for how many times people type in gibberish. 
         print("""Your continued presence within the dungeon has clearly addled your mind.
         In your newfound state of madness you begin to see what appear to be orderlys and a charming doctor melting into being from the walls. 
         They approach carrying what appears to be a straitjacket whilst making calming sounds.""")
         choice = str(input("Would you like to accept the nice doctors sanity pills?: ")).lower()
         if choice == "yes" or choice == "y":
-            gibberish = 0
+            player.gibberish = 0
             main() # resets the game
         else:
             print("I guess those padded walls are fairly appealing. . .and comfy. . .")
@@ -100,7 +100,7 @@ def print_inventory_items(items):
 
     """
     if items: #if value true then
-        print("You have " + list_of_items(inventory) + ".\n") #prints inventory list
+        print("You have " + list_of_items(player.inventory) + ".\n") #prints inventory list
 
 def print_room(room):
     """This function takes a room as an input and nicely displays its name
@@ -230,7 +230,7 @@ def print_menu(exits, room_items, inv_items):
         print("TAKE " + item["id"].upper() + " to take " + item["name"])
 
     for item in inv_items:
-        print("DROP or USE" + item["id"].upper() + " to drop or use " + item["name"])
+        print("DROP or USE " + item["id"].upper() + " to drop or use " + item["name"])
     
     print("What do you want to do?")
 
@@ -254,14 +254,14 @@ def is_valid_exit(exits, chosen_exit):
 
 def execute_use(item_id):
     #This function is so that the player can use items for various functions
-    if not (inventory):
+    if not (player.inventory):
         print("You have nothing in your inventory to use, perhaps your memory is failing you?")
     else:
-        for item in inventory:
+        for item in player.inventory:
             if item['id'] == item_id:
                 if (item['use']) == "removeable":
                     if item['use_func']() == True:
-                        inventory.remove(item)
+                        player.inventory.remove(item)
                     break
                 else:
                     print('You cannot use that item here.')
@@ -278,10 +278,10 @@ def execute_go(direction):
     (and prints the name of the room into which the player is
     moving). Otherwise, it prints "You cannot go there."
     """
-    global current_room
-    if direction in current_room["exits"]:
-        current_room = move(current_room["exits"], direction)
-        print(current_room["name"].upper())
+    #global player.current_room
+    if direction in player.current_room["exits"]:
+        player.current_room = move(player.current_room["exits"], direction)
+        print(player.current_room["name"].upper())
     else:
         print("You cannot go there.")
         
@@ -292,13 +292,13 @@ def execute_take(item_id):
     there is no such item in the room, this function prints
     "You cannot take that."
     """
-    if not (current_room["items"]): #checks if there is a value 
+    if not (player.current_room["items"]): #checks if there is a value 
         print("There is nothing here to take") #if no value 
     else:
-        for item in current_room["items"]: #itterates over items and compares values
+        for item in player.current_room["items"]: #itterates over items and compares values
             if item["id"] == item_id:
-                current_room["items"].remove(item) #removes from the room
-                inventory.append(item) #adds to player inventory
+                player.current_room["items"].remove(item) #removes from the room
+                player.inventory.append(item) #adds to player inventory
                 break
 
         if item_id not in (item["id"]): #if item isn't found in list of takable items
@@ -322,13 +322,13 @@ def execute_drop(item_id):
     # I kept this to explain why I changed it, the if function returns a boolean value of true or fale
     # using it in this manner is like doubling down on the statement, the below corrects it.
 
-    if not (inventory): # checks for any value in inventory
+    if not (player.inventory): # checks for any value in inventory
         print("You have nothing to drop.")
     else: 
-        for item in inventory: #checks against all values in dictionary
+        for item in player.inventory: #checks against all values in dictionary
             if item["id"] == item_id:
-                inventory.remove(item)
-                current_room["items"].append(item)
+                player.inventory.remove(item)
+                player.current_room["items"].append(item)
                 print("Dropped " + item_id + ".") #this is a nice bit I kept, good idea!
                 break
 
@@ -342,7 +342,7 @@ def execute_command(command):
     execute_take, or execute_drop, supplying the second word as the argument.
 
     """
-    global gibberish
+    #global player.gibberish
     if 0 == len(command):
         return
 
@@ -375,7 +375,7 @@ def execute_command(command):
 
     else:
         print("This makes no sense.")
-        gibberish += 1
+        player.gibberish += 1
 
 def menu(exits, room_items, inv_items):
     """This function, given a dictionary of possible exits from a room, and a list
@@ -425,12 +425,12 @@ def main():
     # Main game loop
     while True:
         # Display game status (room description, inventory etc.)
-        fail_conditions(current_room)
-        print_room(current_room)
-        print_inventory_items(inventory)
+        fail_conditions(player.current_room)
+        print_room(player.current_room)
+        print_inventory_items(player.inventory)
 
         # Show the menu with possible actions and ask the player
-        command = menu(current_room["exits"], current_room["items"], inventory)
+        command = menu(player.current_room["exits"], player.current_room["items"], player.inventory)
 
         # Execute the player's command
         execute_command(command)
