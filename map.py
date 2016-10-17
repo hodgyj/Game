@@ -6,9 +6,7 @@ room_office={
 spilling under the desk and over top the framed black-and-white pictures on the wall. A desk stands before you layden
 with books and papers all of incomprehensible text """,
 
-	"exits": {"west": "corridor","south": "exit"},
-
-	"items": []
+	"exits": {"west": "Corridor","south": "exit"}
 
 	}
 
@@ -20,9 +18,7 @@ room_boss= {
 to manifest before your eyes thickening becoming the embodiment of your worst nightmares. The mass' voice beckons demanding
 you drop your weapon and surrender""",
 
-	"exits": {"south": "corridor"},
-
-	"items": []
+	"exits": {"south": "Corridor"}
 
 	}
 
@@ -30,12 +26,11 @@ armoury = {
 	"name":"armoury",
 
 	"description":
-	"""you are in the armoury""",
+	"""You walk into a long elongated room, with walls stacked high with equipent you reconise from GCSE History. You appear to have found an armoury
+	 - how convenient. From full suits of rusty mail to rotting wooden sheilds, the room is packed. There only seem to be a 
+	 few peices that you could pick up that wouldn't fall apart instantly.""",
 
-	"exits": {"east": "corridor", "south": "empty"},
-
-	"items": []
-
+	"exits": {"east": "Corridor", "south": "empty"}
 }
 
 empty_room ={
@@ -44,44 +39,30 @@ empty_room ={
 	"description":
 	"""you have entered an empty room""",
 
-	"exits": {"north": "armoury"},
-
-	"items": []
+	"exits": {"north": "armoury"}
 
 }
 
-room_death ={
-	"name":"room of death",
+room_treasure ={
+	"name":"treasure room",
 
 	"description":
-	"""you are in the death room""",
+	"""You enter a magnificent room filled with riches you couldn't even have imagened. From giant chests overflowing with gold 
+	coins to steel swords with diamond hilts. There are bubbeling liquids of all sorts of colour to your left, to your right 
+	a beautiful handcrafted crossbow with the head of a wolf biting on the handle. Straight ahead of you is a pillar of glass 
+	engraved with strange runes, and atop the pillar is a glowing tome with simular runes all over the cover""",
 
-	"exits": {"south west": "corridor"},
-
-	"items": []
-
+	"exits": {"south west": "Corridor"}
 }
 
 corridor ={
-	"name":"corridor",
+	"name":"Corridor",
 
 	"description":
 	"""you have stumbled out of kirills office into a long forgotten under ground tunnel, dim lighting casts a shadow on the wooden doors spaced every so often.
-you can exit north to the boss' room, north east to the room of death, east back to kirills office and west to the armoury""",
+you can exit north to a grand archway, north east to a door loosly chained, east back to the office and west to a slightly open wooden door.""",
 
-	"exits": {"north": "boss", "north east": "death", "east": "office", "west": "armoury"},
-
-	"items": []
-
-}
-
-room_exit ={
-	"name": "exit",
-
-	"description":
-	"""You left""",
-
-	"exits": {"north": "office"}
+	"exits": {"north": "boss room", " north east": "treasure room", "east": "kirills office", "west": "armoury"}
 }
 
 rooms = {
@@ -89,7 +70,6 @@ rooms = {
 	"boss": room_boss,
 	"armoury": armoury,
 	"empty": empty_room,
-	"death": room_death,
-	"corridor": corridor,
-	"exit": room_exit
+	"treasure": room_treasure,
+	"corridor": corridor
 }
