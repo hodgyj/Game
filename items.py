@@ -8,7 +8,8 @@ item_key = {
 
     "use": "removeable", 
 
-    "use_func": """  """
+    "use_func": if current_room["name"] not current_room["kirills office"]:
+                    print("You cannot use that here.")
 }
 
 item_weapon = {
@@ -18,6 +19,9 @@ item_weapon = {
 
     "description":
     """The steel sword is adorned with the head of a wyvern."""
+
+    "use":
+
 }
 
 item_potion = {
