@@ -21,7 +21,7 @@ def fail_conditions(current_room):
             print("I guess those padded walls are fairly appealing. . .and comfy. . .")
             exit() # quits the game
 
-    # if current_room == death_room:
+    # if current_room == rooms["death"]:
     #     for i in items:
     #         if useless_weapon not in i:
     #             print(" please fill this in with troll death ")
