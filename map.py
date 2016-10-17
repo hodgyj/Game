@@ -72,7 +72,7 @@ corridor ={
 	"""you have stumbled out of kirills office into a long forgotten under ground tunnel, dim lighting casts a shadow on the wooden doors spaced every so often.
 you can exit north to a grand archway, north east to a door loosly chained, east back to the office and west to a slightly open wooden door.""",
 
-	"exits": {"north": "boss room", " north east": "treasure room", "east": "kirills office", "west": "armoury"},
+	"exits": {"north": "boss", "north east": "treasure", "east": "office", "west": "armoury"},
 
 	"items": []
 }

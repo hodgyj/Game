@@ -15,7 +15,7 @@ def win_condition():
             just how in the world did you tie yourself to the chair like that?""")
 
             time.sleep(4)
-            print(""" 'Oh well' you think, 'at least I got to kill a troll'.""")
+            print("""'Oh well' you think, 'at least I got to kill a troll'.""")
             time.sleep(5)
             exit()
 
