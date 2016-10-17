@@ -8,4 +8,13 @@ deaths=["A crossbow bolt flies straight through your head, Kirilling you instant
 "A knight at the end of room spots you and charges ahead, imapling you with their lance in the heart.",
 "A rabid dog drops down onto you, tearing at your throat until your weak struggles stop altogether.",
 "Hot oil pours down onto of you, buring you so badly you can't even breathe.",
-"A loud buzzing sound emerges from the back of the room. Oh no! Not the Bees!"]
+"A loud buzzing sound emerges from the back of the room. Oh no! Not the Bees!","The runes begin to blink in a pattern, before you explode in a pulse of arcane energy.",
+ "You prick yourself as your brush the wall, and feel an imense pain before falling to the floor.",
+ "Your head overflows with complicated maths equations and late coursework, the pressure is too much and you fall.", 
+ "A tombstone flies through the air and smacks into your head. Ironic, i guess.", 
+ "A javelin is flung at you from the corner of your eye, and lands straight into your chest. Good catch moron.", 
+ "A snake slithers up  your leg, and bites you. Well you deserve to die to that, how slow ARE your reactions?",
+ "A holy hand grenade lands in front of you, HALLELUJAH! BOOM!",
+ "You smell the faintest elderberry in the distant, before falling face first into the ground.",
+ "The grounds diserpates below you. Oh dear, you seem to have fallen into some kind of burning hell. At least its warm.", 
+ "The hallucagin wears off, and as you realise the horrors you have been though, your very life leaves you."]
