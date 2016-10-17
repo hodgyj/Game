@@ -68,4 +68,39 @@ item_rope = {
     "name": "rope",
 
     "description":
-    """
+    """the rope is strangely soft, possibly silk?"""
+}
+
+item_chest = {
+    "id": "chest",
+
+    "name": "chest armour",
+
+    "description":
+    """the rusted chestpiece is almost useless,
+the weight of the armour is too much for you and you fall to the ground.
+The rusted armour breaks on impact."""
+}
+
+item_helmet = {
+    "id": "helmet",
+
+    "name": "Warrior's helmet",
+
+    "description":
+    """next to the chest armour you see a magnificent helmet carved out of anchient metal. It is calling for you.
+You put it on but your head is too small for it."""
+}
+
+item_note = {
+    "id": "note",
+
+    "name": "crushed paper",
+
+    "description":
+    """you pick up the crushed piece of paper, there are notes left on the paper which reads.. i saw a bright light
+coming from the north east in the corridor, could it be something more?"""
+}
+
+
+
