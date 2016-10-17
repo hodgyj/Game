@@ -372,25 +372,29 @@ def move(exits, direction):
 
 # This is the entry point of our program
 def main():
+
+    try:
+
     #print("""'python' is not recognized as an internal or external command,
 #operable program or batch file.""")
     #time.sleep(4)
     #print("lol jk")
     #time.sleep(1)
     # Main game loop
-    while True:
+        while True:
         # Display game status (room description, inventory etc.)
         
-        fail_conditions(current_room)
-        print_room(current_room)
-        print_inventory_items(inventory)
+            fail_conditions(current_room)
+            print_room(current_room)
+            print_inventory_items(inventory)
 
-        # Show the menu with possible actions and ask the player
-        command = menu(current_room["exits"], current_room["items"], inventory)
+            # Show the menu with possible actions and ask the player
+            command = menu(current_room["exits"], current_room["items"], inventory)
 
-        # Execute the player's command
-        execute_command(command)
+            # Execute the player's command
+            execute_command(command)
 
-
+    except:
+        print("Yay you broke it")
 if __name__ == "__main__":
     main()
