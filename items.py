@@ -53,24 +53,6 @@ item_prospectus = {
     """in bold writing on the cover of this prospectus reads studying computer science in cardiff university."""
 }
 
-item_water = {
-    "id": "water",
-
-    "name": "water bottle",
-
-    "description":
-    """its obvious the water bottle has been down here for some time."""
-}
-
-item_rope = {
-    "id": "rope",
-
-    "name": "rope",
-
-    "description":
-    """the rope is strangely soft, possibly silk?"""
-}
-
 item_chest = {
     "id": "chest",
 
@@ -102,5 +84,33 @@ item_note = {
 coming from the north east in the corridor, could it be something more?"""
 }
 
+item_crown = {
+    "id": "crown",
+
+    "name": "crown",
+
+    "description":
+    """you put the crown on, you look fabulous."""
+}
+
+item_coins = {
+    "id": "coins",
+
+    "name": "gold coins",
+
+    "description":
+    """modern currency doesnt allow for gold coins, these are useless."""
+}
+
+item_orb = {
+    "id":"orb",
+
+    "name": "celestial sphere",
+
+    "description":
+    """A shiny looking orblike object. There are ancient carvings on it and illustrations to show how it can used"""
+    #when opened can be used as a teleport or u choose between to 2: "the orb does nothing u idiot"-nicks idea
+
+}
 
 
