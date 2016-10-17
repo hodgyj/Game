@@ -1,12 +1,38 @@
-item_id = {
-    "id": "id",
+item_key = {
+    "id": "key",
 
-    "name": "id card",
+    "name": "key",
 
     "description":
-    """You new shiny student ID card. Expires 1 June 2017.
-You wonder why they have printed a suicide hotline number on it?...""",
+    """A rusted old key."""
+}
 
+item_weapon = {
+    "id": "weapon",
+
+    "name": "sword",
+
+    "description":
+    """The steel sword is adorned with the head of a wyvern."""
+}
+
+item_potion = {
+    "id": "potion",
+
+    "name": "health potion",
+
+    "description":
+    """The label reads this potion can restore 150hp, you also notice the expiry
+date is from 2 years ago."""
+}
+
+item_book = {
+    "id": "book",
+
+    "name": "python for dummies",
+
+    "description":
+    """a dog eared papered back version for the key to success in python."""
 }
 
 item_laptop = {
@@ -15,44 +41,31 @@ item_laptop = {
     "name": "laptop",
 
     "description":
-    "It has seen better days. At least it has a WiFi card!",
-
+    """displayed on the laptop screen is a file containing the answers for python lab 3."""
 }
 
-item_money = {
-    "id": "money",
+item_prospectus = {
+    "id": "prospectus",
 
-    "name": "money",
+    "name": "prospectus",
 
     "description":
-    "This wad of cash is barely enough to pay your tuition fees.",
-
+    """in bold writing on the cover of this prospectus reads studying computer science in cardiff university."""
 }
 
-item_biscuits = {
-    "id": "biscuits",
+item_water = {
+    "id": "water",
 
-    "name": "a pack of biscuits",
+    "name": "water bottle",
 
-    "description": "A pack of biscuits.",
-
+    "description":
+    """its obvious the water bottle has been down here for some time."""
 }
 
-item_pen = {
-    "id": "pen",
-    
-    "name": "a pen",
+item_rope = {
+    "id": "rope",
 
-    "description": "A basic ballpoint pen.",
+    "name": "rope",
 
-}
-
-item_handbook = {
-    "id": "handbook",
-    
-    "name": "a student handbook",
-
-    "description": "This student handbook explains everything. Seriously.",
-
-
-}
+    "description":
+    """
