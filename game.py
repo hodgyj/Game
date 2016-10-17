@@ -5,8 +5,6 @@ from player import *
 from items import *
 from gameparser import *
 
-gibberish = 0 # Initialise gibberish as a global variable
-
 def fail_conditions(current_room):
 
     # This function checks against all fail conditions and then after printing the fail condition quits the game.
