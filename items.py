@@ -4,7 +4,11 @@ item_key = {
     "name": "key",
 
     "description":
-    """A rusted old key."""
+    """A rusted old key.""",
+
+    "use": "removeable", 
+
+    "use_func": """  """
 }
 
 item_weapon = {

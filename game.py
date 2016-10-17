@@ -6,6 +6,19 @@ from items import *
 from gameparser import *
 from deaths import *
 
+def win_condition():
+
+    if item_key in inventory:
+        if current_room["kirills office"]:
+            print("""You put the key into the door and slowly turn it, you hear a satifying click as the lock slides back. \n
+            as the door opens you are blinded by the light from outside. As you begin to leave you think back on the day and ponder. . .
+            just how in the world did you tie yourself to the chair like that?""")
+
+            time.sleep(4)
+            print(""" 'Oh well' you think, 'at least I got to kill a troll'.""")
+            time.sleep(5)
+            exit()
+
 def fail_conditions(current_room):
 
     # This function checks against all fail conditions and then after printing the fail condition quits the game.
@@ -246,7 +259,7 @@ def execute_use(item_id):
         for item in inventory:
             if item['id'] == item_id:
                 if removeable in (item['use']):
-                    return item['use']
+                    return item['use_func']
                     inventory.remove(item)
                     break
                 else:
@@ -355,6 +368,9 @@ def execute_command(command):
             execute_use(command[1])
         else:
             print("Use what?")
+
+    elif command[0] == "exit":
+        exit()
 
     else:
         print("This makes no sense.")
