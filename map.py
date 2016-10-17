@@ -6,7 +6,7 @@ room_office={
 spilling under the desk and over top the framed black-and-white pictures on the wall. A desk stands before you layden
 with books and papers all of incomprehensible text """,
 
-	"exits": {"west": "Corridor","south": "exit"},
+	"exits": {"west": "corridor","south": "exit"},
 
 	"items": []
 
@@ -20,7 +20,7 @@ room_boss= {
 to manifest before your eyes thickening becoming the embodiment of your worst nightmares. The mass' voice beckons demanding
 you drop your weapon and surrender""",
 
-	"exits": {"south": "Corridor"},
+	"exits": {"south": "corridor"},
 
 	"items": []
 
@@ -32,7 +32,7 @@ armoury = {
 	"description":
 	"""you are in the armoury""",
 
-	"exits": {"east": "Corridor", "south": "emty"},
+	"exits": {"east": "corridor", "south": "empty"},
 
 	"items": []
 
@@ -56,23 +56,32 @@ room_death ={
 	"description":
 	"""you are in the death room""",
 
-	"exits": {"south west": "Corridor"},
+	"exits": {"south west": "corridor"},
 
 	"items": []
 
 }
 
 corridor ={
-	"name":"Corridor",
+	"name":"corridor",
 
 	"description":
 	"""you have stumbled out of kirills office into a long forgotten under ground tunnel, dim lighting casts a shadow on the wooden doors spaced every so often.
 you can exit north to the boss' room, north east to the room of death, east back to kirills office and west to the armoury""",
 
-	"exits": {"north": "boss room", " north east": "room of death", "east": "kirills office", "west": "armoury"},
+	"exits": {"north": "boss", "north east": "death", "east": "office", "west": "armoury"},
 
 	"items": []
-	
+
+}
+
+room_exit ={
+	"name": "exit",
+
+	"description":
+	"""You left""",
+
+	"exits": {"north": "office"}
 }
 
 rooms = {
@@ -81,5 +90,6 @@ rooms = {
 	"armoury": armoury,
 	"empty": empty_room,
 	"death": room_death,
-	"corridor": corridor
+	"corridor": corridor,
+	"exit": room_exit
 }
