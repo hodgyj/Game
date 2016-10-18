@@ -346,7 +346,7 @@ if __name__ == "__main__":
     print_intro()
     main()
 
-def end():
+def end(): # Where is this used?
     now = input("GAME OVER \n\n\n enter R to restart, Q to quit or H for help")
     if now == "Q":
         print("................EXITING...............")
