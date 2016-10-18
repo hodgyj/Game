@@ -300,13 +300,15 @@ def execute_go(direction):
     #global player.current_room
     if direction in player.current_room["exits"]:
         if player.current_room == rooms["dragon room"] and direction == "south": # Player cannot go to exit
-            print("Nice try.")
             player.attempts += 1
-            print(player[random.randrange(0, len(player.attempt_exit))])
-            if player.attempts >= 4:
+            #print(player.attempt_exit[random.randrange(0, len(player.attempt_exit))])
+            
+            if player.attempts >= 7:
                 print("Alright fine! I'm done with you and I'm done with my clearly useless existance!")
                 time.sleep(2)
                 exit()
+            else:
+                print(player.attempt_exit[player.attempts -1])
 
         # Player can't enter room if they have no items
         elif player.current_room == rooms["corridor"] and direction == "north" and len(player.inventory) == 0 and rooms["boss"]["boss_alive"] == True:
