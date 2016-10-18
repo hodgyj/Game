@@ -14,11 +14,12 @@ deaths=["A crossbow bolt flies straight through your head, Kirilling you instant
  "Your head overflows with complicated maths equations and late coursework, the pressure is too much and you fall.", 
  "A tombstone flies through the air and smacks into your head. Ironic, I guess.", 
  "A javelin is flung at you from the corner of your eye, and lands straight into your chest. Good catch moron.", 
- "A snake slithers up your leg, and bites you. Well you deserve to die to that, how slow ARE your reactions?",
+ "A snake slithers up your leg, and bites you. Well you deserve to die to that, how slow ARE your reactions?\nThis also brings a new meaning to the phrase 'trouser snake'",
  "A holy hand grenade lands in front of you, HALLELUJAH! BOOM!",
- "You smell the faintest elderberry in the distant, before falling face first into the ground.",
- "The grounds dissipates below you. Oh dear, you seem to have fallen into some kind of burning hell. At least it's warm.", 
- "The hallucinogen wears off, and as you realise the horrors you have been though, your very life leaves you."]
+ "You smell the faintest elderberry in the distance, 'father?' before falling face first into the ground.",
+ "The grounds dissipates below you. Oh dear, you seem to have fallen into some kind of burning hell . . . at least it's warm.", 
+ "The hallucinogen wears off, and as you realise the horrors you have been though, your very life leaves you.",
+ "The pressure put on you by the publishers becomes too much to bear, \n you release a game with passive agressive deaths to show your displeasure."]
 
 def kill_player():
     import random

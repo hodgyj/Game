@@ -6,3 +6,4 @@ inventory = []
 # Start game at the reception
 current_room = rooms["office"]
 gibberish = 0
+attempts = 0

@@ -15,16 +15,32 @@ def fail_conditions(current_room):
     # This function checks against all fail conditions and then after printing the fail condition quits the game.
     #global player.gibberish
     if player.gibberish >= 5: # checks for how many times people type in gibberish. 
-        print("""Your continued presence within the dungeon has clearly addled your mind.
+        print("""\
+        Your continued presence within the dungeon has clearly addled your mind.
         In your newfound state of madness you begin to see what appear to be orderlys and a charming doctor melting into being from the walls. 
         They approach carrying what appears to be a straitjacket whilst making calming sounds.""")
         choice = str(input("Would you like to accept the nice doctors sanity pills?: ")).lower()
         if choice == "yes" or choice == "y":
             player.gibberish = 0
+            print("The pills slowly kick in and you feel a sense of euphoria. Time almost seems to reverse as the doctor dissapears back into the wall.")
             main() # resets the game 
         else:
             print("I guess those padded walls are fairly appealing. . .and comfy. . .")
             exit() # quits the game
+
+
+
+def boss_battle_drop(room):
+    if player.current_room["boss"] and rooms["boss"]["boss_alive"]:
+        for item in room["items"]:
+            if item == "useless weapon":
+                print("""\
+                You drop the weapon and then bravely run away.
+                The beast gives chases with an allmighty roar! Unfortunately as he runs he fails to notice the recently deposited sword.
+                He trips and stumbles over the blade, after a moments consideration about his new found ability to defy gravity the beast
+                slams head first into the wall.""")
+
+
 
 # Started trying to do boss stuff but its late and this isn't a good way of doing it
 #    if player.current_room == rooms["boss"] and rooms["boss"]["boss_alive"] == True:
@@ -256,6 +272,10 @@ def is_valid_exit(exits, chosen_exit):
     """
     return chosen_exit in exits
 
+def execute_inspect(item_id):
+    
+
+
 def execute_use(item_id):
     #This function is so that the player can use items for various functions
     if not (player.inventory):
@@ -286,6 +306,7 @@ def execute_go(direction):
     if direction in player.current_room["exits"]:
         if player.current_room == rooms["office"] and direction == "south": # Player cannot go to exit
             print("Nice try.")
+            attempts += 1
 
         # Player can't enter room if they have no items
         elif player.current_room == rooms["corridor"] and direction == "north" and len(player.inventory) == 0 and rooms["boss"]["boss_alive"] == True:

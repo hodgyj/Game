@@ -6,9 +6,9 @@ def use_key():
     #if not player.current_room["kirills office"]: #For some reason this isnt working I hate python !! This if statement will now return false.
     if player.current_room["name"] != "kirills office": 
         print("You cannot use that here.")
-        return False 
     else:
-        print("""You put the key into the door and slowly turn it, you hear a satifying click as the lock slides back. \n
+        print("""\
+You put the key into the door and slowly turn it, you hear a satifying click as the lock slides back.
 As the door opens you are blinded by the light from outside. As you begin to leave you think back on the day and ponder. . .
 just how in the world did you tie yourself to the chair like that?""")
 
@@ -16,10 +16,12 @@ just how in the world did you tie yourself to the chair like that?""")
         print("""\n'Oh well' you think, 'at least I got to kill a troll'.""")
         time.sleep(5)
         exit()
-        return True # Returns True if used so that it can be removed
-        #(Doesnt really matter cause the game ends)
+#(Doesnt really matter cause the game ends)
 # I'll explain what's wrong here tomorrow
 # I fixed it but for some reason it didnt get added in my commit
+
+def no_use():
+    print("You cannot use that item, dummy")
 
 item_key = {
     "id": "key",
@@ -43,6 +45,10 @@ item_sword = {
     "description":
     """The steel sword is adorned with the head of a wyvern."""
 
+    "use": "nope"
+
+    "use_func": no_use
+
 }
 
 item_potion = {
@@ -53,6 +59,10 @@ item_potion = {
     "description":
     """The label reads this potion can restore 150hp, you also notice the expiry
 date is from 2 years ago."""
+
+    "use": "nope"
+
+    "use_func": no_use
 }
 
 item_book = {
@@ -62,6 +72,10 @@ item_book = {
 
     "description":
     """a dog eared papered back version for the key to success in python."""
+
+    "use": "nope"
+
+    "use_func": no_use
 }
 
 item_laptop = {
@@ -71,6 +85,10 @@ item_laptop = {
 
     "description":
     """displayed on the laptop screen is a file containing the answers for python lab 3."""
+
+    "use": "nope"
+
+    "use_func": no_use
 }
 
 item_prospectus = {
@@ -80,6 +98,10 @@ item_prospectus = {
 
     "description":
     """in bold writing on the cover of this prospectus reads studying computer science in cardiff university."""
+
+    "use": "nope"
+
+    "use_func": no_use
 }
 
 item_chest = {
@@ -89,8 +111,14 @@ item_chest = {
 
     "description":
     """the rusted chestpiece is almost useless,
-the weight of the armour is too much for you and you fall to the ground.
-The rusted armour breaks on impact."""
+    the weight of the armour is too much for you and you fall to the ground.
+    The rusted armour breaks on impact."""
+
+    "use": "nope"
+
+    "use_func": no_use
+
+
 }
 
 item_helmet = {
@@ -100,7 +128,11 @@ item_helmet = {
 
     "description":
     """next to the chest armour you see a magnificent helmet carved out of anchient metal. It is calling for you.
-You put it on but your head is too small for it."""
+    You put it on but your head is too small for it."""
+
+    "use": "nope"
+
+    "use_func": no_use
 }
 
 item_note = {
@@ -110,7 +142,11 @@ item_note = {
 
     "description":
     """you pick up the crushed piece of paper, there are notes left on the paper which reads.. i saw a bright light
-coming from the north east in the corridor, could it be something more?"""
+    coming from the north east in the corridor, could it be something more?"""
+
+    "use": "nope"
+
+    "use_func": no_use
 }
 
 item_crown = {
@@ -120,6 +156,10 @@ item_crown = {
 
     "description":
     """you put the crown on, you look fabulous."""
+
+    "use": "nope"
+
+    "use_func": no_use
 }
 
 item_coins = {
@@ -129,6 +169,10 @@ item_coins = {
 
     "description":
     """modern currency doesnt allow for gold coins, these are useless."""
+
+    "use": "nope"
+
+    "use_func": no_use
 }
 
 item_orb = {
@@ -138,6 +182,10 @@ item_orb = {
 
     "description":
     """A shiny looking orblike object. There are ancient carvings on it and illustrations to show how it can used"""
+    
+    "use": "nope"
+
+    "use_func": no_use
     #when opened can be used as a teleport or u choose between to 2: "the orb does nothing u idiot"-nicks idea
 
 }
