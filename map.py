@@ -24,7 +24,9 @@ you drop your weapon and surrender""",
 
 	"exits": {"south": "corridor"},
 
-	"items": []
+	"items": [],
+
+	"boss_alive": True
 
 	}
 

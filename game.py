@@ -26,10 +26,24 @@ def fail_conditions(current_room):
             print("I guess those padded walls are fairly appealing. . .and comfy. . .")
             exit() # quits the game
 
-    # if current_room == death_room:
-    #     for i in items:
-    #         if useless_weapon not in i:
-    #             print(" please fill this in with troll death ")
+#    if player.current_room == rooms["boss"] and rooms["boss"]["boss_alive"] == True:
+#        if len(player.inventory) == 0:
+#            print("You entered the ")
+        
+#        print_room(player.current_room)
+#        while len(player.inventory) > 0 and player.current_room == rooms["boss"]:
+#            print_inventory_items(player.inventory)
+#            print("You can: ")
+#            for item in rooms["boss"]["items"]:
+#                # Print the items in the room 
+#                print("TAKE " + item["id"].upper() + " to take " + item["name"])
+#
+#            for item in player.inventory:
+#                print("DROP or USE " + item["id"].upper() + " to drop or use " + item["name"])
+#            
+#            print("What do you want to do?")
+#            command = normalise_input(input("> "))
+#            execute_command(command)
     # WIP for useless weapon check
 
 def list_of_items(items):
@@ -220,7 +234,7 @@ def print_menu(exits, room_items, inv_items):
 
     for item in inv_items:
         print("DROP or USE " + item["id"].upper() + " to drop or use " + item["name"])
-    
+
     print("What do you want to do?")
 
 def is_valid_exit(exits, chosen_exit):
@@ -271,6 +285,10 @@ def execute_go(direction):
     if direction in player.current_room["exits"]:
         if player.current_room == rooms["office"] and direction == "south": # Player cannot go to exit
             print("Nice try.")
+
+        # Player can't enter room if they have no items
+        elif player.current_room == rooms["corridor"] and direction == "north" and len(player.inventory) == 0 and rooms["boss"]["boss_alive"] == True:
+            print("You have no items. Is it really a good idea to go into a boss room empty handed?")
         else:
             player.current_room = move(player.current_room["exits"], direction)
     else:
