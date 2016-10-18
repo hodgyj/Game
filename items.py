@@ -22,9 +22,8 @@ just how in the world did you tie yourself to the chair like that? What, you thi
 # I fixed it but for some reason it didnt get added in my commit
 
 def no_use():
-    sass = {"You cannot use that item, dummy", "Much like you, that item is useless", "What's the point?", "What if I don't let you?", "Meh."}
-    r = random.randint(0,sass.len())
-    print(sass[r])
+    sass = ["You cannot use that item, dummy", "Much like you, that item is useless", "What's the point?", "What if I don't let you?", "Meh."]
+    print(sass[random.randrange(0, len(sass))])
 
 def use_potion():
     import player
