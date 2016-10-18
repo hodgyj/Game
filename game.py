@@ -6,6 +6,7 @@ import player
 from gameparser import *
 from deaths import *
 from ascii_dragon import *
+import random
 
 def win_condition():
 
@@ -416,19 +417,24 @@ def move(exits, direction):
 
 # This is the entry point of our program
 def main():
-    print_intro()
-    # Main game loop
-    while True:
-        # Display game status (room description, inventory etc.)
-        fail_conditions(player.current_room)
-        print_room(player.current_room)
-        print_inventory_items(player.inventory)
+    try:
+        print_intro()
+        # Main game loop
+        while True:
+            # Display game status (room description, inventory etc.)
+            fail_conditions(player.current_room)
+            print_room(player.current_room)
+            print_inventory_items(player.inventory)
 
-        # Show the menu with possible actions and ask the player
-        command = menu(player.current_room["exits"], player.current_room["items"], player.inventory)
+            # Show the menu with possible actions and ask the player
+            command = menu(player.current_room["exits"], player.current_room["items"], player.inventory)
 
-        # Execute the player's command
-        execute_command(command)
+            # Execute the player's command
+            execute_command(command)
+    except:
+        names = ["James", "Luca", "Alastair", "Dervla", "Natalie", "Sam", "Louie"]
+        print("Ah, an error. " + names[random.randrange(0, len(names))] + " didn't code that bit properly.")
+        exit()
 
 
 if __name__ == "__main__":

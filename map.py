@@ -57,7 +57,7 @@ room_treasure ={
 	"name":"treasure room",
 
 	"description":
-	"""You enter a magnificent room filled with riches you couldn't have imagened. From giant chests overflowing with gold 
+	"""You enter a magnificent room filled with riches you couldn't have imagined. From giant chests overflowing with gold 
 	coins, and steel swords with diamond hilts. There are bubbeling liquids of all sorts of colours to your left, to your right 
 	a beautiful handcrafted crossbow with the head of a wolf biting on the handle. Straight ahead of you is a pillar of glass 
 	engraved with strange runes, and atop the pillar is a glowing tomb with simular runes all over the cover""",

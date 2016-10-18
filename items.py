@@ -30,8 +30,6 @@ item_weapon = {
     "description":
     """The steel sword is adorned with the head of a wyvern."""
 
-    #"use":
-
 }
 
 item_potion = {
