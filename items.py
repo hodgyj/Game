@@ -23,6 +23,11 @@ just how in the world did you tie yourself to the chair like that?""")
 def no_use():
     print("You cannot use that item, dummy")
 
+def use_potion():
+    print("You drink the potion and it restores 1HP.")
+    time.sleep(3)
+    print("You drop the empty bottle and it lands on your toe. You lose 1HP")
+
 item_key = {
     "id": "key",
 
@@ -43,9 +48,9 @@ item_sword = {
     "name": "a sword",
 
     "description":
-    """The steel sword is adorned with the head of a wyvern."""
+    """The steel sword is adorned with the head of a wyvern.""",
 
-    "use": "nope"
+    "use": "nope",
 
     "use_func": no_use
 
@@ -58,11 +63,11 @@ item_potion = {
 
     "description":
     """The label reads this potion can restore 150hp, you also notice the expiry
-date is from 2 years ago."""
+date is from 2 years ago.""",
 
-    "use": "nope"
+    "use": "nope",
 
-    "use_func": no_use
+    "use_func": use_potion
 }
 
 item_book = {
@@ -71,9 +76,9 @@ item_book = {
     "name": "a python for dummies book",
 
     "description":
-    """a dog eared papered back version for the key to success in python."""
+    """a dog eared papered back version for the key to success in python.""",
 
-    "use": "nope"
+    "use": "nope",
 
     "use_func": no_use
 }
@@ -84,9 +89,9 @@ item_laptop = {
     "name": "a laptop",
 
     "description":
-    """displayed on the laptop screen is a file containing the answers for python lab 3."""
+    """displayed on the laptop screen is a file containing the answers for python lab 3.""",
 
-    "use": "nope"
+    "use": "nope",
 
     "use_func": no_use
 }
@@ -97,9 +102,9 @@ item_prospectus = {
     "name": "a prospectus",
 
     "description":
-    """in bold writing on the cover of this prospectus reads studying computer science in cardiff university."""
+    """in bold writing on the cover of this prospectus reads studying computer science in cardiff university.""",
 
-    "use": "nope"
+    "use": "nope",
 
     "use_func": no_use
 }
@@ -112,9 +117,9 @@ item_chest = {
     "description":
     """the rusted chestpiece is almost useless,
     the weight of the armour is too much for you and you fall to the ground.
-    The rusted armour breaks on impact."""
+    The rusted armour breaks on impact.""",
 
-    "use": "nope"
+    "use": "nope",
 
     "use_func": no_use
 
@@ -128,9 +133,9 @@ item_helmet = {
 
     "description":
     """next to the chest armour you see a magnificent helmet carved out of anchient metal. It is calling for you.
-    You put it on but your head is too small for it."""
+    You put it on but your head is too small for it.""",
 
-    "use": "nope"
+    "use": "nope",
 
     "use_func": no_use
 }
@@ -142,9 +147,9 @@ item_note = {
 
     "description":
     """you pick up the crushed piece of paper, there are notes left on the paper which reads.. i saw a bright light
-    coming from the north east in the corridor, could it be something more?"""
+    coming from the north east in the corridor, could it be something more?""",
 
-    "use": "nope"
+    "use": "nope",
 
     "use_func": no_use
 }
@@ -155,9 +160,9 @@ item_crown = {
     "name": "a crown",
 
     "description":
-    """you put the crown on, you look fabulous."""
+    """you put the crown on, you look fabulous.""",
 
-    "use": "nope"
+    "use": "nope",
 
     "use_func": no_use
 }
@@ -168,9 +173,9 @@ item_coins = {
     "name": "some gold coins",
 
     "description":
-    """modern currency doesnt allow for gold coins, these are useless."""
+    """modern currency doesnt allow for gold coins, these are useless.""",
 
-    "use": "nope"
+    "use": "nope",
 
     "use_func": no_use
 }
@@ -181,9 +186,9 @@ item_orb = {
     "name": "a celestial sphere",
 
     "description":
-    """A shiny looking orblike object. There are ancient carvings on it and illustrations to show how it can used"""
+    """A shiny looking orblike object. There are ancient carvings on it and illustrations to show how it can used""",
     
-    "use": "nope"
+    "use": "nope",
 
     "use_func": no_use
     #when opened can be used as a teleport or u choose between to 2: "the orb does nothing u idiot"-nicks idea

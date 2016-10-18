@@ -272,7 +272,7 @@ def is_valid_exit(exits, chosen_exit):
     """
     return chosen_exit in exits
 
-def execute_inspect(item_id):
+#def execute_inspect(item_id):
     
 
 
@@ -283,12 +283,9 @@ def execute_use(item_id):
     else:
         for item in player.inventory:
             if item['id'] == item_id:
-                if item['use_func']() == True: # Swapped these if statements around, so the item doesnt get removed if it isnt used
+                if item['use_func'](): # Swapped these if statements around, so the item doesnt get removed if it isnt used
                     if (item['use']) == "removeable":
                         player.inventory.remove(item)
-                    break
-                else:
-                    print('You cannot use that item here.')
                     break
 
         if item_id not in (item["id"]):
