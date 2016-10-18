@@ -274,7 +274,6 @@ def execute_go(direction):
             print("Nice try.")
         else:
             player.current_room = move(player.current_room["exits"], direction)
-            print(player.current_room["name"].upper())
     else:
         print("You cannot go there.")
         
@@ -427,7 +426,7 @@ def main():
 
         # Execute the player's command
         execute_command(command)
-        time.sleep(2) #Give them time to read output?
+        time.sleep(1) #Give them time to read output?
     #except:
         #names = ["James", "Luca", "Alastair", "Dervla", "Natalie", "Sam", "Louie"]
         #print("Ah, an error. " + names[random.randrange(0, len(names))] + " didn't code that bit properly.")
