@@ -141,6 +141,8 @@ item_chest = {
 
     "use": "nope",
 
+    "gone" : 0,
+
     "use_func": no_use
 
 
@@ -215,5 +217,3 @@ item_orb = {
     #when opened can be used as a teleport or u choose between to 2: "the orb does nothing u idiot"-nicks idea
 
 }
-
-

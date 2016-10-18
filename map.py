@@ -11,7 +11,9 @@ room_dragon={
 
 	"exits": {"west": "corridor","south": "exit"},
 
-	"ceiling" : """""",
+	"ceiling" : """A very fetching Avengers poster shows a man in lycra striking a very camp pose""",
+
+	"floor" : """The floor is a very ugly tattered carpet. Eww. You admire your shoes for a moment.""",
 
 	"items": []
 
@@ -28,7 +30,7 @@ room_boss= {
 
 	"exits": {"south": "corridor"},
 
-	"ceiling" : """There is something written on the ceiling, it says 'Draw a monster. \n ...Now tell me why it's a monster' \n\n\n ....it makes you really think about your perceptions of this 
+	"ceiling" : """There is something written on the ceiling, it says 'Draw a monster. ..Now tell me why it's a monster' ....it makes you really think about your perceptions of this 
 	creature, maybe it's not evil, maybe it's just misunderstood. You realise you might be learning something. Eww gross. Let's find a big sword instead. """,
 
 	"floor" : """You look at the floor and realise it's literally lava. You thought your feet felt toasty. Be careful where you step when you try to battle
@@ -51,7 +53,7 @@ armoury = {
 
 	"exits": {"east": "corridor"},
 
-	"ceiling" : """""",
+	"ceiling" : """A single """,
 
 	"floor" : """""",
 

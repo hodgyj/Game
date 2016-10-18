@@ -114,18 +114,23 @@ def is_valid_exit(exits, chosen_exit):
 
 def execute_inspect(item_id):
     item_found = False
-    for item in player.inventory:
-        if item["id"] == item_id:
-            print(item["description"])
-            item_found = True
-            break
-    for item in player.current_room["items"]:
-        if item["id"] == item_id:
-            print(item["description"])
-            item_found = True
-            break
-    if item_found == False:
-        print("You try looking for " + item_id + " here, but alas it appears to be absent!.")
+    if item_id == "floor":
+        print(player.current_room["floor"])
+    elif item_id == "ceiling":
+        print(player.current_room["ceiling"])
+    else:
+        for item in player.inventory:
+            if item["id"] == item_id:
+                print(item["description"])
+                item_found = True
+                break
+        for item in player.current_room["items"]:
+            if item["id"] == item_id:
+                print(item["description"])
+                item_found = True
+                break
+        if item_found == False:
+            print("You try looking for " + item_id + " here, but alas it appears to be absent!.")
 
 def execute_use(item_id):
     #This function is so that the player can use items for various functions
@@ -270,6 +275,9 @@ def execute_command(command):
 
     elif command[0] == "use":
         if len(command) > 1:
+            if command[1] == "potion":
+                item_potion[gone] =1
+                corridor[items].remove(item_potion)
             execute_use(command[1])
         else:
             print("Use what?")
@@ -288,6 +296,9 @@ def execute_command(command):
             print("Good answer. Let's keep questing xD")
     elif command[0] == "jump":
         print("Wasn't that fun?")
+    elif command[0] == "lick":
+        print("...You are pretty weird aren't you. Anyway you've just been poisoned. Well done kid.")
+        end()
     elif command[0] == "cry":
         print("You cannot see through your tears and stumble into your death.")
         time.sleep(4)
@@ -320,6 +331,22 @@ def move(exits, direction):
     # Next room to go to
     return rooms[exits[direction]]
 
+def end():
+    now = input("GAME OVER \n\n\n enter R to restart, Q to quit or H for help ").upper()
+    if now == "Q":
+        print("................EXITING...............")
+        time.sleep(3)
+        exit()
+    elif now =="H":
+        print("First, watch more monty python, then complete the hitchhikers guide to the galaxy text adventure. Come back and you will understand so much more."
+            "\n\nSorry, that's about as much help as a game this sarcastic is really going to give.")
+    elif now == "R":
+        print("RESTARTING. Don't fail this time.")
+        time.sleep(5)
+        main()
+        #restore game and restart somehow
+
+
 # This is the entry point of our program
 def main():
     #try:
@@ -345,18 +372,3 @@ def main():
 if __name__ == "__main__":
     print_intro()
     main()
-
-def end():
-    now = input("GAME OVER \n\n\n enter R to restart, Q to quit or H for help")
-    if now == "Q":
-        print("................EXITING...............")
-        time.sleep(3)
-        exit()
-    elif now =="H":
-        print("First, watch more monty python, then complete the hitchhikers guide to the galaxy text adventure. Come back and you will understand so much more."
-            "\n\nSorry, that's about as much help as a game this sarcastic is really going to give.")
-    elif now == "R":
-        print("RESTARTING. Don't fail this time.")
-        time.sleep(5)
-        main()
-        #restore game and restart somehow
