@@ -300,7 +300,7 @@ def execute_go(direction):
     """
     #global player.current_room
     if direction in player.current_room["exits"]:
-        if player.current_room == rooms["office"] and direction == "south": # Player cannot go to exit
+        if player.current_room == rooms["dragon room"] and direction == "south": # Player cannot go to exit
             print("Nice try.")
             attempts += 1
 
