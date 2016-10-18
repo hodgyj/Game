@@ -300,6 +300,10 @@ def execute_go(direction):
     #global player.current_room
     if direction in player.current_room["exits"]:
         if player.current_room == rooms["dragon room"] and direction == "south": # Player cannot go to exit
+            
+            if item_key in player.inventory:
+                item_key["use_func"]()
+            
             player.attempts += 1
             #print(player.attempt_exit[random.randrange(0, len(player.attempt_exit))])
             

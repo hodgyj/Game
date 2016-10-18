@@ -8,7 +8,6 @@ current_room = rooms["dragon room"]
 gibberish = 0
 attempts = 0
 
-
 attempt_exit = ["You know you actually have to play the game before leaving?",
 	"You can't go there yet, what's the point in leaving early?",
 	"Why are you even playing this game if you didn't want to finish it?",
