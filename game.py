@@ -335,7 +335,11 @@ def execute_command(command):
     #global player.gibberish
     if 0 == len(command):
         return
-
+    
+    if command[0] != "go" and player.current_room == rooms["treasure"]:
+        import deaths
+        kill_player()
+ 
     if command[0] == "go":
         if len(command) > 1:
             execute_go(command[1])

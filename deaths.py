@@ -19,3 +19,10 @@ deaths=["A crossbow bolt flies straight through your head, Kirilling you instant
  "You smell the faintest elderberry in the distant, before falling face first into the ground.",
  "The grounds dissipates below you. Oh dear, you seem to have fallen into some kind of burning hell. At least it's warm.", 
  "The hallucinogen wears off, and as you realise the horrors you have been though, your very life leaves you."]
+
+def kill_player():
+    import random
+    import time
+    print(deaths[random.randrange(0, len(deaths))])
+    time.sleep(4)
+    exit()

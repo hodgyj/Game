@@ -38,19 +38,7 @@ armoury = {
 
 	"exits": {"east": "corridor", "south": "empty"},
 
-	"items": [item_helmet, item_chest, item_weapon]
-}
-
-empty_room ={
-	"name":"empty",
-        
-	"description":
-	"""you have entered an empty room""",
-
-	"exits": {"north": "armoury"},
-
-	"items": [item_note] #remove if you want, idk whats going on
-
+	"items": [item_helmet, item_chest, item_sword]
 }
 
 room_treasure ={
@@ -94,7 +82,6 @@ rooms = {
 	"office": room_office,
 	"boss": room_boss,
 	"armoury": armoury,
-	"empty": empty_room,
 	"treasure": room_treasure,
 	"corridor": corridor,
 	"exit": room_exit

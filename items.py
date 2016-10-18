@@ -24,7 +24,7 @@ just how in the world did you tie yourself to the chair like that?""")
 item_key = {
     "id": "key",
 
-    "name": "key",
+    "name": "a key",
 
     "description":
     """A rusted old key.""",
@@ -35,10 +35,10 @@ item_key = {
     # It's still treated as a function, if you put the brackets it seems to run the function on startup
 }
 
-item_weapon = {
-    "id": "weapon",
+item_sword = {
+    "id": "sword",
 
-    "name": "sword",
+    "name": "a sword",
 
     "description":
     """The steel sword is adorned with the head of a wyvern."""
@@ -48,7 +48,7 @@ item_weapon = {
 item_potion = {
     "id": "potion",
 
-    "name": "health potion",
+    "name": "a health potion",
 
     "description":
     """The label reads this potion can restore 150hp, you also notice the expiry
@@ -58,7 +58,7 @@ date is from 2 years ago."""
 item_book = {
     "id": "book",
 
-    "name": "python for dummies",
+    "name": "a python for dummies book",
 
     "description":
     """a dog eared papered back version for the key to success in python."""
@@ -67,7 +67,7 @@ item_book = {
 item_laptop = {
     "id": "laptop",
 
-    "name": "laptop",
+    "name": "a laptop",
 
     "description":
     """displayed on the laptop screen is a file containing the answers for python lab 3."""
@@ -76,7 +76,7 @@ item_laptop = {
 item_prospectus = {
     "id": "prospectus",
 
-    "name": "prospectus",
+    "name": "a prospectus",
 
     "description":
     """in bold writing on the cover of this prospectus reads studying computer science in cardiff university."""
@@ -85,7 +85,7 @@ item_prospectus = {
 item_chest = {
     "id": "chest",
 
-    "name": "chest armour",
+    "name": "some chest armour",
 
     "description":
     """the rusted chestpiece is almost useless,
@@ -96,7 +96,7 @@ The rusted armour breaks on impact."""
 item_helmet = {
     "id": "helmet",
 
-    "name": "Warrior's helmet",
+    "name": "a Warrior's helmet",
 
     "description":
     """next to the chest armour you see a magnificent helmet carved out of anchient metal. It is calling for you.
@@ -106,7 +106,7 @@ You put it on but your head is too small for it."""
 item_note = {
     "id": "note",
 
-    "name": "crushed paper",
+    "name": "some crushed paper",
 
     "description":
     """you pick up the crushed piece of paper, there are notes left on the paper which reads.. i saw a bright light
@@ -116,7 +116,7 @@ coming from the north east in the corridor, could it be something more?"""
 item_crown = {
     "id": "crown",
 
-    "name": "crown",
+    "name": "a crown",
 
     "description":
     """you put the crown on, you look fabulous."""
@@ -125,7 +125,7 @@ item_crown = {
 item_coins = {
     "id": "coins",
 
-    "name": "gold coins",
+    "name": "some gold coins",
 
     "description":
     """modern currency doesnt allow for gold coins, these are useless."""
@@ -134,7 +134,7 @@ item_coins = {
 item_orb = {
     "id":"orb",
 
-    "name": "celestial sphere",
+    "name": "a celestial sphere",
 
     "description":
     """A shiny looking orblike object. There are ancient carvings on it and illustrations to show how it can used"""
