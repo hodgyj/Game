@@ -1,14 +1,25 @@
+import time
 # It seems for python to be happy you have to define the function and what it does first, 
 # and then set the value of use_func to the function we want to execute
-# def use_key():
-#     import player 
-#     if not player.current_room["kirills office"]: #For some reason this isnt working I hate python !! This if statement will now return false.
-#         print("You cannot use that here.")
-#         return False 
-#     else:
-#         # Code for using key goes here
-#         return True # Returns True if used so that it can be removed
+def use_key():
+    import player 
+    #if not player.current_room["kirills office"]: #For some reason this isnt working I hate python !! This if statement will now return false.
+    if player.current_room["name"] != "kirills office": 
+        print("You cannot use that here.")
+        return False 
+    else:
+        print("""You put the key into the door and slowly turn it, you hear a satifying click as the lock slides back. \n
+As the door opens you are blinded by the light from outside. As you begin to leave you think back on the day and ponder. . .
+just how in the world did you tie yourself to the chair like that?""")
+
+        time.sleep(4)
+        print("""\n'Oh well' you think, 'at least I got to kill a troll'.""")
+        time.sleep(5)
+        exit()
+        return True # Returns True if used so that it can be removed
+        #(Doesnt really matter cause the game ends)
 # I'll explain what's wrong here tomorrow
+# I fixed it but for some reason it didnt get added in my commit
 
 item_key = {
     "id": "key",
@@ -20,7 +31,8 @@ item_key = {
 
     "use": "removeable", 
 
-    "use_func": use_key() # Don't forget if you don't put the brackets it will treat it as a variable not a function
+    "use_func": use_key # Don't forget if you don't put the brackets it will treat it as a variable not a function
+    # It's still treated as a function, if you put the brackets it seems to run the function on startup
 }
 
 item_weapon = {

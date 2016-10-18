@@ -98,6 +98,7 @@ welcome = [
 
 def print_intro():
     # Feel free to change!
+    print("\n")
     for line in dragon:
         print(line)
         time.sleep(0.05)

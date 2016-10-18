@@ -8,18 +8,7 @@ from deaths import *
 from ascii_dragon import *
 import random
 
-def win_condition():
-
-    if item_key in player.inventory:
-        if player.current_room["kirills office"]:
-            print("""You put the key into the door and slowly turn it, you hear a satifying click as the lock slides back. \n
-            as the door opens you are blinded by the light from outside. As you begin to leave you think back on the day and ponder. . .
-            just how in the world did you tie yourself to the chair like that?""")
-
-            time.sleep(4)
-            print("""'Oh well' you think, 'at least I got to kill a troll'.""")
-            time.sleep(5)
-            exit()
+# win_condition has been moved to items.py
 
 def fail_conditions(current_room):
 
@@ -260,8 +249,8 @@ def execute_use(item_id):
     else:
         for item in player.inventory:
             if item['id'] == item_id:
-                if (item['use']) == "removeable":
-                    if item['use_func']() == True:
+                if item['use_func']() == True: # Swapped these if statements around, so the item doesnt get removed if it isnt used
+                    if (item['use']) == "removeable":
                         player.inventory.remove(item)
                     break
                 else:
@@ -417,24 +406,24 @@ def move(exits, direction):
 
 # This is the entry point of our program
 def main():
-    try:
-        print_intro()
-        # Main game loop
-        while True:
-            # Display game status (room description, inventory etc.)
-            fail_conditions(player.current_room)
-            print_room(player.current_room)
-            print_inventory_items(player.inventory)
+    #try:
+    print_intro()
+    # Main game loop
+    while True:
+        # Display game status (room description, inventory etc.)
+        fail_conditions(player.current_room)
+        print_room(player.current_room)
+        print_inventory_items(player.inventory)
+        
+        # Show the menu with possible actions and ask the player
+        command = menu(player.current_room["exits"], player.current_room["items"], player.inventory)
 
-            # Show the menu with possible actions and ask the player
-            command = menu(player.current_room["exits"], player.current_room["items"], player.inventory)
-
-            # Execute the player's command
-            execute_command(command)
-    except:
-        names = ["James", "Luca", "Alastair", "Dervla", "Natalie", "Sam", "Louie"]
-        print("Ah, an error. " + names[random.randrange(0, len(names))] + " didn't code that bit properly.")
-        exit()
+        # Execute the player's command
+        execute_command(command)
+    #except:
+        #names = ["James", "Luca", "Alastair", "Dervla", "Natalie", "Sam", "Louie"]
+        #print("Ah, an error. " + names[random.randrange(0, len(names))] + " didn't code that bit properly.")
+        #exit()
 
 
 if __name__ == "__main__":
