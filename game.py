@@ -261,7 +261,13 @@ def execute_command(command):
         else:
             print("Inspect what?")
     elif command[0] == "exit":
-        exit()
+        user_input = input("Are you sure you want to give up and exit like a total failure?? YES or NO")
+        user_input = normalise_input(user_input)
+        if input == "yes" or "y":
+            print("Just so you know, we are all angry AND dissapointed in you. tsk tsk. \n\n GAME EXITING NOW")
+            options("Q")
+        else:
+            print("Good answer. Let's keep questing xD")
     elif command[0] == "jump":
         print("Wasn't that fun?")
     elif command[0] == "cry":
@@ -323,6 +329,16 @@ if __name__ == "__main__":
 
 def end():
     now = input("GAME OVER \n\n\n enter R to restart, Q to quit or H for help")
+    if now == "Q":
+        print(................EXITING...............)
+        time.sleep(3)
+        exit()
+    elif now =="H":
+        print("First, watch more monty python, then complete the hitchhikers guide to the galaxy text adventure. Come back and you will understand so much more."
+            "\n\nSorry, that's about as much help as a game this sarcastic is really going to give.")
+    elif now == "R":
+        #restore game and restart somehow
+def options(now):
     if now == "Q":
         print(................EXITING...............)
         time.sleep(3)

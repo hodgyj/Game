@@ -11,6 +11,8 @@ room_dragon={
 
 	"exits": {"west": "corridor","south": "exit"},
 
+	"ceiling" : """""",
+
 	"items": []
 
 	}
@@ -25,6 +27,12 @@ room_boss= {
 	the room? You've got bigger problems right now. Oh, and by the way, I don't think you're really in this guys league . . . """,
 
 	"exits": {"south": "corridor"},
+
+	"ceiling" : """There is something written on the ceiling, it says 'Draw a monster. \n ...Now tell me why it's a monster', you think about your perceptions of this 
+	creature, maybe it's not evil, maybe it's just misunderstood. You realise you might be learning something. Eww gross. Let's find a big sword instead. """,
+
+	"floor" : """You look at the floor and realise it's literally lava. You thought your feet felt toasty. Be careful where you step when you try to battle
+	   the monstrous creature."""
 
 	"items": [],
 
@@ -43,6 +51,10 @@ armoury = {
 
 	"exits": {"east": "corridor"},
 
+	"ceiling" : """""",
+
+	"floor" : """""",
+
 	"items": [item_helmet, item_chest, item_sword]
 }
 
@@ -59,6 +71,10 @@ room_treasure ={
 	mean you wanted an Iphone? How are you disapointed with THIS? You really are infuriating.""",
 
 	"exits": {"southwest": "corridor"},
+
+	"ceiling" : """""",
+
+	"floor" : "",
 
 	"items": [item_crown, item_coins]
 }
@@ -77,6 +93,10 @@ corridor ={
 #	you can exit north to a grand archway, north east to a door loosly chained, east back to the office and west to a slightly open wooden door.
 	"exits": {"north": "boss", "northeast": "treasure", "east": "dragon room", "west": "armoury"},
 
+	"ceiling" : """""",
+
+	"floor" : """""",
+
 	"items": [item_potion, item_book, item_laptop, item_prospectus]
 }
 
@@ -86,6 +106,10 @@ room_exit = {
 	"description":
 	"""Congratulations! Despite all your flaws, weaknesses, mishaps and failures, you somehow stumbled out of this mess, or at least you think you did.
 	What? You want a prize, is freedom not enough for you? Too bad, no cookie for you.""",
+
+	"ceiling" : """""",
+
+	"floor" : "This floor is made of linoleum. Also, your shoes look disgusting. What have you been walking through?",
 
 	"exits": {"north": "dragon room"},
 
