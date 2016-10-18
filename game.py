@@ -21,7 +21,7 @@ def fail_conditions(current_room):
         choice = str(input("Would you like to accept the nice doctors sanity pills?: ")).lower()
         if choice == "yes" or choice == "y":
             player.gibberish = 0
-            main() # resets the game # this now prints the dragon intro again.. whoops
+            main() # resets the game 
         else:
             print("I guess those padded walls are fairly appealing. . .and comfy. . .")
             exit() # quits the game
@@ -412,7 +412,6 @@ def move(exits, direction):
 # This is the entry point of our program
 def main():
     #try:
-    print_intro()
     # Main game loop
     while True:
         # Display game status (room description, inventory etc.)
@@ -433,4 +432,5 @@ def main():
 
 
 if __name__ == "__main__":
+    print_intro() 
     main()
