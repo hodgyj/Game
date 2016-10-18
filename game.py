@@ -38,7 +38,10 @@ def boss_battle_drop(room):
                 You drop the weapon and then bravely run away.
                 The beast gives chases with an allmighty roar! Unfortunately as he runs he fails to notice the recently deposited sword.
                 He trips and stumbles over the blade, after a moments consideration about his new found ability to defy gravity the beast
-                slams head first into the wall.""")
+                slams head first into the wall.
+                as he falls you hear the sound of a metallic object skittering accross the floor.""")
+                player.current_room["items"].append(item_key)
+                break
 
 
 
@@ -241,6 +244,8 @@ def print_menu(exits, room_items, inv_items):
     """
     print("You can:")
     # Iterate over available exits
+    if player.current_room == room["boss"]:
+        
     for direction in exits:
         # Print the exit name and where it leads to
         print_exit(direction, exit_leads_to(exits, direction))
@@ -273,7 +278,7 @@ def is_valid_exit(exits, chosen_exit):
     return chosen_exit in exits
 
 def execute_inspect(item_id):
-    
+
 
 
 def execute_use(item_id):
@@ -358,6 +363,7 @@ def execute_drop(item_id):
                 player.inventory.remove(item)
                 player.current_room["items"].append(item)
                 print("Dropped " + item_id + ".") #this is a nice bit I kept, good idea!
+                boss_battle_drop(room)
                 break
 
     if item_id not in (item["id"]): #this is a catch for when an item is not in the dictionary but the dictionary still have values
