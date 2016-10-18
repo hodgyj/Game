@@ -161,7 +161,11 @@ def execute_go(direction):
 
         # Player can't enter room if they have no items
         elif player.current_room == rooms["corridor"] and direction == "north" and len(player.inventory) == 0 and rooms["boss"]["boss_alive"] == True:
-            print("You have no items. Is it really a good idea to go into a boss room empty handed?")
+            choice = str(input("You have no items.\nWould you like to enter the boss room empty handed?\n> ")).lower()
+            if choice == "y" or choice == "yes":
+                print("Kill player here")
+                time.sleep(3)
+                exit()
         else:
             player.current_room = move(player.current_room["exits"], direction)
     else:
