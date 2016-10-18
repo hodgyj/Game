@@ -1,4 +1,5 @@
 import time
+from player import *
 dragon = [
 "################################################################ ###################################",
 "#############################################################W D####################################",
@@ -114,3 +115,20 @@ def print_intro():
         head drops to desk.""")
     input("\n\nPress enter to start the game... ")
     print("\n-----------------------------------------------------------\n")
+
+    name = input("WHAT is your name?: ")
+    quest = input("WHAT is your quest?: ")
+
+    if "holy" in quest:
+        answer = input("WHAT is the air speed velocity of an unladen swallow?: ")
+        if "african" in answer:
+            print("What?!? I DON'T KNOW THAT!")
+            print("The narrator falls majestically into the pit below.")
+    else:
+        print("And so your quest begins. . .")
+
+
+    # if player.name = "kirill":
+    #     player.name.join(r)
+    #     print("So your name is " + player.name + "?")
+
