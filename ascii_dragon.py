@@ -1,5 +1,5 @@
 import time
-from player import *
+import player
 dragon = [
 "################################################################ ###################################",
 "#############################################################W D####################################",
@@ -116,18 +116,37 @@ def print_intro():
     input("\n\nPress enter to start the game... ")
     print("\n-----------------------------------------------------------\n")
 
-    name = input("WHAT is your name?: ")
-    quest = input("WHAT is your quest?: ")
+    player.name = input("WHAT is your name?: ")
 
-    if "holy" in quest:
-        answer = input("WHAT is the air speed velocity of an unladen swallow?: ")
-        if "african" in answer:
+    # works but messy, will tidy up
+    if player.name.lower() == "kirill":
+        r_count = 2
+        while True:
+            player.name = "Ki"
+            for r in range(0, r_count):
+                player.name = player.name + "r"
+            player.name = player.name + "ill"
+            player_input = str(input("Ah, so your name is " + player.name + "? ")).lower()
+            if player_input == "y" or player_input == "yes":
+                r_count = r_count * 2
+                player.name = "Ki"
+                for r in range(0, (r_count - 1)):
+                    player.name = player.name + "r"
+                player.name = player.name + "ill"
+                print("Great, your name is " + player.name)
+                break
+            r_count = r_count + 1
+
+    player.quest = input("WHAT is your quest?: ")
+
+    if "holy" in player.quest:
+        player.answer = input("WHAT is the air speed velocity of an unladen swallow?: ")
+        if "african" in player.answer:
             print("What?!? I DON'T KNOW THAT!")
             print("The narrator falls majestically into the pit below.")
             time.sleep(2)
     else:
         print("And so your quest begins. . .")
-
 
     # if player.name = "kirill":
     #     player.name.join(r)
