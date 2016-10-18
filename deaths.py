@@ -23,6 +23,7 @@ deaths=["A crossbow bolt flies straight through your head, Kirilling you instant
 def kill_player():
     import random
     import time
+    time.sleep(0.5)
     print(deaths[random.randrange(0, len(deaths))])
-    time.sleep(4)
+    time.sleep(3)
     exit()

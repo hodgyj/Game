@@ -107,3 +107,4 @@ def print_intro():
         print(line)
         time.sleep(0.02)
     input("\n\nPress enter to start the game... ")
+    print("\n-----------------------------------------------------------\n")
