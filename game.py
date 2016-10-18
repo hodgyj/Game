@@ -30,10 +30,10 @@ def fail_conditions(current_room):
 
 
 
-def boss_battle_drop(room):
-    if player.current_room["boss"] and rooms["boss"]["boss_alive"]:
-        for item in room["items"]:
-            if item == "useless weapon":
+def boss_battle_drop():
+    if player.current_room == rooms["boss"] and rooms["boss"]["boss_alive"]:
+        for item in player.current_room["items"]:
+            if item == item_sword:
                 print("""\
                 You drop the weapon and then bravely run away.
                 The beast gives chases with an allmighty roar! Unfortunately as he runs he fails to notice the recently deposited sword.
@@ -219,7 +219,7 @@ def print_menu(exits, room_items, inv_items):
     """
     print("You can:")
     # Iterate over available exits
-    if player.current_room == room["boss"] and rooms["boss"]["boss_avlive"] == False:
+    if player.current_room == rooms["boss"] and rooms["boss"]["boss_alive"] == False:
         for direction in exits:
             print_exit(direction, exit_leads_to(exits, direction))
         for item in room_items:
@@ -262,8 +262,6 @@ def is_valid_exit(exits, chosen_exit):
     return chosen_exit in exits
 
 def execute_inspect(item_id):
-<<<<<<< HEAD
-=======
     item_found = False
     for item in player.inventory:
         if item["id"] == item_id:
@@ -275,7 +273,6 @@ def execute_inspect(item_id):
             item_found = True
     if item_found == False:
         print("You try looking for a " + item_id + " here, but you couldn't find it.")
->>>>>>> origin/master
 
 def execute_use(item_id):
     #This function is so that the player can use items for various functions
@@ -302,7 +299,7 @@ def execute_go(direction):
     if direction in player.current_room["exits"]:
         if player.current_room == rooms["dragon room"] and direction == "south": # Player cannot go to exit
             print("Nice try.")
-            attempts += 1
+            player.attempts += 1
 
         # Player can't enter room if they have no items
         elif player.current_room == rooms["corridor"] and direction == "north" and len(player.inventory) == 0 and rooms["boss"]["boss_alive"] == True:
@@ -356,7 +353,7 @@ def execute_drop(item_id):
                 player.inventory.remove(item)
                 player.current_room["items"].append(item)
                 print("Dropped " + item_id + ".") #this is a nice bit I kept, good idea!
-                boss_battle_drop(room)
+                boss_battle_drop()
                 break
 
     if item_id not in (item["id"]): #this is a catch for when an item is not in the dictionary but the dictionary still have values
@@ -463,7 +460,7 @@ def main():
 
         # Execute the player's command
         execute_command(command)
-        time.sleep(1) #Give them time to read output?
+        #time.sleep(1) #Give them time to read output?
     #except:
         #names = ["James", "Luca", "Alastair", "Dervla", "Natalie", "Sam", "Louie"]
         #print("Ah, an error. " + names[random.randrange(0, len(names))] + " didn't code that bit properly.")

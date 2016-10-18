@@ -110,6 +110,6 @@ def print_intro():
         monitors, and behind them a vague figure. You notice a whiteboard to your right, but you can't read any of the gibberish written on it.
         The figure prompts you to drink the tea in front of you. You lift it to your face, and smell sweet mushrooms and vanilla. As you drink, 
         your mind clears, and the gibbersh on the board makes sence to you, taking the form of some kind of rune. Your vision fails you as your 
-        head drops to desk.)
+        head drops to desk.""")
     input("\n\nPress enter to start the game... ")
     print("\n-----------------------------------------------------------\n")
