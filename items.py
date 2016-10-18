@@ -25,7 +25,7 @@ def no_use():
 
 def use_potion():
     import player
-    print("You drink the potion and it restores 1HP.")
+    print("You drink the potion and it restores 1HP, it's expired, do you not even read expiery dates? You barbarian!")
     time.sleep(2)
     print("You drop the empty bottle and it lands on your toe. You lose 1HP")
     time.sleep(2)
