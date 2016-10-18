@@ -1,3 +1,8 @@
+#split game file for clarification
+#this file will contain all users interactions with items
+#game.py will contain everything else
+
+
 def execute_inspect(item_id):
     item_found = False
     for item in player.inventory:

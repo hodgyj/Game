@@ -28,7 +28,7 @@ room_boss= {
 
 	"exits": {"south": "corridor"},
 
-	"ceiling" : """There is something written on the ceiling, it says 'Draw a monster. \n ...Now tell me why it's a monster', you think about your perceptions of this 
+	"ceiling" : """There is something written on the ceiling, it says 'Draw a monster. \n ...Now tell me why it's a monster' \n\n\n ....it makes you really think about your perceptions of this 
 	creature, maybe it's not evil, maybe it's just misunderstood. You realise you might be learning something. Eww gross. Let's find a big sword instead. """,
 
 	"floor" : """You look at the floor and realise it's literally lava. You thought your feet felt toasty. Be careful where you step when you try to battle
