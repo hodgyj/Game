@@ -36,7 +36,7 @@ armoury = {
 	 - how convenient. From full suits of rusty mail to rotting wooden shields, the room is packed. There only seem to be a 
 	 few items that you could pick up that wouldn't fall apart instantly.""",
 
-	"exits": {"east": "corridor", "south": "empty"},
+	"exits": {"east": "corridor"},
 
 	"items": [item_helmet, item_chest, item_sword]
 }
