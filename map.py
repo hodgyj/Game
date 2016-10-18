@@ -62,7 +62,7 @@ room_treasure ={
 	a beautiful handcrafted crossbow with the head of a wolf biting on the handle. Straight ahead of you is a pillar of glass 
 	engraved with strange runes, and atop the pillar is a glowing tomb with simular runes all over the cover""",
 
-	"exits": {"south west": "corridor"},
+	"exits": {"southwest": "corridor"},
 
 	"items": [item_crown, item_coins]
 }
@@ -74,7 +74,7 @@ corridor ={
 	"""you have stumbled out of kirills office into a long forgotten under ground tunnel, dim lighting casts a shadow on the wooden doors spaced every so often.
 you can exit north to a grand archway, north east to a door loosly chained, east back to the office and west to a slightly open wooden door.""",
 
-	"exits": {"north": "boss", "north east": "treasure", "east": "office", "west": "armoury"},
+	"exits": {"north": "boss", "northeast": "treasure", "east": "office", "west": "armoury"},
 
 	"items": [item_potion, item_book, item_laptop, item_prospectus]
 }

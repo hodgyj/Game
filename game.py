@@ -416,11 +416,6 @@ def move(exits, direction):
 
 # This is the entry point of our program
 def main():
-    #print("""'python' is not recognized as an internal or external command,
-#operable program or batch file.""")
-    #time.sleep(4)
-    #print("lol jk")
-    #time.sleep(1)
     print_intro()
     # Main game loop
     while True:
