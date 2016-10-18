@@ -5,7 +5,8 @@ room_dragon={
 
 	"description": 
 	"""The room is large and bare, the chair sits in the center. A large Welsh flag is pinned to the wall facing the chair.
-	From the damp in the room you are certain that it is underground. A pool of liquid has built under the chair, it looks slippery. """,
+	From the damp in the room you are certain that it is underground. A pool of liquid has built under the chair, 
+	it looks slippery. Oh look at that, its all over your shoe, you are careless arn't you. """,
 
 	"exits": {"west": "corridor","south": "exit"},
 
@@ -17,9 +18,10 @@ room_boss= {
 	"name":"boss room",
         
 	"description":
-	"""Water trickles down the stone walls that are coated in a suspiciously viscid substance, a mass of darkness begins
-to manifest before your eyes thickening becoming the embodiment of your worst nightmares. The mass' voice beckons demanding
-you drop your weapon and surrender""",
+	"""
+	The room is slightly flooded with the slipery liquid you have found throughout, and across from you is a giant throne. 
+	The creature sitting upon it lifts it eyeys to meet yours, and you feel a sence of dread . . . do you really care what else is in 
+	the room? You've got bigger problems right now. Oh, and by the way, I don't think you're really in this guys league . . . """,
 
 	"exits": {"south": "corridor"},
 
