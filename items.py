@@ -1,4 +1,5 @@
 import time
+import random
 # It seems for python to be happy you have to define the function and what it does first, 
 # and then set the value of use_func to the function we want to execute
 def use_key():
@@ -21,7 +22,9 @@ just how in the world did you tie yourself to the chair like that? What, you thi
 # I fixed it but for some reason it didnt get added in my commit
 
 def no_use():
-    print("You cannot use that item, dummy")
+    sass = {"You cannot use that item, dummy", "Much like you, that item is useless", "What's the point?", "What if I don't let you?", "Meh."}
+    r = random.randint(0,sass.len())
+    print(sass[r])
 
 def use_potion():
     import player
@@ -39,7 +42,7 @@ item_key = {
 
     "description":
     """
-    A key shaped beautifully in the shape of a dragon. It appears to be made of gold, well, at least you got some
+    A key, artfully shaped into the likeness of a majestic dragon. It appears to be made of gold, well, at least you got some
     kind of wealth out of this.""",
 
     "use": "removeable", 
@@ -56,7 +59,7 @@ item_sword = {
     "description":
     """
     The steel sword is adorned with the head of a wyvern with runes etched all along the blade. It must have been 
-    beautiful in its time. It's not now, its rusted so badly you've probaly already got tetanus, Congradulations!""",
+    beautiful in its time. It's not now, it's rusted so badly you've probaly already got tetanus, Congratulations!""",
 
     "use": "nope",
 
@@ -85,8 +88,8 @@ item_book = {
 
     "description":
     """
-    A dog eared papered back version for the key to success in python. Probaly should of used this when this 
-    game was made . . .""",
+    A dog eared papered back version for the key to success in python. The developers probably should have used this when they made this 
+    game . . .""",
 
     "use": "nope",
 
@@ -99,7 +102,8 @@ item_laptop = {
     "name": "a laptop",
 
     "description":
-    """displayed on the laptop screen is a file containing the answers for python lab 3.""",
+    """The wallpaper is of a generic landscape. Inspiring.
+    Displayed on the laptop screen is a file containing the answers for python lab 3, a recycling bin, and a folder marked... nevermind.""",
 
     "use": "nope",
 
@@ -112,7 +116,9 @@ item_prospectus = {
     "name": "a prospectus",
 
     "description":
-    """in bold writing on the cover of this prospectus reads studying computer science in cardiff university.""",
+    """In bold writing on the cover of this prospectus reads "Thinking of studying computer science in cardiff university?" then in smaller writing below "why?" 
+    You notice the stock photo of students on the front looks particularly painful. It's hard to tell if they are smiling or grimacing.""",
+    #too much? or... - dervla
 
     "use": "nope",
 
@@ -125,9 +131,9 @@ item_chest = {
     "name": "some chest armour",
 
     "description":
-    """the rusted chestpiece is almost useless,
+    """The rusted chestpiece is almost useless,
     the weight of the armour is too much for you and you fall to the ground.
-    The rusted armour breaks on impact.""",
+    The rusted armour breaks on impact. You get a splinter in your finger.""",
 
     "use": "nope",
 
@@ -142,8 +148,8 @@ item_helmet = {
     "name": "a Warrior's helmet",
 
     "description":
-    """next to the chest armour you see a magnificent helmet carved out of anchient metal. It is calling for you.
-    You put it on but your head is too small for it. Suprising, I took you for the big headed type.""",
+    """Next to the chest armour you see a magnificent helmet carved out of ancient metal. It is calling for you.
+    You put it on but your head is too small for it. That's suprising. I took you for the big headed type.""",
 
     "use": "nope",
 
@@ -156,7 +162,7 @@ item_note = {
     "name": "some crushed paper",
 
     "description":
-    """you pick up the crushed piece of paper, there are notes left on the paper which reads.. i saw a bright light
+    """You pick up the crushed piece of paper, there are notes left on the paper which reads.. i saw a bright light
     coming from the north east in the corridor, could it be something more?""",
 
     "use": "nope",
@@ -170,7 +176,7 @@ item_crown = {
     "name": "a crown",
 
     "description":
-    """you put the crown on, you look fabulous. Haha just kiding you look as stupid as ever. Take it off before 
+    """You put the crown on, you look fabulous. Haha just kiding you look as stupid as ever. Take it off before 
     I laugh myself to death.""",
 
     "use": "nope",
@@ -184,7 +190,7 @@ item_coins = {
     "name": "some gold coins",
 
     "description":
-    """modern currency doesnt allow for gold coins, these are useless.""",
+    """Modern currency doesn't allow for gold coins, these are useless.""",
 
     "use": "nope",
 
