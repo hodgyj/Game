@@ -32,7 +32,7 @@ room_boss= {
 	creature, maybe it's not evil, maybe it's just misunderstood. You realise you might be learning something. Eww gross. Let's find a big sword instead. """,
 
 	"floor" : """You look at the floor and realise it's literally lava. You thought your feet felt toasty. Be careful where you step when you try to battle
-	   the monstrous creature."""
+	   the monstrous creature.""",
 
 	"items": [],
 
