@@ -1,12 +1,11 @@
 from items import *
 
-room_office={
-	"name":"kirills office",
+room_dragon={
+	"name":"dragon room",
 
 	"description": 
-	"""you have woken in a moderatly decorated office. The absence of overhead light casts shadows into the corners,
-spilling under the desk and over top the framed black-and-white pictures on the wall. A desk stands before you layden
-with books and papers all of incomprehensible text """,
+	"""The room is large and bare, the chair sits in the center. A large Welsh flag is pinned to the wall facing the chair.
+	From the damp in the room you are certain that it is underground. A pool of liquid has built under the chair, it looks slippery. """,
 
 	"exits": {"west": "corridor","south": "exit"},
 
@@ -64,7 +63,7 @@ corridor ={
 	"""you have stumbled out of kirills office into a long forgotten under ground tunnel, dim lighting casts a shadow on the wooden doors spaced every so often.
 you can exit north to a grand archway, north east to a door loosly chained, east back to the office and west to a slightly open wooden door.""",
 
-	"exits": {"north": "boss", "northeast": "treasure", "east": "office", "west": "armoury"},
+	"exits": {"north": "boss", "northeast": "treasure", "east": "dragon room", "west": "armoury"},
 
 	"items": [item_potion, item_book, item_laptop, item_prospectus]
 }
@@ -75,13 +74,13 @@ room_exit = {
 	"description":
 	"""You exited. Well done""",
 
-	"exits": {"north": "office"},
+	"exits": {"north": "dragon room"},
 
 	"items": []
 }
 
 rooms = {
-	"office": room_office,
+	"dragon room": room_dragon,
 	"boss": room_boss,
 	"armoury": armoury,
 	"treasure": room_treasure,
