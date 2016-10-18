@@ -266,7 +266,8 @@ def execute_command(command):
         print("Wasn't that fun?")
     elif command[0] == "cry":
         print("You cannot see through your tears and stumble into your death.")
-        kill_player()
+        time.sleep(4)
+
     elif command[0] == "shout":
         print("Good job, now the beast knows you're here. (This means you're definitely dead)")
         exit()
@@ -299,6 +300,7 @@ def main():
     #try:
     # Main game loop
     while True:
+        #Could we make the game fullscreen by default so the ascii art will work out and things?
         # Display game status (room description, inventory etc.)
         fail_conditions(player.current_room)
         print_room(player.current_room)
@@ -318,3 +320,16 @@ def main():
 if __name__ == "__main__":
     print_intro()
     main()
+
+def end():
+    now = input("GAME OVER \n\n\n enter R to restart, Q to quit or H for help")
+    if now == "Q":
+        print(................EXITING...............)
+        time.sleep(3)
+        exit()
+    elif now =="H":
+        print("First, watch more monty python, then complete the hitchhikers guide to the galaxy text adventure. Come back and you will understand so much more."
+            "\n\nSorry, that's about as much help as a game this sarcastic is really going to give.")
+    elif now == "R":
+        #restore game and restart somehow
+
