@@ -41,7 +41,7 @@ def boss_battle_drop():
                 slams head first into the wall.
                 as he falls you hear the sound of a metallic object skittering accross the floor.""")
                 player.current_room["items"].append(item_key)
-                rooms["boss"]["boss_alive"].append(False)
+                rooms["boss"]["boss_alive"] = False
                 break
 
 def list_of_items(items):
