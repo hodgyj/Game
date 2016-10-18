@@ -281,7 +281,6 @@ def is_valid_exit(exits, chosen_exit):
     return chosen_exit in exits
 
 def execute_inspect(item_id):
-<<<<<<< HEAD
     item_found = False
     for item in player.inventory:
         if item["id"] == item_id:
@@ -293,10 +292,6 @@ def execute_inspect(item_id):
             item_found = True
     if item_found == False:
         print("You try looking for a " + item_id + " here, but you couldn't find it.")
-=======
-
-
->>>>>>> 8e44fdec5fbd1b28178b972bea6e5648e444837f
 
 def execute_use(item_id):
     #This function is so that the player can use items for various functions
