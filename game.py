@@ -185,3 +185,6 @@ def options(now):
             \n\nSorry, that's about as much help as a game this sarcastic is really going to give.""")
     elif now == "R":
         #restore game and restart somehow
+        print("um")
+        time.sleep(5)
+        exit()
