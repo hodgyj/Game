@@ -17,7 +17,7 @@ room_boss= {
 	"name":"boss room",
         
 	"description":
-	"""water trickles down the stone walls that are coated in a suspiciously viscid substance, a mass of darkness begins
+	"""Water trickles down the stone walls that are coated in a suspiciously viscid substance, a mass of darkness begins
 to manifest before your eyes thickening becoming the embodiment of your worst nightmares. The mass' voice beckons demanding
 you drop your weapon and surrender""",
 
@@ -30,7 +30,7 @@ you drop your weapon and surrender""",
 	}
 
 armoury = {
-	"name":"armoury",
+	"name":"Armoury",
 
 	"description":
 	"""You walk into a elongated room, with walls stacked high with equipment you recognise from GCSE History. You appear to have found an armoury
@@ -43,7 +43,7 @@ armoury = {
 }
 
 room_treasure ={
-	"name":"treasure room",
+	"name":"Treasure Room",
 
 	"description":
 	"""You enter a magnificent room filled with riches you couldn't have imagined. From giant chests overflowing with gold 
@@ -60,7 +60,7 @@ corridor ={
 	"name":"Corridor",
 
 	"description":
-	"""you have stumbled out of kirills office into a long forgotten under ground tunnel, dim lighting casts a shadow on the wooden doors spaced every so often.
+	"""You have stumbled out of kirills office into a long forgotten under ground tunnel, dim lighting casts a shadow on the wooden doors spaced every so often.
 you can exit north to a grand archway, north east to a door loosly chained, east back to the office and west to a slightly open wooden door.""",
 
 	"exits": {"north": "boss", "northeast": "treasure", "east": "dragon room", "west": "armoury"},
