@@ -21,7 +21,7 @@ def fail_conditions(current_room):
         choice = str(input("Would you like to accept the nice doctors sanity pills?: ")).lower()
         if choice == "yes" or choice == "y":
             player.gibberish = 0
-            main() # resets the game
+            main() # resets the game # this now prints the dragon intro again.. whoops
         else:
             print("I guess those padded walls are fairly appealing. . .and comfy. . .")
             exit() # quits the game
@@ -31,7 +31,6 @@ def fail_conditions(current_room):
     #         if useless_weapon not in i:
     #             print(" please fill this in with troll death ")
     # WIP for useless weapon check
-
 
 def list_of_items(items):
     """This function takes a list of items (see items.py for the definition) and

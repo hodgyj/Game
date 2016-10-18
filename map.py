@@ -24,7 +24,7 @@ you drop your weapon and surrender""",
 
 	"exits": {"south": "corridor"},
 
-	"items": [item_key]
+	"items": []
 
 	}
 
