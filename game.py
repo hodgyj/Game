@@ -267,12 +267,14 @@ def execute_inspect(item_id):
         if item["id"] == item_id:
             print(item["description"])
             item_found = True
+            break
     for item in player.current_room["items"]:
         if item["id"] == item_id:
             print(item["description"])
             item_found = True
+            break
     if item_found == False:
-        print("You try looking for a " + item_id + " here, but you couldn't find it.")
+        print("You try looking for " + item_id + " here, but alas it appears to be absent!.")
 
 def execute_use(item_id):
     #This function is so that the player can use items for various functions
@@ -300,6 +302,11 @@ def execute_go(direction):
         if player.current_room == rooms["dragon room"] and direction == "south": # Player cannot go to exit
             print("Nice try.")
             player.attempts += 1
+            print(player[random.randrange(0, len(player.attempt_exit))])
+            if player.attempts >= 4:
+                print("Alright fine! I'm done with you and I'm done with my clearly useless existance!")
+                time.sleep(2)
+                exit()
 
         # Player can't enter room if they have no items
         elif player.current_room == rooms["corridor"] and direction == "north" and len(player.inventory) == 0 and rooms["boss"]["boss_alive"] == True:
