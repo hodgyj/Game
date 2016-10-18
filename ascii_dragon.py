@@ -135,7 +135,7 @@ def print_intro():
                 player.name = player.name + "ill"
                 print("Great, your name is " + player.name)
                 break
-            r_count = r_count + 1
+            r_count = r_count + 2
 
     player.quest = input("WHAT is your quest?: ")
 
