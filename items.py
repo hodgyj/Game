@@ -1,13 +1,14 @@
 # It seems for python to be happy you have to define the function and what it does first, 
 # and then set the value of use_func to the function we want to execute
-def use_key():
-    import player 
-    if player.current_room["name"] != "kirills office": #For some reason this isnt working I hate python
-        print("You cannot use that here.")
-        return False
-    else:
-        # Code for using key goes here
-        return True # Returns True if used so that it can be removed
+# def use_key():
+#     import player 
+#     if not player.current_room["kirills office"]: #For some reason this isnt working I hate python !! This if statement will now return false.
+#         print("You cannot use that here.")
+#         return False 
+#     else:
+#         # Code for using key goes here
+#         return True # Returns True if used so that it can be removed
+# I'll explain what's wrong here tomorrow
 
 item_key = {
     "id": "key",
@@ -19,7 +20,7 @@ item_key = {
 
     "use": "removeable", 
 
-    "use_func": use_key
+    "use_func": use_key() # Don't forget if you don't put the brackets it will treat it as a variable not a function
 }
 
 item_weapon = {
