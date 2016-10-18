@@ -2,7 +2,7 @@ import os
 import time
 from map import rooms
 import player
-#from items import *
+#from items import * # Not sure if needed?
 from gameparser import *
 from deaths import *
 from ascii_dragon import *
