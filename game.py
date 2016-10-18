@@ -164,7 +164,7 @@ if __name__ == "__main__":
 def end():
     now = input("GAME OVER \n\n\n enter R to restart, Q to quit or H for help")
     if now == "Q":
-        print(................EXITING...............)
+        print("................EXITING...............")
         time.sleep(3)
         exit()
     elif now =="H":
@@ -174,7 +174,7 @@ def end():
         #restore game and restart somehow
 def options(now):
     if now == "Q":
-        print(................EXITING...............)
+        print("................EXITING...............")
         time.sleep(3)
         exit()
     elif now =="H":
