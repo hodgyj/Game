@@ -108,10 +108,10 @@ def print_intro():
         print(line)
         time.sleep(0.02)
     print("""\
-        You find yourself in a cluttered office, seated on a small chair screwed to the floor. Overlooking you are the backs of several
+        \n\nYou find yourself in a cluttered office, seated on a small chair screwed to the floor. Overlooking you are the backs of several
         monitors, and behind them a vague figure. You notice a whiteboard to your right, but you can't read any of the gibberish written on it.
         The figure prompts you to drink the tea in front of you. You lift it to your face, and smell sweet mushrooms and vanilla. As you drink, 
-        your mind clears, and the gibbersh on the board makes sence to you, taking the form of some kind of rune. Your vision fails you as your 
+        your mind clears, and the gibberish on the board makes sense to you, taking the form of some kind of rune. Your vision fails you as your 
         head drops to desk.""")
     input("\n\nPress enter to start the game... ")
     print("\n-----------------------------------------------------------\n")
