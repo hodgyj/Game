@@ -2,7 +2,7 @@ import os
 import time
 from map import rooms
 import player
-#from items import * # Not sure if needed?
+from items import * # Not sure if needed?
 from gameparser import *
 from deaths import *
 from ascii_dragon import *
@@ -251,6 +251,9 @@ def print_menu(exits, room_items, inv_items):
 
     for item in inv_items:
         print("DROP or USE " + item["id"].upper() + " to drop or use " + item["name"])
+    
+    if room_items != [] or inv_items != []:
+        print("\nYou can inspect stuff if you want.\n")
 
     print("What do you want to do?")
 
@@ -273,8 +276,17 @@ def is_valid_exit(exits, chosen_exit):
     return chosen_exit in exits
 
 def execute_inspect(item_id):
-    
-
+    item_found = False
+    for item in player.inventory:
+        if item["id"] == item_id:
+            print(item["description"])
+            item_found = True
+    for item in player.current_room["items"]:
+        if item["id"] == item_id:
+            print(item["description"])
+            item_found = True
+    if item_found == False:
+        print("You try looking for a " + item_id + " here, but you couldn't find it.")
 
 def execute_use(item_id):
     #This function is so that the player can use items for various functions
@@ -401,7 +413,11 @@ def execute_command(command):
             execute_use(command[1])
         else:
             print("Use what?")
-
+    elif command[0] == "inspect":
+        if len(command) > 1:
+            execute_inspect(command[1])
+        else:
+            print("Inspect what?")
     elif command[0] == "exit":
         exit()
 
