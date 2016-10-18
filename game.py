@@ -272,7 +272,7 @@ def is_valid_exit(exits, chosen_exit):
     """
     return chosen_exit in exits
 
-#def execute_inspect(item_id):
+def execute_inspect(item_id):
     
 
 
