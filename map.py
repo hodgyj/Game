@@ -28,7 +28,7 @@ room_boss= {
 
 	"items": [],
 
-	"boss_alive": [True]
+	"boss_alive": True
 
 	}
 
