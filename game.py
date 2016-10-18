@@ -163,7 +163,8 @@ def execute_go(direction):
         elif player.current_room == rooms["corridor"] and direction == "north" and len(player.inventory) == 0 and rooms["boss"]["boss_alive"] == True:
             choice = str(input("You have no items.\nWould you like to enter the boss room empty handed?\n> ")).lower()
             if choice == "y" or choice == "yes":
-                print("Kill player here")
+                print("""You bravely challenge the beast to a duel. The troll crushes your head in one blow and swings your body around the room, 
+                    paining the room in blood. Who knew trolls liked to decorate?""")
                 time.sleep(3)
                 exit()
         else:
