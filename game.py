@@ -26,6 +26,7 @@ def fail_conditions(current_room):
             print("I guess those padded walls are fairly appealing. . .and comfy. . .")
             exit() # quits the game
 
+# Started trying to do boss stuff but its late and this isn't a good way of doing it
 #    if player.current_room == rooms["boss"] and rooms["boss"]["boss_alive"] == True:
 #        if len(player.inventory) == 0:
 #            print("You entered the ")
