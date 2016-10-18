@@ -28,4 +28,4 @@ def kill_player():
     time.sleep(0.5)
     print(deaths[random.randrange(0, len(deaths))])
     time.sleep(3)
-    end()
+    exit()

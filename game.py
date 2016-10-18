@@ -224,6 +224,23 @@ def execute_drop(item_id):
     if item_id not in (item["id"]): #this is a catch for when an item is not in the dictionary but the dictionary still have values
         print("You cannot drop that.")
 
+def options(now):
+    if now == "Q":
+        time.sleep(3)
+        exit()
+    elif now =="H":
+        print("First, watch more monty python, then complete the hitchhikers guide to the galaxy text adventure. Come back and you will understand so much more."
+            "\n\nSorry, that's about as much help as a game this sarcastic is really going to give.")
+
+        print("""First, watch more monty python, then complete the hitchhikers guide to the galaxy text adventure. Come back and you will understand so much more.
+            \n\nSorry, that's about as much help as a game this sarcastic is really going to give.""")
+
+    elif now == "R":
+        #restore game and restart somehow
+        print("um")
+        time.sleep(5)
+        exit()
+
 def execute_command(command):
 
     if 0 == len(command):
@@ -262,10 +279,10 @@ def execute_command(command):
         else:
             print("Inspect what?")
     elif command[0] == "exit":
-        user_input = input("Are you sure you want to give up and exit like a total failure?? YES or NO")
+        user_input = input("Are you sure you want to give up and exit like a total failure?? YES or NO: ")
         user_input = normalise_input(user_input)
         if input == "yes" or "y":
-            print("Just so you know, we are all angry AND dissapointed in you. tsk tsk. \n\n GAME EXITING NOW")
+            print("Just so you know, we are all angry AND dissapointed in you. tsk tsk.")
             options("Q")
         else:
             print("Good answer. Let's keep questing xD")
@@ -343,20 +360,3 @@ def end():
         time.sleep(5)
         main()
         #restore game and restart somehow
-def options(now):
-    if now == "Q":
-        print("................EXITING...............")
-        time.sleep(3)
-        exit()
-    elif now =="H":
-        print("First, watch more monty python, then complete the hitchhikers guide to the galaxy text adventure. Come back and you will understand so much more."
-            "\n\nSorry, that's about as much help as a game this sarcastic is really going to give.")
-
-        print("""First, watch more monty python, then complete the hitchhikers guide to the galaxy text adventure. Come back and you will understand so much more.
-            \n\nSorry, that's about as much help as a game this sarcastic is really going to give.""")
-
-    elif now == "R":
-        print("RESTARTING. Don't fail this time.")
-        time.sleep(5)
-        #restore game and restart somehow
-        main()
