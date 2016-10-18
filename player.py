@@ -1,7 +1,7 @@
 from items import *
 from map import rooms
 
-inventory = [item_key]
+inventory = []
 
 # Start game at the reception
 current_room = rooms["office"]
