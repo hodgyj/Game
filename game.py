@@ -337,7 +337,10 @@ def end():
     elif now =="H":
         print("First, watch more monty python, then complete the hitchhikers guide to the galaxy text adventure. Come back and you will understand so much more."
             "\n\nSorry, that's about as much help as a game this sarcastic is really going to give.")
-    #elif now == "R":
+    elif now == "R":
+        print("um")
+        time.sleep(5)
+        exit()
         #restore game and restart somehow
 def options(now):
     if now == "Q":
@@ -350,3 +353,7 @@ def options(now):
     #elif now == "R":
         #restore game and restart somehow
 
+        print("""First, watch more monty python, then complete the hitchhikers guide to the galaxy text adventure. Come back and you will understand so much more.
+            \n\nSorry, that's about as much help as a game this sarcastic is really going to give.""")
+    elif now == "R":
+        #restore game and restart somehow
