@@ -124,6 +124,7 @@ def print_intro():
         if "african" in answer:
             print("What?!? I DON'T KNOW THAT!")
             print("The narrator falls majestically into the pit below.")
+            time.sleep(2)
     else:
         print("And so your quest begins. . .")
 
