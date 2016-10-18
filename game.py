@@ -274,7 +274,8 @@ def execute_command(command):
     elif command[0] == "cry":
         print("You cannot see through your tears and stumble into your death.")
         time.sleep(4)
-
+        print("......GAME OVER.....")
+        exit()
     elif command[0] == "shout":
         print("Good job, now the beast knows you're here. (This means you're definitely dead)")
         exit()
@@ -338,9 +339,9 @@ def end():
         print("First, watch more monty python, then complete the hitchhikers guide to the galaxy text adventure. Come back and you will understand so much more."
             "\n\nSorry, that's about as much help as a game this sarcastic is really going to give.")
     elif now == "R":
-        print("um")
+        print("RESTARTING. Don't fail this time.")
         time.sleep(5)
-        exit()
+        main()
         #restore game and restart somehow
 def options(now):
     if now == "Q":
@@ -355,7 +356,7 @@ def options(now):
             \n\nSorry, that's about as much help as a game this sarcastic is really going to give.""")
 
     elif now == "R":
-        #restore game and restart somehow
-        print("um")
+        print("RESTARTING. Don't fail this time.")
         time.sleep(5)
-        exit()
+        #restore game and restart somehow
+        main()

@@ -48,9 +48,6 @@ item_key = {
 
     "use": "removeable", 
 
-    #this key will be one or zero depending on if the item has been used up/ if out of the game yet
-    "gone" : 0, 
-
     "use_func": use_key # Don't forget if you don't put the brackets it will treat it as a variable not a function
     # It's still treated as a function, if you put the brackets it seems to run the function on startup
 }
@@ -66,8 +63,6 @@ item_sword = {
     beautiful in its time. It's not now, it's rusted so badly you've probaly already got tetanus, Congratulations!""",
 
     "use": "nope",
-
-    "gone" : 0,
 
     "use_func": no_use
 
@@ -85,6 +80,7 @@ date is from 2 years ago.""",
     "use": "nope",
 
     "gone" : 0,
+    #this key will be one or zero depending on if the item has been used up/ if out of the game yet
 
     "use_func": use_potion
 }
@@ -101,8 +97,6 @@ item_book = {
 
     "use": "nope",
 
-    "gone" : 0,
-
     "use_func": no_use
 }
 
@@ -116,8 +110,6 @@ item_laptop = {
     Displayed on the laptop screen is a file containing the answers for python lab 3, a recycling bin, and a folder marked... nevermind.""",
 
     "use": "nope",
-
-    "gone" : 0,
 
     "use_func": no_use
 }
@@ -134,8 +126,6 @@ item_prospectus = {
 
     "use": "nope",
 
-    "gone" : 0,
-
     "use_func": no_use
 }
 
@@ -150,8 +140,6 @@ item_chest = {
     The rusted armour breaks on impact. You get a splinter in your finger.""",
 
     "use": "nope",
-
-    "gone" : 0,
 
     "use_func": no_use
 
@@ -183,8 +171,6 @@ item_note = {
 
     "use": "nope",
 
-    "gone" : 0,
-
     "use_func": no_use
 }
 
@@ -212,8 +198,6 @@ item_coins = {
 
     "use": "nope",
 
-    "gone" : 0,
-
     "use_func": no_use
 }
 
@@ -226,8 +210,6 @@ item_orb = {
     """A shiny looking orblike object. There are ancient carvings on it and illustrations to show how it can used""",
     
     "use": "nope",
-
-    "gone" : 0,
     
     "use_func": no_use
     #when opened can be used as a teleport or u choose between to 2: "the orb does nothing u idiot"-nicks idea
