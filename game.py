@@ -41,30 +41,8 @@ def boss_battle_drop(room):
                 slams head first into the wall.
                 as he falls you hear the sound of a metallic object skittering accross the floor.""")
                 player.current_room["items"].append(item_key)
+                rooms["boss"]["boss_alive"].append(False)
                 break
-
-
-
-# Started trying to do boss stuff but its late and this isn't a good way of doing it
-#    if player.current_room == rooms["boss"] and rooms["boss"]["boss_alive"] == True:
-#        if len(player.inventory) == 0:
-#            print("You entered the ")
-        
-#        print_room(player.current_room)
-#        while len(player.inventory) > 0 and player.current_room == rooms["boss"]:
-#            print_inventory_items(player.inventory)
-#            print("You can: ")
-#            for item in rooms["boss"]["items"]:
-#                # Print the items in the room 
-#                print("TAKE " + item["id"].upper() + " to take " + item["name"])
-#
-#            for item in player.inventory:
-#                print("DROP or USE " + item["id"].upper() + " to drop or use " + item["name"])
-#            
-#            print("What do you want to do?")
-#            command = normalise_input(input("> "))
-#            execute_command(command)
-    # WIP for useless weapon check
 
 def list_of_items(items):
     """This function takes a list of items (see items.py for the definition) and
@@ -84,7 +62,6 @@ def list_of_items(items):
 
     """
     return ", ".join([i['name']for i in items]) #returns list of items by iterating over dictionary values
-
 
 def print_room_items(room):
     """This function takes a room as an input and nicely displays a list of items
@@ -110,7 +87,6 @@ def print_room_items(room):
     """
     if room["items"]: #checks if items list has any values
         print("There is " + list_of_items(room["items"]) + " here. \n") #if there are items then summon list function and prints each item
-
 
 def print_inventory_items(items):
     """This function takes a list of inventory items and displays it nicely, in a
@@ -196,7 +172,6 @@ def exit_leads_to(exits, direction):
     """
     return rooms[exits[direction]]["name"]
 
-
 def print_exit(direction, leads_to):
     """This function prints a line of a menu of exits. It takes a direction (the
     name of an exit) and the name of the room into which it leads (leads_to),
@@ -244,20 +219,28 @@ def print_menu(exits, room_items, inv_items):
     """
     print("You can:")
     # Iterate over available exits
-    if player.current_room == room["boss"]:
-        
-    for direction in exits:
+    if player.current_room == room["boss"] and rooms["boss"]["boss_avlive"] == False:
+        for direction in exits:
+            print_exit(direction, exit_leads_to(exits, direction))
+        for item in room_items:
+            print("TAKE " + item["id"].upper() + " to take " + item["name"])
+        for item in inv_items:
+            print("DROP or USE " + item["id"].upper() + " to drop or use " + item["name"])
+        print("What do you want to do?")
+    else:
+        for direction in exits:
         # Print the exit name and where it leads to
-        print_exit(direction, exit_leads_to(exits, direction))
+            print_exit(direction, exit_leads_to(exits, direction))
 
-    for item in room_items:
+        for item in room_items:
         # Print the items in the room 
-        print("TAKE " + item["id"].upper() + " to take " + item["name"])
+            print("TAKE " + item["id"].upper() + " to take " + item["name"])
 
-    for item in inv_items:
-        print("DROP or USE " + item["id"].upper() + " to drop or use " + item["name"])
+        for item in inv_items:
+            print("DROP or USE " + item["id"].upper() + " to drop or use " + item["name"])
 
-    print("What do you want to do?")
+        print("What do you want to do?")
+    
 
 def is_valid_exit(exits, chosen_exit):
     """This function checks, given a dictionary "exits" (see map.py) and
@@ -279,8 +262,6 @@ def is_valid_exit(exits, chosen_exit):
 
 def execute_inspect(item_id):
 
-
-
 def execute_use(item_id):
     #This function is so that the player can use items for various functions
     if not (player.inventory):
@@ -295,8 +276,6 @@ def execute_use(item_id):
 
         if item_id not in (item["id"]):
             print("You cannot use that.")
-
-
 
 def execute_go(direction):
     """This function, given the direction (e.g. "south") updates the current room
@@ -317,7 +296,6 @@ def execute_go(direction):
             player.current_room = move(player.current_room["exits"], direction)
     else:
         print("You cannot go there.")
-        
 
 def execute_take(item_id):
     """This function takes an item_id as an argument and moves this item from the
@@ -451,7 +429,6 @@ def move(exits, direction):
     # Next room to go to
     return rooms[exits[direction]]
 
-
 # This is the entry point of our program
 def main():
     #try:
@@ -472,7 +449,6 @@ def main():
         #names = ["James", "Luca", "Alastair", "Dervla", "Natalie", "Sam", "Louie"]
         #print("Ah, an error. " + names[random.randrange(0, len(names))] + " didn't code that bit properly.")
         #exit()
-
 
 if __name__ == "__main__":
     print_intro() 

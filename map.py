@@ -25,7 +25,7 @@ you drop your weapon and surrender""",
 
 	"items": [],
 
-	"boss_alive": True
+	"boss_alive": [True]
 
 	}
 
