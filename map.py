@@ -55,7 +55,7 @@ armoury = {
 
 	"ceiling" : """A single """,
 
-	"floor" : """""",
+	"floor" : """There is nothing remarkable about the floor. You admire your shoes less now, they are muddied.""",
 
 	"items": [item_helmet, item_chest, item_sword]
 }
@@ -74,9 +74,9 @@ room_treasure ={
 
 	"exits": {"southwest": "corridor"},
 
-	"ceiling" : """""",
+	"ceiling" : """The ceiling is golden but makes you think of death.""",
 
-	"floor" : "",
+	"floor" : "You look down and thinnk about your impending death.",
 
 	"items": [item_crown, item_coins]
 }
@@ -95,9 +95,9 @@ corridor ={
 #	you can exit north to a grand archway, north east to a door loosly chained, east back to the office and west to a slightly open wooden door.
 	"exits": {"north": "boss", "northeast": "treasure", "east": "dragon room", "west": "armoury"},
 
-	"ceiling" : """""",
+	"ceiling" : """There are cobwebs here.""",
 
-	"floor" : """""",
+	"floor" : """What is tha- ewww.""",
 
 	"items": [item_potion, item_book, item_laptop, item_prospectus]
 }
@@ -109,7 +109,7 @@ room_exit = {
 	"""Congratulations! Despite all your flaws, weaknesses, mishaps and failures, you somehow stumbled out of this mess, or at least you think you did.
 	What? You want a prize, is freedom not enough for you? Too bad, no cookie for you.""",
 
-	"ceiling" : """""",
+	"ceiling" : """You see daylight and freedom.""",
 
 	"floor" : "This floor is made of linoleum. Also, your shoes look disgusting. What have you been walking through?",
 

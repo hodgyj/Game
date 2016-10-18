@@ -43,6 +43,7 @@ def boss_battle_drop():
                 as he falls you hear the sound of a metallic object skittering accross the floor.""")
                 player.current_room["items"].append(item_key)
                 rooms["boss"]["boss_alive"] = False
+                time.sleep(3)
                 break
 
 def list_of_items(items):
@@ -372,3 +373,4 @@ def main():
 if __name__ == "__main__":
     print_intro()
     main()
+
