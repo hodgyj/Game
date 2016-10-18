@@ -10,7 +10,7 @@ def use_key():
         print("""\
 You put the key into the door and slowly turn it, you hear a satifying click as the lock slides back.
 As the door opens you are blinded by the light from outside. As you begin to leave you think back on the day and ponder. . .
-just how in the world did you tie yourself to the chair like that?""")
+just how in the world did you tie yourself to the chair like that? What, you think someone tied you up? No one would do that . . . """)
 
         time.sleep(4)
         print("""\n'Oh well' you think, 'at least I got to kill a troll'.""")
@@ -35,7 +35,9 @@ item_key = {
     "name": "a key",
 
     "description":
-    """A rusted old key.""",
+    """
+    A key shaped beautifully in the shape of a dragon. It appears to be made of gold, well, at least you got some
+    kind of wealth out of this.""",
 
     "use": "removeable", 
 
@@ -49,7 +51,9 @@ item_sword = {
     "name": "a sword",
 
     "description":
-    """The steel sword is adorned with the head of a wyvern.""",
+    """
+    The steel sword is adorned with the head of a wyvern with runes etched all along the blade. It must have been 
+    beautiful in its time. It's not now, its rusted so badly you've probaly already got tetanus, Congradulations!""",
 
     "use": "nope",
 
@@ -77,7 +81,9 @@ item_book = {
     "name": "a python for dummies book",
 
     "description":
-    """a dog eared papered back version for the key to success in python.""",
+    """
+    A dog eared papered back version for the key to success in python. Probaly should of used this when this 
+    game was made . . .""",
 
     "use": "nope",
 
@@ -134,7 +140,7 @@ item_helmet = {
 
     "description":
     """next to the chest armour you see a magnificent helmet carved out of anchient metal. It is calling for you.
-    You put it on but your head is too small for it.""",
+    You put it on but your head is too small for it. Suprising, I took you for the big headed type.""",
 
     "use": "nope",
 
@@ -161,7 +167,8 @@ item_crown = {
     "name": "a crown",
 
     "description":
-    """you put the crown on, you look fabulous.""",
+    """you put the crown on, you look fabulous. Haha just kiding you look as stupid as ever. Take it off before 
+    I laugh myself to death.""",
 
     "use": "nope",
 
