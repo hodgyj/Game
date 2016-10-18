@@ -9,3 +9,4 @@ see line 255 for explination of some changes.} - Luca
 {Changed gibberish variable to a global variable} - James
 {Imported player using "import player" instead of "from player
 import *", so that using player in items.py works!} - James
+{Removed empty room. Doing anything but "go" in treasure room kills you} - James
