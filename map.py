@@ -1,12 +1,11 @@
 from items import *
 
-room_office={
-	"name":"kirills office",
+room_dragon={
+	"name":"dragon room",
 
 	"description": 
-	"""you have woken in a moderatly decorated office. The absence of overhead light casts shadows into the corners,
-spilling under the desk and over top the framed black-and-white pictures on the wall. A desk stands before you layden
-with books and papers all of incomprehensible text """,
+	"""The room is large and bare, the chair sits in the center. A large Welsh flag is pinned to the wall facing the chair.
+	From the damp in the room you are certain that it is underground. A pool of liquid has built under the chair, it looks slippery. """,
 
 	"exits": {"west": "corridor","south": "exit"},
 
