@@ -5,7 +5,7 @@ The Misadventure is a short text based adventure game developed by a group of st
 Unravel the mystery of this small dungeon you find yourself in, find weird and wonderful ways in which you can die.
 Dare you take on the dungeons monster?
 
-To launce the game, use command prompt.
+To launch the game, use command prompt.
 
 navigate to the correct directory using >cd C:\game directory
 
