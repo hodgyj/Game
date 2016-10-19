@@ -12,6 +12,7 @@ def roll_credits():
 	"\nWorld creators: creators: Nick, Natalie, Sam, Alastair",
 	"\nLab rats: Nick, Alastair, Sam, Natalie",
 	"\nGame coders: Dervla, James, Luca",
+	"\nCode breakers: Dervla, Alastair",
 	"\nSpecial thanks to Louie for being the hardest working member of the team."]
 
 	for line in credits:

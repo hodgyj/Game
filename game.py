@@ -19,7 +19,7 @@ def fail_conditions(current_room):
     if player.gibberish >= 5: # checks for how many times people type in gibberish.
         print("""\
         Your continued presence within the dungeon has clearly addled your mind.
-        In your newfound state of madness you begin to see what appear to be orderlys and a charming doctor melting into being from the walls.
+        In your newfound state of madness you begin to see what appears to be orderlys and a charming doctor melting into being from the walls.
         They approach carrying what appears to be a straight jacket whilst making calming sounds.""")
         choice = str(input("Would you like to accept the nice doctors sanity pills?: ")).lower()
         if choice == "yes" or choice == "y":
@@ -162,7 +162,7 @@ def execute_go(direction):
                 player.attempts += 1
 
                 if player.attempts >= 7:
-                    print("Alright fine! I'm done with you and I'm done with my clearly useless existance!")
+                    print("Alright fine! I'm done with you and I'm done with my clearly useless existence!")
                     time.sleep(2)
                     exit()
                 else:
