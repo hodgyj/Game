@@ -55,6 +55,26 @@ def remove_punct(text):
 
     return no_punct
 
+def remove_spaces(text):
+    """This function is used to remove leading and trailing spaces from a string.
+    It takes a string and returns a new string with does not have leading and
+    trailing spaces. For example:
+
+    >>> remove_spaces("  Hello!  ")
+    'Hello!'
+    >>> remove_spaces("  Python  is  easy!   ")
+    'Python  is  easy!'
+    >>> remove_spaces("Python is easy!")
+    'Python is easy!'
+    >>> remove_spaces("")
+    ''
+    >>> remove_spaces("   ")
+    ''
+    """
+    text = text.strip(" ")
+    ' '.join(text.split())
+    return text
+
 
 def normalise_input(user_input):
     """This function removes all punctuation from the string and converts it to
@@ -83,8 +103,8 @@ def normalise_input(user_input):
     """
     # Remove punctuation and convert to lower case
     no_punct = remove_punct(user_input).lower()
-
-    words = no_punct.split()
+    no_spaces = remove_spaces(no_punct)
+    words = no_spaces.split()
 
     # Remove filtered words
     filtered = filter_words(words, skip_words)

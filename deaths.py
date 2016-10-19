@@ -16,7 +16,7 @@ deaths=["A crossbow bolt flies straight through your head, Kirilling you instant
  "A javelin is flung at you from the corner of your eye, and lands straight into your chest. Good catch moron.", 
  "A snake slithers up your leg, and bites you. Well you deserve to die to that, how slow ARE your reactions?\nThis also brings a new meaning to the phrase 'trouser snake'",
  "A holy hand grenade lands in front of you, HALLELUJAH! BOOM!",
- "Something spooky happens, now you're dead.",
+ "Something spoopy happens, now you're dead.",
  "You smell the faintest elderberry in the distance, 'father?' before falling face first into the ground.",
  "The ground dissipates below you. Oh dear, you seem to have fallen into some kind of burning hell . . . at least it's warm.", 
  "The hallucinogen wears off, and as you realise the horrors you have been though, your very life leaves you.",
