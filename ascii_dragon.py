@@ -124,9 +124,16 @@ def print_intro():
         input("\n\nPress enter to start the game... ")
         print("\n-----------------------------------------------------------\n")
 
-        player.name = input("WHAT is your name?: ")
+        gave_name = True
+        # while loop ensures player eventually gives a name
+        while True:
+            player.name = input("WHAT is your name?: ")
+            if player.name != "":
+                break
+            gave_name = False # If player doesn't give a name, set to false for getting quest
+            print("Oh come on, it's not exactly personal.") # Maybe add some catch for multiple empty responses?
+            time.sleep(1)
 
-        # works but messy, will tidy up
         if player.name.lower() == "kirill":
             r_count = 2
             while True:
@@ -142,9 +149,18 @@ def print_intro():
         else:
             print("Great, I'll call you Player 1. That's right isn't it?")
             time.sleep(1.5)
-
-        player.quest = input("WHAT is your quest?: ")
-
+        
+        # Loops until player gives a quest
+        while True:
+            player.quest = input("WHAT is your quest?: ")
+            if player.quest != "":
+                break
+            if gave_name == False: # If player at first did not give a name
+                print("Christ. I struggle to get a name out of you, and now you're not answering this?? Work with me here.")
+            else:
+                print("It would be great if you could just cooperate here. Not that it matters.")
+            time.sleep(1)
+            
         if "holy" in player.quest:
             player.answer = input("WHAT is the air speed velocity of an unladen swallow?: ")
             if "african" in player.answer:

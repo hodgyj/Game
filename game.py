@@ -39,10 +39,14 @@ def boss_battle_drop():
                 You drop the weapon and then bravely run away.
                 The beast gives chases with an all-mighty roar! Unfortunately as he runs he fails to notice the recently deposited sword.
                 He trips and stumbles over the blade, after a moments consideration about his new found ability to defy gravity the beast
-                slams head first into the wall.
+                slams head first into a wall.
                 as he falls you hear the sound of a metallic object skittering accross the floor.""")
+                print("\tCongratulations " + player.name + ".. er.. I mean Player 1! You defeated the troll! And it needed so much skill from you.")
                 player.current_room["items"].append(item_key)
                 rooms["boss"]["boss_alive"] = False
+                rooms["boss"]["description"] = """
+                The room is slightly flooded with the slippery liquid you have found throughout, and across from you is a giant throne.
+                The troll which was once sitting on the throne is now lying on the floor, after an unfortunate encounter with a wall."""
                 item["name"] = "a bent sword"
                 # Maybe add description of damaged sword?
                 time.sleep(3)

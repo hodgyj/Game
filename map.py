@@ -25,7 +25,7 @@ room_boss= {
 	"description":
 	"""
 	The room is slightly flooded with the slippery liquid you have found throughout, and across from you is a giant throne. 
-	The creature sitting upon it lifts it eyes to meet yours, and you feel a sence of dread . . . do you really care what else is in 
+	The creature sitting upon it lifts it eyes to meet yours, and you feel a sense of dread . . . do you really care what else is in 
 	the room? You've got bigger problems right now. Oh, and by the way, I don't think you're really in this guys league . . . """,
 
 	"exits": {"south": "corridor"},
