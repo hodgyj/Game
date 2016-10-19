@@ -11,18 +11,20 @@ def use_key():
         no_use()
     else:
         print("""\
+        
         You put the key into the door and slowly turn it, you hear a satifying click as the lock slides back.
         As the door opens you are blinded by the light from outside. As you begin to leave you think back on the day and ponder. . .
         just how in the world did you tie yourself to the chair like that? What, you think someone tied you up? No one would do that . . . """)
 
         time.sleep(4)
-        print("""\n'Oh well' you think, 'at least I got to kirill a troll'.""")
+        print("""
+        'Oh well' you think, 'at least I got to kirill a troll'.""")
         time.sleep(2)
         if len(player.quest) < 4:
             print("""
-            Well, usually I would congratulate you on completing your quest, but you put in as much effort as one of our team mates.""")
+        Well, usually I would congratulate you on completing your quest, but you put in as much effort as one of our team mates.""")
         print(str("""
-            Congratulations Player 1, you completed your quest to {}! I'm so proud of you\n""").format(player.quest))
+        Congratulations Player 1, you completed your quest to {}! I'm so proud of you\n""").format(player.quest))
         time.sleep(2)
         game.end()
 
