@@ -377,6 +377,7 @@ def main():
 
 if __name__ == "__main__":
     import os
+    # Resizes the command window. Doesn't work on Linux but ah well
     os.system('mode con: cols=180 lines=80')
     print_intro()
     main()
