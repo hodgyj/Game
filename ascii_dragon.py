@@ -97,6 +97,13 @@ welcome = [
 " 				( M ) i ) s ) a ) d ) v ) e ) n ) t ) u ) r ) e )",
 " 				 \_/ \_/ \_/ \_/ \_/ \_/ \_/ \_/ \_/ \_/ \_/ \_/ "]
 
+def generate_kirill(r_num):
+    r_string = ""
+    for num in range(0, r_num):
+        r_string = r_string + "r"
+    name = "Ki{}ill".format(r_string)
+    return name
+
 def print_intro():
     # Feel free to change!
     print("\n")
@@ -106,7 +113,7 @@ def print_intro():
     time.sleep(1)
     for line in welcome:
         print(line)
-        time.sleep(0.02)
+        time.sleep(0.01)
     print("""\
         \n\nYou find yourself in a cluttered office, seated on a small chair screwed to the floor. Overlooking you are the backs of several
         monitors, and behind them a vague figure. You notice a whiteboard to your right, but you can't read any of the gibberish written on it.
@@ -122,18 +129,12 @@ def print_intro():
     if player.name.lower() == "kirill":
         r_count = 2
         while True:
-            player.name = "Ki"
-            for r in range(0, r_count):
-                player.name = player.name + "r"
-            player.name = player.name + "ill"
+            player.name = generate_kirill(r_count)
             player_input = str(input("Ah, so your name is " + player.name + "? ")).lower()
             if player_input == "y" or player_input == "yes":
                 r_count = r_count * 2
-                player.name = "Ki"
-                for r in range(0, (r_count - 1)):
-                    player.name = player.name + "r"
-                player.name = player.name + "ill"
-                print("Great, your name is " + player.name)
+                player.name = generate_kirill(r_count)
+                print("I think I got it. I'll call you " + player.name)
                 break
             r_count = r_count + 2
 
@@ -146,7 +147,10 @@ def print_intro():
             print("The narrator falls majestically into the pit below.")
             time.sleep(2)
     else:
+        print("Ah, well unfortunately for you, you don't get to choose the quest.")
+        time.sleep(1.5)
         print("And so your quest begins. . .")
+        time.sleep(0.7)
 
     # if player.name = "kirill":
     #     player.name.join(r)
