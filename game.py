@@ -162,6 +162,7 @@ def execute_go(direction):
                 exit()
             else:
                 print(player.attempt_exit[player.attempts -1])
+                time.sleep(1)
 
         # Player can't enter room if they have no items
         elif player.current_room == rooms["corridor"] and direction == "north" and len(player.inventory) == 0 and rooms["boss"]["boss_alive"] == True:
@@ -313,7 +314,7 @@ def menu(exits, room_items, inv_items):
 
     # Display menu
     print_menu(exits, room_items, inv_items)
-    #print (current_room)
+    
     # Read player's input
     user_input = input("> ")
 

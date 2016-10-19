@@ -109,11 +109,12 @@ def print_intro():
         print("\n")
         for line in dragon:
             print(line)
-            time.sleep(0.05)
+            time.sleep(0.03)
         time.sleep(1)
         for line in welcome:
             print(line)
             time.sleep(0.01)
+        time.sleep(1)
         print("""\
             \n\nYou find yourself in a cluttered office, seated on a small chair screwed to the floor. Overlooking you are the backs of several
             monitors, and behind them a vague figure. You notice a whiteboard to your right, but you can't read any of the gibberish written on it.
