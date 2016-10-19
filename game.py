@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 import os
 import time
 from map import rooms
@@ -245,6 +247,7 @@ def execute_command(command):
     if command[0] != "go" and player.current_room == rooms["treasure"]:
         import deaths
         kill_player()
+        end()
 
     if command[0] == "go":
         if len(command) > 1:
