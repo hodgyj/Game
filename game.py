@@ -43,6 +43,8 @@ def boss_battle_drop():
                 as he falls you hear the sound of a metallic object skittering accross the floor.""")
                 player.current_room["items"].append(item_key)
                 rooms["boss"]["boss_alive"] = False
+                item["name"] = "a bent sword"
+                # Maybe add description of damaged sword?
                 time.sleep(3)
                 break
 
@@ -169,7 +171,7 @@ def execute_go(direction):
             choice = str(input("You have no items.\nWould you like to enter the boss room empty handed?\n> ")).lower()
             if choice == "y" or choice == "yes":
                 print("""You bravely challenge the beast to a duel. The troll crushes your head in one blow and swings your body around the room, 
-                    paining the room in blood. Who knew trolls liked to decorate?""")
+                    painting the room in blood. Who knew trolls liked to decorate?""")
                 time.sleep(3)
                 exit()
         else:

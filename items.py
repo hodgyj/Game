@@ -26,6 +26,7 @@ def no_use():
     "It's all about consumption with this generation", "I'd let you use it, but it'd just be another of earth's precious resources wasted.", "Another time perhaps."
     "Find something better to do with your life."]
     print(sass[random.randrange(0, len(sass))])
+    time.sleep(1.3)
 
 def use_potion():
     import player
@@ -34,6 +35,24 @@ def use_potion():
     print("You drop the empty bottle and it lands on your toe. You lose 1HP")
     time.sleep(2)
     player.inventory.remove(item_potion)
+
+def use_sword():
+    import player
+    if player.current_room["name"].lower() == "boss room":
+        if player.current_room["boss_alive"] == True:
+            print("You attack the troll with a mighty swing of your sword. Mum would be proud.")
+            time.sleep(1.2)
+            print("""\tUnfortunately, you aren't trained in swordfighting, and the troll now knows 
+            this thanks to your god awful swing.
+            The troll crushes your head in one blow and swings your body around the room, 
+            painting the room in blood. Who knew trolls liked to decorate? """)
+            time.sleep(3)
+            exit()
+        else:
+            print("You stab the troll with the sword. Feels gross.")
+    else:
+        no_use()
+
     
 
 item_key = {
@@ -48,8 +67,7 @@ item_key = {
 
     "use": "removeable", 
 
-    "use_func": use_key # Don't forget if you don't put the brackets it will treat it as a variable not a function
-    # It's still treated as a function, if you put the brackets it seems to run the function on startup
+    "use_func": use_key # Don't put brackets here!
 }
 
 item_sword = {
@@ -64,7 +82,7 @@ item_sword = {
 
     "use": "nope",
 
-    "use_func": no_use
+    "use_func": use_sword
 
 }
 

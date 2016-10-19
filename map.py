@@ -1,7 +1,7 @@
 from items import *
 
 room_dragon={
-	"name":"dragon room",
+	"name":"Dragon Room",
 
 	"description": 
 	"""
@@ -20,7 +20,7 @@ room_dragon={
 	}
 
 room_boss= {
-	"name":"boss room",
+	"name":"Boss Room",
         
 	"description":
 	"""
