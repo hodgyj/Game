@@ -152,7 +152,8 @@ def execute_go(direction):
     if direction in player.current_room["exits"]:
         if player.current_room == rooms["dragon room"] and direction == "south":
             if not rooms["boss"]["boss_alive"] and not item_key in player.inventory:
-                print("Fucking idiot get the key") # Make harsher
+                print("""
+                    You missed the key. Oh come on, how the hell do you miss the ONLY thing you had to get? How incompetent can one person be?""") # Make harsher
                 time.sleep(1)
             else:
                 if item_key in player.inventory:
@@ -176,10 +177,13 @@ def execute_go(direction):
                     painting the room in blood. Who knew trolls liked to decorate?""")
                 time.sleep(3)
                 end()
+        elif player.current_room == rooms["boss"] and item_sword in player.inventory:
+            print("How do expect to run with that sword?")
+            time.sleep(1.3)
         else:
             player.current_room = move(player.current_room["exits"], direction)
     else:
-        print("You cannot go there.")
+        print("You cannot go there. Do you SEE that in the options? Should have gone to specsavers.")
 
 def execute_take(item_id):
 
@@ -374,7 +378,6 @@ def main():
     except:
         names = ["James", "Luca", "Alastair", "Dervla", "Natalie", "Sam"]
         print("Ah, an error. " + names[random.randrange(0, len(names))] + " didn't code that bit properly.")
-        time.sleep(3)
         exit()
 
 if __name__ == "__main__":
