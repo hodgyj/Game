@@ -23,7 +23,7 @@ def fail_conditions(current_room):
         choice = str(input("Would you like to accept the nice doctors sanity pills?: ")).lower()
         if choice == "yes" or choice == "y":
             player.gibberish = 0
-            print("The pills slowly kick in and you feel a sense of euphoria. Time almost seems to reverse as the doctor dissapears back into the wall.")
+            print("The pills slowly kick in and you feel a sense of euphoria. Time almost seems to reverse as the doctor disappears back into the wall.")
             main() # resets the game
         else:
             print("I guess those padded walls are fairly appealing. . .and comfy. . .")
@@ -247,12 +247,6 @@ def options(now):
     elif now =="H":
         print("First, watch more monty python, then complete the hitchhikers guide to the galaxy text adventure. Come back and you will understand so much more."
             "\n\nSorry, that's about as much help as a game this sarcastic is really going to give.")
-
-    elif now == "R":
-        #restore game and restart somehow
-        print("um")
-        time.sleep(5)
-        exit()
 
 def execute_command(command):
 
