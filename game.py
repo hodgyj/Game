@@ -335,6 +335,7 @@ def end():
 # This is the entry point of our program
 def main():
     try:
+        rooms["armoury"]["ceiling"] = rooms["armoury"]["ceiling"].format(player.name)
         # Main game loop
         while True:
             

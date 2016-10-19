@@ -53,7 +53,7 @@ armoury = {
 
 	"exits": {"east": "corridor"},
 
-	"ceiling" : """A single """,
+	"ceiling" : """For some reason someone has written {} on the ceiling. Not sure why that's there, your name is definitely\nPlayer 1""",
 
 	"floor" : """There is nothing remarkable about the floor. You admire your shoes less now, they are muddied.""",
 
@@ -69,8 +69,8 @@ room_treasure ={
 	coins, and steel swords with diamond hilts. There are bubbling liquids in every colour to your left, to your right 
 	a beautiful handcrafted crossbow with the head of a wolf biting on the handle. Straight ahead of you is a pillar of glass 
 	engraved with strange runes, and atop the pillar is a glowing tomb with simular runes all over the cover. You think you can
-	faintly hear mysterious chanting in an ancient language. What? What do you mean you wanted an Iphone? 
-	How are you disapointed with THIS? You really are infuriating.""",
+	faintly hear mysterious chanting in an ancient language. What? What do you mean you wanted an iPhone? 
+	How are you disappointed with THIS? You really are infuriating.""",
 
 	"exits": {"southwest": "corridor"},
 
