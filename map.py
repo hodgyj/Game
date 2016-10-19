@@ -76,7 +76,7 @@ room_treasure ={
 
 	"ceiling" : """The ceiling is golden but makes you think of death.""",
 
-	"floor" : "You look down and thinnk about your impending death.",
+	"floor" : "You look down and think about your impending death.",
 
 	"items": [item_crown, item_coins]
 }

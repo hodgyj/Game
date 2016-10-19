@@ -253,6 +253,14 @@ def execute_command(command):
 
     if command[0] == "go":
         if len(command) > 1:
+            # Correct the player's input if they enter "north east" instead of "northeast"
+            # in the corridor, or "south west" instead of "southwest" in the treasure room
+            if player.current_room == rooms["corridor"] and len(command) == 3:
+                if command[1] == "north" and command[2] == "east":
+                    command[1] = "northeast"
+            elif player.current_room == rooms["treasure"] and len(command) == 3:
+                if command[1] == "south" and command[2] == "west":
+                    command[1] = "southwest"
             execute_go(command[1])
         else:
             print("Go where?")
