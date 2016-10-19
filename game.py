@@ -159,7 +159,7 @@ def execute_go(direction):
                     item_key["use_func"]()
 
                 player.attempts += 1
-                
+
                 if player.attempts >= 7:
                     print("Alright fine! I'm done with you and I'm done with my clearly useless existance!")
                     time.sleep(2)
@@ -371,11 +371,11 @@ def main():
         print("I'd have thought you'd put more effort in than that...")
         print("Exited game.")
         exit()
-    # except:
-    #     names = ["James", "Luca", "Alastair", "Dervla", "Natalie", "Sam"]
-    #     print("Ah, an error. " + names[random.randrange(0, len(names))] + " didn't code that bit properly.")
-    #     time.sleep(3)
-    #     exit()
+    except:
+        names = ["James", "Luca", "Alastair", "Dervla", "Natalie", "Sam"]
+        print("Ah, an error. " + names[random.randrange(0, len(names))] + " didn't code that bit properly.")
+        time.sleep(3)
+        exit()
 
 if __name__ == "__main__":
     import os
