@@ -5,8 +5,8 @@ import random
 def use_key():
     import player 
     #if not player.current_room["kirills office"]: #For some reason this isnt working I hate python !! This if statement will now return false.
-    if player.current_room["name"] != "dragon room": 
-        print("You cannot use that here.")
+    if player.current_room["name"].lower() != "dragon room": 
+        no_use()
     else:
         print("""\
 You put the key into the door and slowly turn it, you hear a satifying click as the lock slides back.

@@ -41,7 +41,7 @@ def boss_battle_drop():
                 He trips and stumbles over the blade, after a moments consideration about his new found ability to defy gravity the beast
                 slams head first into a wall.
                 as he falls you hear the sound of a metallic object skittering accross the floor.""")
-                print("\tCongratulations " + player.name + ".. er.. I mean Player 1! You defeated the troll! And it needed so much skill from you.")
+                print("\tCongratulations " + player.name[:3] + ".. er.. I mean Player 1! You defeated the troll! And it needed so much skill from you.")
                 player.current_room["items"].append(item_key)
                 rooms["boss"]["boss_alive"] = False
                 rooms["boss"]["description"] = """
@@ -108,6 +108,7 @@ def print_menu(exits, room_items, inv_items):
 
         for item in inv_items:
             print("DROP or USE " + item["id"].upper() + " to drop or use " + item["name"])
+        print("You also might want to INSPECT stuff")
 
         print("What do you want to do?")
 
@@ -143,7 +144,7 @@ def execute_use(item_id):
     else:
         for item in player.inventory:
             if item['id'] == item_id:
-                if item['use_func'](): # Swapped these if statements around, so the item doesnt get removed if it isnt used
+                if item['use_func']():
                     if (item['use']) == "removeable":
                         player.inventory.remove(item)
                     break
@@ -195,8 +196,13 @@ def execute_take(item_id):
     else:
         for item in player.current_room["items"]: #itterates over items and compares values
             if item["id"] == item_id:
+                if item["name"] == "a bent sword":
+                    print("This sword is clearly damaged, why on earth would you want this?")
+                    time.sleep(1)
                 player.current_room["items"].remove(item) #removes from the room
                 player.inventory.append(item) #adds to player inventory
+                print("Took " + item["name"] + ".\n")
+                time.sleep(0.5)
                 break
 
         if item_id not in (item["id"]): #if item isn't found in list of takable items
@@ -374,6 +380,7 @@ def main():
     except KeyboardInterrupt:
         # When exception is keyboard interrupt, quit gracefully
         print("I'd have thought you'd put more effort in than that...")
+        print("KeyboardInterrupt: Exited game.")
         exit()
     # except:
     #     names = ["James", "Luca", "Alastair", "Dervla", "Natalie", "Sam"]

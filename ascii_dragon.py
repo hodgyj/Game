@@ -144,6 +144,8 @@ def print_intro():
                     player.name = generate_kirill(r_count)
                     print("I think I got it. I'll call you " + player.name)
                     time.sleep(1.5)
+                    print("Actually that's pretty hard to remember, too many Ls. I'll stick to Player 1.")
+                    time.sleep(1)
                     break
                 r_count = r_count + 2
         else:
@@ -160,19 +162,24 @@ def print_intro():
             else:
                 print("It would be great if you could just cooperate here. Not that it matters.")
             time.sleep(1)
-            
+
         if "holy" in player.quest:
+            time.sleep(0.3)
             player.answer = input("WHAT is the air speed velocity of an unladen swallow?: ")
             if "african" in player.answer:
+                time.sleep(0.1)
                 print("What?!? I DON'T KNOW THAT!")
+                time.sleep(1)
                 print("The narrator falls majestically into the pit below.")
                 time.sleep(2)
+                print("Anyway, on with the story. . .")
+                time.sleep(1)
         else:
-            print("Ah, well unfortunately for you, you don't get to choose the quest.")
+            print("We actually considered that for the plot of this game, but decided it wasn't good enough. You tried.")
             time.sleep(1.5)
             print("And so your quest begins. . .")
             time.sleep(0.7)
     except KeyboardInterrupt:
-        print("Exited game.")
+        print("KeyboardInterrupt: Exited game.")
         exit()
 
