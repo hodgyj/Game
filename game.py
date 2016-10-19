@@ -352,7 +352,7 @@ def main():
     except KeyboardInterrupt:
         # When exception is keyboard interrupt, quit gracefully
         print("I'd have thought you'd put more effort in than that...")
-        print("KeyboardInterrupt: Exited game.")
+        print("Exited game.")
         exit()
     # except:
     #     names = ["James", "Luca", "Alastair", "Dervla", "Natalie", "Sam"]

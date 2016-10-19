@@ -23,7 +23,7 @@ just how in the world did you tie yourself to the chair like that? What, you thi
 
 def no_use():
     sass = ["You cannot use that item, dummy", "Much like you, that item is useless", "What's the point?", "What if I just don't let you? HA.", "Meh.", 
-    "It's all about consumption with this generation", "I'd let you use it, but it'd just be another of earth's precious resources wasted.", "Another time perhaps."
+    "It's all about consumption with this generation", "I'd let you use it, but it'd just be another of earth's precious resources wasted.", "Another time perhaps.",
     "Find something better to do with your life."]
     print(sass[random.randrange(0, len(sass))])
     time.sleep(1.3)
@@ -147,8 +147,8 @@ item_prospectus = {
     "use_func": no_use
 }
 
-item_chest = {
-    "id": "chest",
+item_armour = {
+    "id": "armour",
 
     "name": "some chest armour",
 

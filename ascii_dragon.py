@@ -180,6 +180,6 @@ def print_intro():
             print("And so your quest begins. . .")
             time.sleep(0.7)
     except KeyboardInterrupt:
-        print("KeyboardInterrupt: Exited game.")
+        print("Exited game.")
         exit()
 
