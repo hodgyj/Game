@@ -88,29 +88,20 @@ def print_menu(exits, room_items, inv_items):
 
     print("You can:")
     # Iterate over available exits
-    if player.current_room == rooms["boss"] and rooms["boss"]["boss_alive"] == False:
-        for direction in exits:
-            print_exit(direction, exit_leads_to(exits, direction))
-        for item in room_items:
-            print("TAKE " + item["id"].upper() + " to take " + item["name"])
-        for item in inv_items:
-            print("DROP or USE " + item["id"].upper() + " to drop or use " + item["name"])
-        print("What do you want to do?")
-    else:
-        for direction in exits:
-        # Print the exit name and where it leads to
-            print_exit(direction, exit_leads_to(exits, direction))
+    for direction in exits:
+    # Print the exit name and where it leads to
+        print_exit(direction, exit_leads_to(exits, direction))
 
-        for item in room_items:
+    for item in room_items:
         # Print the items in the room
-            print("TAKE " + item["id"].upper() + " to take " + item["name"])
+        print("TAKE " + item["id"].upper() + " to take " + item["name"])
 
 
-        for item in inv_items:
-            print("DROP or USE " + item["id"].upper() + " to drop or use " + item["name"])
-        print("You also might want to INSPECT stuff")
+    for item in inv_items:
+        print("DROP or USE " + item["id"].upper() + " to drop or use " + item["name"])
+    print("You also might want to INSPECT stuff")
 
-        print("What do you want to do?")
+    print("What do you want to do?")
 
 
 def is_valid_exit(exits, chosen_exit):
@@ -136,7 +127,7 @@ def execute_inspect(item_id):
                 break
         if item_found == False:
             print("You try looking for " + item_id + " here, but alas it appears to be absent!.")
-    time.sleep(3) # Delay before prompting for next command
+    time.sleep(2) # Delay before prompting for next command
 def execute_use(item_id):
     #This function is so that the player can use items for various functions
     if not (player.inventory):
@@ -161,7 +152,6 @@ def execute_go(direction):
                 item_key["use_func"]()
 
             player.attempts += 1
-            #print(player.attempt_exit[random.randrange(0, len(player.attempt_exit))])
 
             if player.attempts >= 7:
                 print("Alright fine! I'm done with you and I'm done with my clearly useless existance!")
@@ -171,8 +161,8 @@ def execute_go(direction):
                 print(player.attempt_exit[player.attempts -1])
                 time.sleep(1)
 
-        # Player can't enter room if they have no items
-        elif player.current_room == rooms["corridor"] and direction == "north" and len(player.inventory) == 0 and rooms["boss"]["boss_alive"] == True:
+        # Player asked if they want to enter boss room if they have no items
+        elif player.current_room == rooms["corridor"] and direction == "north" and len(player.inventory) == 0 and rooms["boss"]["boss_alive"]:
             choice = str(input("You have no items.\nWould you like to enter the boss room empty handed?\n> ")).lower()
             if choice == "y" or choice == "yes":
                 print("""You bravely challenge the beast to a duel. The troll crushes your head in one blow and swings your body around the room, 
@@ -214,18 +204,6 @@ def execute_drop(item_id):
     player's inventory to list of items in the current room. However, if there is
     no such item in the inventory, this function prints "You cannot drop that."
     """
-    # has_item = False
-    # for item in inventory:
-    #     if item["id"] == item_id:
-    #         has_item = True
-    #         current_room["items"].append(item)
-    #         inventory.remove(item)
-    #         print ("Dropped " + item_id + ".")
-    #         break
-    # if has_item == False:
-    #     print ("You cannot drop that.")
-    # I kept this to explain why I changed it, the if function returns a boolean value of true or fale
-    # using it in this manner is like doubling down on the statement, the below corrects it.
     if not (player.inventory): # checks for any value in inventory
         print("You have nothing to drop.")
     else:
@@ -359,7 +337,6 @@ def main():
     try:
         # Main game loop
         while True:
-        #Could we make the game fullscreen by default so the ascii art will work out and things?
             
             # Display game status (room description, inventory etc.)
             fail_conditions(player.current_room)
