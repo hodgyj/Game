@@ -191,4 +191,6 @@ def print_intro():
     except KeyboardInterrupt:
         print("Exited game.")
         exit()
+    except:
+        print("Ah, an error. How unfortunate.")
 

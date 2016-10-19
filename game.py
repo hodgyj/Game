@@ -177,7 +177,7 @@ def execute_go(direction):
                     painting the room in blood. Who knew trolls liked to decorate?""")
                 time.sleep(3)
                 end()
-        elif player.current_room == rooms["boss"] and item_sword in player.inventory:
+        elif player.current_room == rooms["boss"] and item_sword in player.inventory and rooms["boss"]["boss_alive"]:
             print("How do expect to run with that sword?")
             time.sleep(1.3)
         else:
@@ -374,6 +374,8 @@ def main():
         # When exception is keyboard interrupt, quit gracefully
         print("I'd have thought you'd put more effort in than that...")
         print("Exited game.")
+        exit()
+    except SystemExit:
         exit()
     except:
         names = ["James", "Luca", "Alastair", "Dervla", "Natalie", "Sam"]
