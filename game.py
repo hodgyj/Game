@@ -7,6 +7,7 @@ from gameparser import *
 from deaths import *
 from ascii_dragon import *
 import random
+from credits import *
 
 # win_condition has been moved to items.py
 #moved all item interactions (take drop use etc etc) to interaction.py - Why? 
@@ -266,10 +267,6 @@ def execute_command(command):
 
     elif command[0] == "use":
         if len(command) > 1:
-            # The potion is removed from the inventory in the use_potion command in items.py
-            # if command[1] == "potion":
-            #     item_potion[gone] =1
-            #     corridor[items].remove(item_potion)
             execute_use(command[1])
         else:
             print("Use what?")
@@ -338,12 +335,15 @@ def end():
 
                                 Q to quit or H for help """).upper()
     if now == "Q":
+        roll_credits()
         print("\n\n................EXITING...............")
         time.sleep(3)
         exit()
     elif now =="H":
         print("First, watch more monty python, then complete the hitchhikers guide to the galaxy text adventure. Come back and you will understand so much more."
             "\n\nSorry, that's about as much help as a game this sarcastic is really going to give.")
+        roll_credits()
+        exit()
 
 
 # This is the entry point of our program
