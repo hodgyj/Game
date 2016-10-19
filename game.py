@@ -286,8 +286,7 @@ def execute_command(command):
         else:
             print("Inspect what?")
     elif command[0] == "exit":
-        user_input = input("Are you sure you want to give up and exit like a total failure?? YES or NO: ")
-        user_input = normalise_input(user_input)
+        user_input = str(input("Are you sure you want to give up and exit like a total failure?? YES or NO: ")).lower()
         if user_input == "yes" or user_input == "y":
             print("Just so you know, we are all angry AND dissapointed in you. tsk tsk.")
             options("Q")
