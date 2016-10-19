@@ -14,7 +14,7 @@ As the door opens you are blinded by the light from outside. As you begin to lea
 just how in the world did you tie yourself to the chair like that? What, you think someone tied you up? No one would do that . . . """)
 
         time.sleep(4)
-        print("""\n'Oh well' you think, 'at least I got to kill a troll'.""")
+        print("""\n'Oh well' you think, 'at least I got to kirill a troll'.""")
         time.sleep(2)
         if len(player.quest) < 4:
             print("""
