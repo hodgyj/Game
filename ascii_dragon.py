@@ -131,7 +131,7 @@ def print_intro():
             if player.name != "":
                 break
             gave_name = False # If player doesn't give a name, set to false for getting quest
-            print("Oh come on, it's not exactly personal.") # Maybe add some catch for multiple empty responses?
+            print("Oh come on, it's not exactly difficult.") # Maybe add some catch for multiple empty responses?
             time.sleep(1)
 
         if player.name.lower() == "kirill":
