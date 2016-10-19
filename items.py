@@ -15,7 +15,12 @@ just how in the world did you tie yourself to the chair like that? What, you thi
 
         time.sleep(4)
         print("""\n'Oh well' you think, 'at least I got to kill a troll'.""")
-        time.sleep(5)
+        time.sleep(2)
+        if len(player.quest) < 4:
+            print("""
+Well, usually I would congratulate you on completing your quest, but you put in as much effort as one of our team mates.""")
+        print(str("""
+Congratulations Player 1, you completed your quest to {}! I'm so proud of you""").format(player.quest))
         end()
 
 def no_use():

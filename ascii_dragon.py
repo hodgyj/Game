@@ -155,7 +155,7 @@ def print_intro():
         
         # Loops until player gives a quest
         while True:
-            player.quest = input("WHAT is your quest?: ")
+            player.quest = str(input("WHAT is your quest?: ")).lower()
             if player.quest != "":
                 break
             if gave_name == False: # If player at first did not give a name
