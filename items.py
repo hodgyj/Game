@@ -17,9 +17,6 @@ just how in the world did you tie yourself to the chair like that? What, you thi
         print("""\n'Oh well' you think, 'at least I got to kill a troll'.""")
         time.sleep(5)
         exit()
-#(Doesnt really matter cause the game ends)
-# I'll explain what's wrong here tomorrow
-# I fixed it but for some reason it didnt get added in my commit
 
 def no_use():
     sass = ["You cannot use that item, dummy", "Much like you, that item is useless", "What's the point?", "What if I just don't let you? HA.", "Meh.", 
@@ -30,7 +27,7 @@ def no_use():
 
 def use_potion():
     import player
-    print("You drink the potion and it restores 1HP, it's expired, do you not even read expiry dates? You barbarian!")
+    print("\nYou drink the potion and it restores 1HP, it's expired, do you not even read expiry dates? You barbarian!")
     time.sleep(2)
     print("You drop the empty bottle and it lands on your toe. You lose 1HP")
     time.sleep(2)
@@ -49,7 +46,7 @@ def use_sword():
             time.sleep(3)
             exit()
         else:
-            print("You stab the troll with the sword. Feels gross.")
+            print("\nYou stab the troll with the sword. Feels gross and altogether rather pointless.")
     else:
         no_use()
 
@@ -92,8 +89,9 @@ item_potion = {
     "name": "a health potion",
 
     "description":
-    """The label reads this potion can restore 150hp, you also notice the expiry
-date is from 2 years ago.""",
+    """
+    The label reads this potion can restore 150hp, you also notice the expiry
+    date is from 2 years ago.""",
 
     "use": "nope",
 
@@ -124,7 +122,8 @@ item_laptop = {
     "name": "a laptop",
 
     "description":
-    """The wallpaper is of a generic landscape. Inspiring.
+    """
+    The wallpaper is of a generic landscape. Inspiring.
     Displayed on the laptop screen is a file containing the answers for python lab 3, a recycling bin, and a folder marked... nevermind.""",
 
     "use": "nope",
@@ -138,7 +137,8 @@ item_prospectus = {
     "name": "a prospectus",
 
     "description":
-    """In bold writing on the cover of this prospectus reads "Thinking of studying computer science in cardiff university?" then in smaller writing below "why?" 
+    """
+    In bold writing on the cover of this prospectus reads "Thinking of studying computer science in cardiff university?" then in smaller writing below "why?" 
     You notice the stock photo of students on the front looks particularly painful. It's hard to tell if they are smiling or grimacing.""",
     #too much? or... - dervla
 
@@ -153,7 +153,8 @@ item_armour = {
     "name": "some chest armour",
 
     "description":
-    """The rusted chestpiece is almost useless,
+    """
+    The rusted chestpiece is almost useless,
     the weight of the armour is too much for you and you fall to the ground.
     The rusted armour breaks on impact. You get a splinter in your finger.""",
 
@@ -172,7 +173,8 @@ item_helmet = {
     "name": "a Warrior's helmet",
 
     "description":
-    """Next to the chest armour you see a magnificent helmet carved out of ancient metal. It is calling for you.
+    """
+    Next to the chest armour you see a magnificent helmet carved out of ancient metal. It is calling for you.
     You put it on but your head is too small for it. That's suprising. I took you for the big headed type.""",
 
     "use": "nope",
@@ -186,7 +188,8 @@ item_note = {
     "name": "some crushed paper",
 
     "description":
-    """You pick up the crushed piece of paper, there are notes left on the paper which reads.. i saw a bright light
+    """
+    You pick up the crushed piece of paper, there are notes left on the paper which reads.. i saw a bright light
     coming from the north east in the corridor, could it be something more?""",
 
     "use": "nope",
@@ -200,7 +203,8 @@ item_crown = {
     "name": "a crown",
 
     "description":
-    """You put the crown on, you look fabulous. Haha just kiding you look as stupid as ever. Take it off before 
+    """
+    You put the crown on, you look fabulous. Haha just kiding you look as stupid as ever. Take it off before 
     I laugh myself to death.""",
 
     "use": "nope",
@@ -214,7 +218,8 @@ item_coins = {
     "name": "some gold coins",
 
     "description":
-    """Modern currency doesn't allow for gold coins, these are useless.""",
+    """
+    Modern currency doesn't allow for gold coins, these are useless.""",
 
     "use": "nope",
 
@@ -227,7 +232,8 @@ item_orb = {
     "name": "a celestial sphere",
 
     "description":
-    """A shiny looking orblike object. There are ancient carvings on it and illustrations to show how it can used""",
+    """
+    A shiny looking orblike object. There are ancient carvings on it and illustrations to show how it can used""",
     
     "use": "nope",
     
