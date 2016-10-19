@@ -176,6 +176,9 @@ def execute_go(direction):
                     painting the room in blood. Who knew trolls liked to decorate?""")
                 time.sleep(3)
                 end()
+        elif player.current_room == rooms["boss"] and item_sword in player.inventory:
+            print("How do expect to run with that sword?")
+            time.sleep(1.3)
         else:
             player.current_room = move(player.current_room["exits"], direction)
     else:
@@ -374,7 +377,6 @@ def main():
     except:
         names = ["James", "Luca", "Alastair", "Dervla", "Natalie", "Sam"]
         print("Ah, an error. " + names[random.randrange(0, len(names))] + " didn't code that bit properly.")
-        time.sleep(3)
         exit()
 
 if __name__ == "__main__":
