@@ -21,7 +21,7 @@ just how in the world did you tie yourself to the chair like that? What, you thi
 Well, usually I would congratulate you on completing your quest, but you put in as much effort as one of our team mates.""")
         print(str("""
 Congratulations Player 1, you completed your quest to {}! I'm so proud of you""").format(player.quest))
-        end()
+        exit()
 
 def no_use():
     sass = ["You cannot use that item, dummy", "Much like you, that item is useless", "What's the point?", "What if I just don't let you? HA.", "Meh.", 
