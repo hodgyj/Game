@@ -183,7 +183,7 @@ def execute_go(direction):
         else:
             player.current_room = move(player.current_room["exits"], direction)
     else:
-        print("You cannot go there. Do you SEE that in the options? Should of gone to specsavers.")
+        print("You cannot go there. Do you SEE that in the options? Should have gone to specsavers.")
 
 def execute_take(item_id):
 
