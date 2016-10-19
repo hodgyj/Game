@@ -86,10 +86,11 @@ corridor ={
 
 	"description":
 	"""
-	Ah, you appear to have found the corridor, no one saw that coming. It is long and dimly lit, but you can just about make out three doors in front 
-	of you. There is a grand archway at the end of the corridor to the north (. . . pssst . . . that's the boss). On the right hand side of that, to the northeast
-	is a door with a broken chain that probably once kept it locked, I know this because it's supposed to still be locked. Don't go in there, seriously, just don't. To the west 
-	is an old wooden door, cracked at the bottom and slightly open, looks like a lazy developer trying to tell you to GO IN, you know, because it's an OPEN DOOR to an 
+	Ah, you appear to have found the corridor, no one saw that coming. It is long and dimly lit, but you can just about make out 
+	three doors in front of you. There is a grand archway at the end of the corridor to the north (. . . pssst . . . that's the boss). 
+	On the right hand side of that, to the northeast is a door with a broken chain that probably once kept it locked, I know this 
+	because it's supposed to still be locked. Don't go in there, seriously, just don't. To the west is an old wooden door, cracked at 
+	the bottom and slightly open, looks like a lazy developer trying to tell you to GO IN, you know, because it's an OPEN DOOR to an 
 	ARMOURY, and you can get gear... oh just forget about it already you really don't catch on quickly at all. do you?""",
 #You have stumbled out of kirills office into a long forgotten under ground tunnel, dim lighting casts a shadow on the wooden doors spaced every so often.
 #	you can exit north to a grand archway, north east to a door loosly chained, east back to the office and west to a slightly open wooden door.
