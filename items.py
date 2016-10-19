@@ -16,7 +16,7 @@ just how in the world did you tie yourself to the chair like that? What, you thi
         time.sleep(4)
         print("""\n'Oh well' you think, 'at least I got to kill a troll'.""")
         time.sleep(5)
-        exit()
+        end()
 
 def no_use():
     sass = ["You cannot use that item, dummy", "Much like you, that item is useless", "What's the point?", "What if I just don't let you? HA.", "Meh.", 
@@ -44,7 +44,7 @@ def use_sword():
             The troll crushes your head in one blow and swings your body around the room, 
             painting the room in blood. Who knew trolls liked to decorate? """)
             time.sleep(3)
-            exit()
+            end()
         else:
             print("\nYou stab the troll with the sword. Feels gross and altogether rather pointless.")
     else:

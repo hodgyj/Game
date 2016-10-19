@@ -27,7 +27,7 @@ def fail_conditions(current_room):
             main() # resets the game
         else:
             print("I guess those padded walls are fairly appealing. . .and comfy. . .")
-            exit() # quits the game
+            end() # quits the game
 
 
 
@@ -156,7 +156,7 @@ def execute_go(direction):
             if player.attempts >= 7:
                 print("Alright fine! I'm done with you and I'm done with my clearly useless existance!")
                 time.sleep(2)
-                exit()
+                end()
             else:
                 print(player.attempt_exit[player.attempts -1])
                 time.sleep(1)
@@ -168,7 +168,7 @@ def execute_go(direction):
                 print("""You bravely challenge the beast to a duel. The troll crushes your head in one blow and swings your body around the room, 
                     painting the room in blood. Who knew trolls liked to decorate?""")
                 time.sleep(3)
-                exit()
+                end()
         else:
             player.current_room = move(player.current_room["exits"], direction)
     else:
@@ -288,15 +288,15 @@ def execute_command(command):
     elif command[0] == "lick":
         print("...You are pretty weird aren't you. Anyway you've just been poisoned. Well done kid.")
         time.sleep(3)
-        exit()
+        end()
     elif command[0] == "cry":
         print("You cannot see through your tears and stumble into your death.")
         time.sleep(3)
-        exit()
+        end()
     elif command[0] == "shout":
         print("Good job, now the beast knows you're here. (This means you're definitely dead)")
         time.sleep(3)
-        exit()
+        end()
     else:
         print("This makes no sense.")
         player.gibberish += 1
@@ -322,9 +322,20 @@ def move(exits, direction):
     return rooms[exits[direction]]
 
 def end():
-    now = input("GAME OVER \n\n\n Q to quit or H for help ").upper()
+    now = input("""\
+    _________ _______  __   __  _______    _______  __   __  _______  ______    __
+    |       ||   _   ||  |_|  ||       |  |       ||  | |  ||       ||    _ |  |  | 
+    |    ___||  |_|  ||       ||    ___|  |   _   ||  |_|  ||    ___||   | ||  |  | 
+    |   | __ |       ||       ||   |___   |  | |  ||       ||   |___ |   |_||_ |  | 
+    |   ||  ||       ||       ||    ___|  |  |_|  ||       ||    ___||    __  ||__| 
+    |   |_| ||   _   || ||_|| ||   |___   |       | |     | |   |___ |   |  | | __  
+    |_______||__| |__||_|   |_||_______|  |_______|  |___|  |_______||___|  |_||__|
+                                        
+
+
+                                Q to quit or H for help """).upper()
     if now == "Q":
-        print("................EXITING...............")
+        print("\n\n................EXITING...............")
         time.sleep(3)
         exit()
     elif now =="H":
