@@ -132,7 +132,7 @@ def execute_inspect(item_id):
                 break
         if item_found == False:
             print("You try looking for " + item_id + " here, but alas it appears to be absent!.")
-
+    time.sleep(3) # Delay before prompting for next command
 def execute_use(item_id):
     #This function is so that the player can use items for various functions
     if not (player.inventory):
@@ -351,25 +351,29 @@ def end():
 
 # This is the entry point of our program
 def main():
-    #try:
-    # Main game loop
-    while True:
+    try:
+        # Main game loop
+        while True:
         #Could we make the game fullscreen by default so the ascii art will work out and things?
-        # Display game status (room description, inventory etc.)
-        fail_conditions(player.current_room)
-        print_room(player.current_room)
-        print_inventory_items(player.inventory)
+        
+            # Display game status (room description, inventory etc.)
+            fail_conditions(player.current_room)
+            print_room(player.current_room)
+            print_inventory_items(player.inventory)
 
-        # Show the menu with possible actions and ask the player
-        command = menu(player.current_room["exits"], player.current_room["items"], player.inventory)
+            # Show the menu with possible actions and ask the player
+            command = menu(player.current_room["exits"], player.current_room["items"], player.inventory)
 
-        # Execute the player's command
-        execute_command(command)
-        #time.sleep(1) #Give them time to read output?
-    #except:
-        #names = ["James", "Luca", "Alastair", "Dervla", "Natalie", "Sam", "Louie"]
-        #print("Ah, an error. " + names[random.randrange(0, len(names))] + " didn't code that bit properly.")
-        #exit()
+            # Execute the player's command
+            execute_command(command)
+    except KeyboardInterrupt:
+        # When exception is keyboard interrupt, quit gracefully
+        print("I'd have thought you'd put more effort in than that...")
+        exit()
+    except:
+        names = ["James", "Luca", "Alastair", "Dervla", "Natalie", "Sam"]
+        print("Ah, an error. " + names[random.randrange(0, len(names))] + " didn't code that bit properly.")
+        exit()
 
 if __name__ == "__main__":
     print_intro()

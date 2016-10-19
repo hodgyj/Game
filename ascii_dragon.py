@@ -105,54 +105,52 @@ def generate_kirill(r_num):
     return name
 
 def print_intro():
-    # Feel free to change!
-    print("\n")
-    for line in dragon:
-        print(line)
-        time.sleep(0.05)
-    time.sleep(1)
-    for line in welcome:
-        print(line)
-        time.sleep(0.01)
-    print("""\
-        \n\nYou find yourself in a cluttered office, seated on a small chair screwed to the floor. Overlooking you are the backs of several
-        monitors, and behind them a vague figure. You notice a whiteboard to your right, but you can't read any of the gibberish written on it.
-        The figure prompts you to drink the tea in front of you. You lift it to your face, and smell sweet mushrooms and vanilla. As you drink, 
-        your mind clears, and the gibberish on the board makes sense to you, taking the form of some kind of rune. Your vision fails you as your 
-        head drops to desk.""")
-    input("\n\nPress enter to start the game... ")
-    print("\n-----------------------------------------------------------\n")
+    try:
+        print("\n")
+        for line in dragon:
+            print(line)
+            time.sleep(0.05)
+        time.sleep(1)
+        for line in welcome:
+            print(line)
+            time.sleep(0.01)
+        print("""\
+            \n\nYou find yourself in a cluttered office, seated on a small chair screwed to the floor. Overlooking you are the backs of several
+            monitors, and behind them a vague figure. You notice a whiteboard to your right, but you can't read any of the gibberish written on it.
+            The figure prompts you to drink the tea in front of you. You lift it to your face, and smell sweet mushrooms and vanilla. As you drink, 
+            your mind clears, and the gibberish on the board makes sense to you, taking the form of some kind of rune. Your vision fails you as your 
+            head drops to desk.""")
+        input("\n\nPress enter to start the game... ")
+        print("\n-----------------------------------------------------------\n")
 
-    player.name = input("WHAT is your name?: ")
+        player.name = input("WHAT is your name?: ")
 
-    # works but messy, will tidy up
-    if player.name.lower() == "kirill":
-        r_count = 2
-        while True:
-            player.name = generate_kirill(r_count)
-            player_input = str(input("Ah, so your name is " + player.name + "? ")).lower()
-            if player_input == "y" or player_input == "yes":
-                r_count = r_count * 2
+        # works but messy, will tidy up
+        if player.name.lower() == "kirill":
+            r_count = 2
+            while True:
                 player.name = generate_kirill(r_count)
-                print("I think I got it. I'll call you " + player.name)
-                break
-            r_count = r_count + 2
+                player_input = str(input("Ah, so your name is " + player.name + "? ")).lower()
+                if player_input == "y" or player_input == "yes":
+                    r_count = r_count * 2
+                    player.name = generate_kirill(r_count)
+                    print("I think I got it. I'll call you " + player.name)
+                    break
+                r_count = r_count + 2
 
-    player.quest = input("WHAT is your quest?: ")
+        player.quest = input("WHAT is your quest?: ")
 
-    if "holy" in player.quest:
-        player.answer = input("WHAT is the air speed velocity of an unladen swallow?: ")
-        if "african" in player.answer:
-            print("What?!? I DON'T KNOW THAT!")
-            print("The narrator falls majestically into the pit below.")
-            time.sleep(2)
-    else:
-        print("Ah, well unfortunately for you, you don't get to choose the quest.")
-        time.sleep(1.5)
-        print("And so your quest begins. . .")
-        time.sleep(0.7)
-
-    # if player.name = "kirill":
-    #     player.name.join(r)
-    #     print("So your name is " + player.name + "?")
+        if "holy" in player.quest:
+            player.answer = input("WHAT is the air speed velocity of an unladen swallow?: ")
+            if "african" in player.answer:
+                print("What?!? I DON'T KNOW THAT!")
+                print("The narrator falls majestically into the pit below.")
+                time.sleep(2)
+        else:
+            print("Ah, well unfortunately for you, you don't get to choose the quest.")
+            time.sleep(1.5)
+            print("And so your quest begins. . .")
+            time.sleep(0.7)
+    except KeyboardInterrupt:
+        exit()
 
