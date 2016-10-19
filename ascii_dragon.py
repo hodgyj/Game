@@ -166,7 +166,7 @@ def print_intro():
 
         if "holy" in player.quest:
             time.sleep(0.3)
-            player.answer = input("WHAT is the air speed velocity of an unladen swallow?: ")
+            player.answer = str(input("WHAT is the air speed velocity of an unladen swallow?: ")).lower()
             if "african" in player.answer:
                 time.sleep(0.1)
                 print("What?!? I DON'T KNOW THAT!")
@@ -177,7 +177,7 @@ def print_intro():
                 time.sleep(1)
             else:
                 time.sleep(0.1)
-                print("The narrator cackles as your thrown into the valley below.")
+                print("The narrator cackles as you're thrown into the valley below.")
                 end()
 
         elif len(player.quest) < 4:
@@ -190,6 +190,8 @@ def print_intro():
             time.sleep(0.7)
     except KeyboardInterrupt:
         print("Exited game.")
+        exit()
+    except SystemExit:
         exit()
     except:
         print("Ah, an error. How unfortunate.")
