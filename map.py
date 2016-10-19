@@ -53,11 +53,11 @@ armoury = {
 
 	"exits": {"east": "corridor"},
 
-	"ceiling" : """For some reason someone has written {} on the ceiling. Not sure why that's there, your name is definitely\nPlayer 1""",
+	"ceiling" : """For some reason someone has written {} on the ceiling. Not sure why that's there, \nyour name is definitely Player 1""",
 
 	"floor" : """There is nothing remarkable about the floor. You admire your shoes less now, they are muddied.""",
 
-	"items": [item_helmet, item_chest, item_sword]
+	"items": [item_helmet, item_armour, item_sword]
 }
 
 room_treasure ={
