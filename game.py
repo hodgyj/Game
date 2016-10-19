@@ -152,7 +152,8 @@ def execute_go(direction):
     if direction in player.current_room["exits"]:
         if player.current_room == rooms["dragon room"] and direction == "south":
             if not rooms["boss"]["boss_alive"] and not item_key in player.inventory:
-                print("Fucking idiot get the key") # Make harsher
+                print("""
+                    You missed the key. Oh come on, how the hell do you miss the ONLY thing you had to get? How incompetent can one person be?""") # Make harsher
                 time.sleep(1)
             else:
                 if item_key in player.inventory:
@@ -179,7 +180,7 @@ def execute_go(direction):
         else:
             player.current_room = move(player.current_room["exits"], direction)
     else:
-        print("You cannot go there.")
+        print("You cannot go there. Do you SEE that in the options? Should of gone to specsavers.")
 
 def execute_take(item_id):
 
