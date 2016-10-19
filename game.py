@@ -63,12 +63,9 @@ def print_inventory_items(items):
 def print_room(room):
 
     # Display room name
-    print()
-    print(room["name"].upper())
-    print()
+    print("\n" + room["name"].upper() + "\n")
     # Display room description
-    print(room["description"])
-    print()
+    print(room["description"] + "\n")
 
     if (room["items"] != []):
         print_room_items(room)
@@ -238,9 +235,6 @@ def options(now):
         print("First, watch more monty python, then complete the hitchhikers guide to the galaxy text adventure. Come back and you will understand so much more."
             "\n\nSorry, that's about as much help as a game this sarcastic is really going to give.")
 
-        print("""First, watch more monty python, then complete the hitchhikers guide to the galaxy text adventure. Come back and you will understand so much more.
-            \n\nSorry, that's about as much help as a game this sarcastic is really going to give.""")
-
     elif now == "R":
         #restore game and restart somehow
         print("um")
@@ -276,9 +270,10 @@ def execute_command(command):
 
     elif command[0] == "use":
         if len(command) > 1:
-            if command[1] == "potion":
-                item_potion[gone] =1
-                corridor[items].remove(item_potion)
+            # The potion is removed from the inventory in the use_potion command in items.py
+            # if command[1] == "potion":
+            #     item_potion[gone] =1
+            #     corridor[items].remove(item_potion)
             execute_use(command[1])
         else:
             print("Use what?")
@@ -334,7 +329,7 @@ def move(exits, direction):
     return rooms[exits[direction]]
 
 def end():
-    now = input("GAME OVER \n\n\n enter R to restart, Q to quit or H for help ").upper()
+    now = input("GAME OVER \n\n\n Q to quit or H for help ").upper()
     if now == "Q":
         print("................EXITING...............")
         time.sleep(3)
@@ -342,11 +337,6 @@ def end():
     elif now =="H":
         print("First, watch more monty python, then complete the hitchhikers guide to the galaxy text adventure. Come back and you will understand so much more."
             "\n\nSorry, that's about as much help as a game this sarcastic is really going to give.")
-    elif now == "R":
-        print("RESTARTING. Don't fail this time.")
-        time.sleep(5)
-        main()
-        #restore game and restart somehow
 
 
 # This is the entry point of our program
@@ -370,15 +360,17 @@ def main():
         # When exception is keyboard interrupt, quit gracefully
         print("I'd have thought you'd put more effort in than that...")
         exit()
-    except:
-        names = ["James", "Luca", "Alastair", "Dervla", "Natalie", "Sam"]
-        print("Ah, an error. " + names[random.randrange(0, len(names))] + " didn't code that bit properly.")
-        exit()
+    # except:
+    #     names = ["James", "Luca", "Alastair", "Dervla", "Natalie", "Sam"]
+    #     print("Ah, an error. " + names[random.randrange(0, len(names))] + " didn't code that bit properly.")
+    #     time.sleep(3)
+    #     exit()
 
 if __name__ == "__main__":
     import os
     # Resizes the command window. Doesn't work on Linux but ah well
-    os.system('mode con: cols=180 lines=80')
+    # Commented as it breaks VSCode. Make sure it's uncommented for the final version
+    # os.system('mode con: cols=180 lines=80')
     print_intro()
     main()
 

@@ -135,8 +135,12 @@ def print_intro():
                     r_count = r_count * 2
                     player.name = generate_kirill(r_count)
                     print("I think I got it. I'll call you " + player.name)
+                    time.sleep(1.5)
                     break
                 r_count = r_count + 2
+        else:
+            print("Great, I'll call you Player 1. That's right isn't it?")
+            time.sleep(1.5)
 
         player.quest = input("WHAT is your quest?: ")
 
@@ -152,5 +156,6 @@ def print_intro():
             print("And so your quest begins. . .")
             time.sleep(0.7)
     except KeyboardInterrupt:
+        print("Exited game.")
         exit()
 

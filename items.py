@@ -79,7 +79,7 @@ date is from 2 years ago.""",
 
     "use": "nope",
 
-    "gone" : 0,
+    #"gone" : 0, # Not sure if needed?
     #this key will be one or zero depending on if the item has been used up/ if out of the game yet
 
     "use_func": use_potion
@@ -141,7 +141,7 @@ item_chest = {
 
     "use": "nope",
 
-    "gone" : 0,
+    # "gone" : 0,
 
     "use_func": no_use
 
