@@ -176,6 +176,7 @@ def print_intro():
                 time.sleep(1)
         elif len(player.quest) < 4:
             print("You are a special snowflake arn't you? This IS a game you know, try to have some fun with it you dull witted sloth")
+            time.sleep(1.5)
         else:
             print("We actually considered that for the plot of this game, but decided it wasn't good enough. You tried.")
             time.sleep(1.5)
