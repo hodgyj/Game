@@ -2,7 +2,7 @@ import os
 import time
 from map import rooms
 import player
-from items import * # Not sure if needed?
+from items import *
 from gameparser import *
 from deaths import *
 from ascii_dragon import *
@@ -355,7 +355,7 @@ def main():
         # Main game loop
         while True:
         #Could we make the game fullscreen by default so the ascii art will work out and things?
-        
+            
             # Display game status (room description, inventory etc.)
             fail_conditions(player.current_room)
             print_room(player.current_room)
@@ -376,6 +376,8 @@ def main():
         exit()
 
 if __name__ == "__main__":
+    import os
+    os.system('mode con: cols=180 lines=80')
     print_intro()
     main()
 
