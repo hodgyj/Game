@@ -290,7 +290,7 @@ def execute_command(command):
     elif command[0] == "exit":
         user_input = input("Are you sure you want to give up and exit like a total failure?? YES or NO: ")
         user_input = normalise_input(user_input)
-        if input == "yes" or "y":
+        if user_input == "yes" or "y":
             print("Just so you know, we are all angry AND dissapointed in you. tsk tsk.")
             options("Q")
         else:
@@ -299,14 +299,15 @@ def execute_command(command):
         print("Wasn't that fun?")
     elif command[0] == "lick":
         print("...You are pretty weird aren't you. Anyway you've just been poisoned. Well done kid.")
-        end()
+        time.sleep(3)
+        exit()
     elif command[0] == "cry":
         print("You cannot see through your tears and stumble into your death.")
-        time.sleep(4)
-        print("......GAME OVER.....")
+        time.sleep(3)
         exit()
     elif command[0] == "shout":
         print("Good job, now the beast knows you're here. (This means you're definitely dead)")
+        time.sleep(3)
         exit()
     else:
         print("This makes no sense.")
