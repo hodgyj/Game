@@ -146,20 +146,23 @@ def execute_use(item_id):
 def execute_go(direction):
 
     if direction in player.current_room["exits"]:
-        if player.current_room == rooms["dragon room"] and direction == "south": # Player cannot go to exit
-
-            if item_key in player.inventory:
-                item_key["use_func"]()
-
-            player.attempts += 1
-
-            if player.attempts >= 7:
-                print("Alright fine! I'm done with you and I'm done with my clearly useless existance!")
-                time.sleep(2)
-                exit()
-            else:
-                print(player.attempt_exit[player.attempts -1])
+        if player.current_room == rooms["dragon room"] and direction == "south":
+            if not rooms["boss"]["boss_alive"] and not item_key in player.inventory:
+                print("Fucking idiot get the key") # Make harsher
                 time.sleep(1)
+            else:
+                if item_key in player.inventory:
+                    item_key["use_func"]()
+
+                player.attempts += 1
+
+                if player.attempts >= 7:
+                    print("Alright fine! I'm done with you and I'm done with my clearly useless existance!")
+                    time.sleep(2)
+                    exit()
+                else:
+                    print(player.attempt_exit[player.attempts -1])
+                    time.sleep(1)
 
         # Player asked if they want to enter boss room if they have no items
         elif player.current_room == rooms["corridor"] and direction == "north" and len(player.inventory) == 0 and rooms["boss"]["boss_alive"]:
