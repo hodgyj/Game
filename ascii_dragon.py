@@ -1,5 +1,6 @@
 import time
 import player
+from game import end
 dragon = [
 "################################################################ ###################################",
 "#############################################################W D####################################",
@@ -170,10 +171,15 @@ def print_intro():
                 time.sleep(0.1)
                 print("What?!? I DON'T KNOW THAT!")
                 time.sleep(1)
-                print("The narrator falls majestically into the pit below.")
+                print("The narrator falls with a cry into the valley below.")
                 time.sleep(2)
                 print("Anyway, on with the story. . .")
                 time.sleep(1)
+            else:
+                time.sleep(0.1)
+                print("The narrator cackles as your thrown into the valley below.")
+                end()
+
         elif len(player.quest) < 4:
             print("You are a special snowflake arn't you? This IS a game you know, try to have some fun with it you dull witted sloth")
             time.sleep(1.5)

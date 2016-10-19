@@ -7,6 +7,7 @@ from gameparser import *
 from deaths import *
 from ascii_dragon import *
 import random
+from credits import *
 
 # win_condition has been moved to items.py
 #moved all item interactions (take drop use etc etc) to interaction.py - Why? 
@@ -27,7 +28,7 @@ def fail_conditions(current_room):
             main() # resets the game
         else:
             print("I guess those padded walls are fairly appealing. . .and comfy. . .")
-            exit() # quits the game
+            end() # quits the game
 
 
 
@@ -40,14 +41,17 @@ def boss_battle_drop():
                 The beast gives chases with an all-mighty roar! Unfortunately as he runs he fails to notice the recently deposited sword.
                 He trips and stumbles over the blade, after a moments consideration about his new found ability to defy gravity the beast
                 slams head first into a wall.
-                as he falls you hear the sound of a metallic object skittering accross the floor.""")
-                print("\tCongratulations " + player.name[:3] + ".. er.. I mean Player 1! You defeated the troll! And it needed so much skill from you.")
+                As he falls you hear the sound of a metallic object skittering accross the floor.""")
+                print("""
+                Congratulations """ + player.name[:3] + ".. er.. I mean Player 1! You defeated the troll! And it needed so much skill from you.")
                 player.current_room["items"].append(item_key)
                 rooms["boss"]["boss_alive"] = False
                 rooms["boss"]["description"] = """
                 The room is slightly flooded with the slippery liquid you have found throughout, and across from you is a giant throne.
                 The troll which was once sitting on the throne is now lying on the floor, after an unfortunate encounter with a wall."""
                 item["name"] = "a bent sword"
+                item["description"] = """
+                The sword is even more damaged now, you just can't stop yourself breaking things, can you?"""
                 # Maybe add description of damaged sword?
                 time.sleep(3)
                 break
@@ -155,7 +159,7 @@ def execute_go(direction):
                     item_key["use_func"]()
 
                 player.attempts += 1
-
+                
                 if player.attempts >= 7:
                     print("Alright fine! I'm done with you and I'm done with my clearly useless existance!")
                     time.sleep(2)
@@ -171,7 +175,7 @@ def execute_go(direction):
                 print("""You bravely challenge the beast to a duel. The troll crushes your head in one blow and swings your body around the room, 
                     painting the room in blood. Who knew trolls liked to decorate?""")
                 time.sleep(3)
-                exit()
+                end()
         else:
             player.current_room = move(player.current_room["exits"], direction)
     else:
@@ -266,10 +270,6 @@ def execute_command(command):
 
     elif command[0] == "use":
         if len(command) > 1:
-            # The potion is removed from the inventory in the use_potion command in items.py
-            # if command[1] == "potion":
-            #     item_potion[gone] =1
-            #     corridor[items].remove(item_potion)
             execute_use(command[1])
         else:
             print("Use what?")
@@ -291,15 +291,15 @@ def execute_command(command):
     elif command[0] == "lick":
         print("...You are pretty weird aren't you. Anyway you've just been poisoned. Well done kid.")
         time.sleep(3)
-        exit()
+        end()
     elif command[0] == "cry":
         print("You cannot see through your tears and stumble into your death.")
         time.sleep(3)
-        exit()
+        end()
     elif command[0] == "shout":
         print("Good job, now the beast knows you're here. (This means you're definitely dead)")
         time.sleep(3)
-        exit()
+        end()
     else:
         print("This makes no sense.")
         player.gibberish += 1
@@ -325,14 +325,28 @@ def move(exits, direction):
     return rooms[exits[direction]]
 
 def end():
-    now = input("GAME OVER \n\n\n Q to quit or H for help ").upper()
+    now = input("""\
+    _________ _______  __   __  _______    _______  __   __  _______  ______    __
+    |       ||   _   ||  |_|  ||       |  |       ||  | |  ||       ||    _ |  |  | 
+    |    ___||  |_|  ||       ||    ___|  |   _   ||  |_|  ||    ___||   | ||  |  | 
+    |   | __ |       ||       ||   |___   |  | |  ||       ||   |___ |   |_||_ |  | 
+    |   ||  ||       ||       ||    ___|  |  |_|  ||       ||    ___||    __  ||__| 
+    |   |_| ||   _   || ||_|| ||   |___   |       | |     | |   |___ |   |  | | __  
+    |_______||__| |__||_|   |_||_______|  |_______|  |___|  |_______||___|  |_||__|
+                                        
+
+
+                                Q to quit or H for help """).upper()
     if now == "Q":
-        print("................EXITING...............")
+        roll_credits()
+        print("\n\n................EXITING...............")
         time.sleep(3)
         exit()
     elif now =="H":
         print("First, watch more monty python, then complete the hitchhikers guide to the galaxy text adventure. Come back and you will understand so much more."
             "\n\nSorry, that's about as much help as a game this sarcastic is really going to give.")
+        roll_credits()
+        exit()
 
 
 # This is the entry point of our program
