@@ -128,14 +128,14 @@ def print_intro():
         gave_name = True
         # while loop ensures player eventually gives a name
         while True:
-            player.name = input("WHAT is your name?: ")
+            player.name = input("WHAT is your name?: ").lower()
             if player.name != "":
                 break
             gave_name = False # If player doesn't give a name, set to false for getting quest
             print("Oh come on, it's not exactly difficult.") # Maybe add some catch for multiple empty responses?
             time.sleep(1)
 
-        if player.name.lower() == "kirill":
+        if player.name == "kirill":
             r_count = 2
             while True:
                 player.name = generate_kirill(r_count)
@@ -186,7 +186,7 @@ def print_intro():
         else:
             print("We actually considered that for the plot of this game, but decided it wasn't good enough. You tried.")
             time.sleep(1.5)
-            print("And so your quest begins. . .")
+            print("And so your (our) quest begins. . .")
             time.sleep(0.7)
     except KeyboardInterrupt:
         print("Exited game.")
