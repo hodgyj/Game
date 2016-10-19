@@ -1,28 +1,29 @@
 import time
 import random
+
 # It seems for python to be happy you have to define the function and what it does first, 
 # and then set the value of use_func to the function we want to execute
 def use_key():
-    import player 
+    import player
+    import game
     #if not player.current_room["kirills office"]: #For some reason this isnt working I hate python !! This if statement will now return false.
     if player.current_room["name"].lower() != "dragon room": 
         no_use()
     else:
         print("""\
-You put the key into the door and slowly turn it, you hear a satifying click as the lock slides back.
-As the door opens you are blinded by the light from outside. As you begin to leave you think back on the day and ponder. . .
-just how in the world did you tie yourself to the chair like that? What, you think someone tied you up? No one would do that . . . """)
+        You put the key into the door and slowly turn it, you hear a satifying click as the lock slides back.
+        As the door opens you are blinded by the light from outside. As you begin to leave you think back on the day and ponder. . .
+        just how in the world did you tie yourself to the chair like that? What, you think someone tied you up? No one would do that . . . """)
 
         time.sleep(4)
         print("""\n'Oh well' you think, 'at least I got to kirill a troll'.""")
         time.sleep(2)
         if len(player.quest) < 4:
             print("""
-Well, usually I would congratulate you on completing your quest, but you put in as much effort as one of our team mates.""")
+            Well, usually I would congratulate you on completing your quest, but you put in as much effort as one of our team mates.""")
         print(str("""
-Congratulations Player 1, you completed your quest to {}! I'm so proud of you\n""").format(player.quest))
+            Congratulations Player 1, you completed your quest to {}! I'm so proud of you\n""").format(player.quest))
         time.sleep(2)
-        import game
         game.end()
 
 def no_use():
@@ -42,16 +43,19 @@ def use_potion():
 
 def use_sword():
     import player
+    import game
     if player.current_room["name"].lower() == "boss room":
         if player.current_room["boss_alive"] == True:
-            print("You attack the troll with a mighty swing of your sword. Mum would be proud.")
+            print(""""\
+                You attack the troll with a mighty swing of your sword. Mum would be proud.""")
             time.sleep(1.2)
-            print("""\tUnfortunately, you aren't trained in swordfighting, and the troll now knows 
+            print("""\t
+            Unfortunately, you aren't trained in swordfighting, and the troll now knows 
             this thanks to your god awful swing.
             The troll crushes your head in one blow and swings your body around the room, 
             painting the room in blood. Who knew trolls liked to decorate? """)
             time.sleep(3)
-            end()
+            game.end()
         else:
             print("\nYou stab the troll with the sword. Feels gross and altogether rather pointless.")
     else:
