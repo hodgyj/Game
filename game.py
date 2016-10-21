@@ -353,6 +353,9 @@ def end():
             "\n\nSorry, that's about as much help as a game this sarcastic is really going to give.")
         roll_credits()
         exit()
+    else:
+        roll_credits()
+        exit()
 
 
 # This is the entry point of our program
