@@ -346,7 +346,6 @@ def end():
     if now == "Q":
         roll_credits()
         print("\n\n................EXITING...............")
-        time.sleep(3)
         exit()
     elif now =="H":
         print("First, watch more monty python, then complete the hitchhikers guide to the galaxy text adventure. Come back and you will understand so much more."
